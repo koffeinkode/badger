@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Left ear -->
+  <path d="M32 18 C28 10, 22 12, 26 22"/>
+  <!-- Right ear -->
+  <path d="M68 18 C72 10, 78 12, 74 22"/>
+  <!-- Head outline left side -->
+  <path d="M26 22 C24 30, 22 38, 30 50 L44 68"/>
+  <!-- Head outline right side -->
+  <path d="M74 22 C76 30, 78 38, 70 50 L56 68"/>
+  <!-- Center stripe left -->
+  <path d="M38 20 C42 32, 44 46, 46 64"/>
+  <!-- Center stripe right -->
+  <path d="M62 20 C58 32, 56 46, 54 64"/>
+  <!-- Nose bridge -->
+  <path d="M46 64 C46 68, 48 72, 50 72 C52 72, 54 68, 54 64"/>
+  <!-- Chin -->
+  <path d="M44 68 C46 74, 48 76, 50 76 C52 76, 54 74, 56 68"/>
+  <!-- Nose -->
+  <ellipse cx="50" cy="68" rx="4" ry="3" fill="#1a1a1a" stroke="none"/>
+  <!-- Eyes -->
+  <circle cx="39" cy="42" r="3" fill="#1a1a1a" stroke="none"/>
+  <circle cx="61" cy="42" r="3" fill="#1a1a1a" stroke="none"/>
+</svg>
