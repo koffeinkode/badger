@@ -1,9 +1,3 @@
-<!--
-  Badger - Badge Generator
-  (c) 2025 KoffeinKode. Alle rettigheter reservert.
-  Uautorisert kopiering, distribusjon eller endring er forbudt.
-  Se medfølgende LISENS-BADGER.md for fullstendige vilkår.
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -824,12 +818,1208 @@
 
   <div class="preview-area" id="previewArea">
     <div class="empty-state">
+      <p>Versjon 1.0 — av Hallvar Bugge Johnsen / hei@hallvar.no</p>
     </div>
   </div>
 </div>
 
 <script>
-const a0_0x3aa3f8=a0_0x4979;(function(_0x1baaea,_0x2a4f70){const _0x236f39=a0_0x4979,_0x46e245=_0x1baaea();while(!![]){try{const _0x1daf24=-parseInt(_0x236f39(0x1e8))/0x1*(parseInt(_0x236f39(0x212))/0x2)+-parseInt(_0x236f39(0x1fb))/0x3+parseInt(_0x236f39(0x250))/0x4*(-parseInt(_0x236f39(0x1f6))/0x5)+-parseInt(_0x236f39(0x1db))/0x6+parseInt(_0x236f39(0x257))/0x7*(-parseInt(_0x236f39(0x22e))/0x8)+parseInt(_0x236f39(0x1f8))/0x9+parseInt(_0x236f39(0x234))/0xa;if(_0x1daf24===_0x2a4f70)break;else _0x46e245['push'](_0x46e245['shift']());}catch(_0x5be26e){_0x46e245['push'](_0x46e245['shift']());}}}(a0_0x2a78,0x77c86));let entries=[],qrDataUrl=null,logoDataUrl=null,currentLayout='a',currentFont=a0_0x3aa3f8(0x25a),qrDotStyle=a0_0x3aa3f8(0x1e4),qrCodeInstance=null,logoWidthPct=0x64,logoAlign=a0_0x3aa3f8(0x1e7);const layoutDescriptions={'a':'Høyrestilt\x20—\x20QR\x20venstre,\x20info\x20høyre','c':a0_0x3aa3f8(0x20a)};function loadLogo(_0x37882e){const _0x307b4e=a0_0x3aa3f8,_0x20214e=_0x37882e[_0x307b4e(0x242)][_0x307b4e(0x22d)][0x0];if(!_0x20214e)return;const _0x50ae1a=new FileReader();_0x50ae1a[_0x307b4e(0x246)]=function(_0x441e8e){const _0x522b18=_0x307b4e;logoDataUrl=_0x441e8e['target'][_0x522b18(0x241)];const _0x17981a=document[_0x522b18(0x24d)](_0x522b18(0x1f3));_0x17981a['classList'][_0x522b18(0x25f)](_0x522b18(0x1dd)),_0x17981a[_0x522b18(0x211)]=_0x522b18(0x1ec)+logoDataUrl+_0x522b18(0x22a)+esc(_0x20214e[_0x522b18(0x238)])+_0x522b18(0x1ee),document[_0x522b18(0x24d)](_0x522b18(0x1f1))[_0x522b18(0x20b)][_0x522b18(0x1e5)]='',renderBadges();},_0x50ae1a[_0x307b4e(0x202)](_0x20214e);}const countryMap={'faroe':a0_0x3aa3f8(0x1e1),'finland':'Finland','finnish':a0_0x3aa3f8(0x216),'tampere':a0_0x3aa3f8(0x216),'lapland':a0_0x3aa3f8(0x216),'greenland':a0_0x3aa3f8(0x25d),'film\x20gl':a0_0x3aa3f8(0x25d),'iceland':a0_0x3aa3f8(0x1d8),'norway':'Norway','norwegian':a0_0x3aa3f8(0x21f),'oslo':a0_0x3aa3f8(0x21f),'arktisk':a0_0x3aa3f8(0x21f),'midgard':a0_0x3aa3f8(0x21f),'western\x20norway':'Norway','eastern\x20norway':a0_0x3aa3f8(0x21f),'sweden':a0_0x3aa3f8(0x1e9),'swedish':a0_0x3aa3f8(0x1e9),'stockholm':a0_0x3aa3f8(0x1e9),'gotland':a0_0x3aa3f8(0x1e9),'åland':a0_0x3aa3f8(0x256),'film.ax':'Åland','denmark':a0_0x3aa3f8(0x20d),'danish':'Denmark','vision\x20denmark':'Denmark','north\x20finland':a0_0x3aa3f8(0x216),'west\x20finland':a0_0x3aa3f8(0x216),'east\x20finland':a0_0x3aa3f8(0x216),'southern\x20sweden':a0_0x3aa3f8(0x1e9)};function detectCountry(_0x23a946){const _0x2b6616=a0_0x3aa3f8,_0x4eda94=_0x23a946[_0x2b6616(0x24c)]();for(const [_0x27faae,_0x4272d0]of Object[_0x2b6616(0x218)](countryMap)){if(_0x4eda94['includes'](_0x27faae))return _0x4272d0;}return'';}function switchTab(_0x162d37,_0x6b0b2e){const _0x5dbb24=a0_0x3aa3f8,_0x2887eb=_0x6b0b2e[_0x5dbb24(0x23e)](_0x5dbb24(0x203));_0x2887eb['querySelectorAll']('.tab')[_0x5dbb24(0x1fc)](_0x2cef87=>_0x2cef87[_0x5dbb24(0x239)][_0x5dbb24(0x200)](_0x5dbb24(0x1eb))),_0x2887eb[_0x5dbb24(0x24b)](_0x5dbb24(0x210))[_0x5dbb24(0x1fc)](_0x3ef06c=>_0x3ef06c[_0x5dbb24(0x239)][_0x5dbb24(0x200)](_0x5dbb24(0x1eb))),_0x6b0b2e[_0x5dbb24(0x239)][_0x5dbb24(0x25f)](_0x5dbb24(0x1eb)),_0x2887eb[_0x5dbb24(0x248)](_0x5dbb24(0x243)+_0x162d37)[_0x5dbb24(0x239)][_0x5dbb24(0x25f)](_0x5dbb24(0x1eb));}function switchQrTab(_0x4e01e3,_0x53d979){const _0x5c5e2a=a0_0x3aa3f8,_0x2cb0ca=_0x53d979[_0x5c5e2a(0x23e)](_0x5c5e2a(0x203));_0x2cb0ca[_0x5c5e2a(0x24b)](_0x5c5e2a(0x204))[_0x5c5e2a(0x1fc)](_0x546eee=>_0x546eee[_0x5c5e2a(0x239)][_0x5c5e2a(0x200)](_0x5c5e2a(0x1eb))),_0x2cb0ca[_0x5c5e2a(0x24b)]('.tab-content')[_0x5c5e2a(0x1fc)](_0x2fc161=>_0x2fc161['classList'][_0x5c5e2a(0x200)](_0x5c5e2a(0x1eb))),_0x53d979[_0x5c5e2a(0x239)]['add'](_0x5c5e2a(0x1eb)),_0x2cb0ca[_0x5c5e2a(0x248)](_0x5c5e2a(0x1d5)+_0x4e01e3)[_0x5c5e2a(0x239)][_0x5c5e2a(0x25f)]('active');}function loadQR(_0x37bc7b){const _0x1956db=a0_0x3aa3f8,_0x15ab57=_0x37bc7b[_0x1956db(0x242)]['files'][0x0];if(!_0x15ab57)return;const _0x39cd9c=new FileReader();_0x39cd9c[_0x1956db(0x246)]=function(_0x3edfc9){const _0x3efd37=_0x1956db;qrDataUrl=_0x3edfc9[_0x3efd37(0x242)][_0x3efd37(0x241)];const _0x5a80b9=document[_0x3efd37(0x24d)](_0x3efd37(0x1f2));_0x5a80b9[_0x3efd37(0x239)]['add']('has-file'),_0x5a80b9[_0x3efd37(0x211)]=_0x3efd37(0x1ec)+qrDataUrl+'\x22\x20alt=\x22QR\x22>\x0a\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22upload-filename\x22>'+esc(_0x15ab57[_0x3efd37(0x238)])+_0x3efd37(0x228),renderBadges();},_0x39cd9c[_0x1956db(0x202)](_0x15ab57);}function a0_0x2a78(){const _0x7b654e=['src','\x0a\x20\x20\x20\x20\x20\x20\x20\x20','</span>\x0a\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22file\x22\x20accept=\x22image/*\x22\x20onchange=\x22loadQR(event)\x22>','flex-start','\x22\x20alt=\x22Logo\x22\x20style=\x22max-width:200px;max-height:50px\x22>\x0a\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22upload-filename\x22>','title','push','files','6042664MbPrpY',')\x22>x</button>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20','<div\x20class=\x22badge-count\x22>','includes','excelArea','#ffffff','23897400vWAbbc','Fornavn\x20Etternavn','\x22\x20alt=\x22QR\x22>','length','name','classList','filter','div','badgeFontLink','.layout-btn','closest','decode','inputList','result','target','#tab-','entriesList','fontSize_commission','onload','image/png','querySelector','append','<div\x20class=\x22page\x22>','querySelectorAll','toLowerCase','getElementById','replace','</div>','10932KfDOwf','print','<div\x20class=\x22entry-country\x22>','img','map','%;height:auto\x22></div>','Åland','7fDOeqb','qrColor','Sheets','Lato','\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22badge-bottom\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22qr\x22>','<span\x20class=\x22upload-filename\x22>','Greenland','value','add','company','badgeWidth','#qrtab-','toString','badge--layout-','Iceland','<div\x20style=\x22display:flex;justify-content:','\x0a\x20\x20\x20\x20<div\x20class=\x22entry-item\x22>\x0a\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22entry-name\x22>','1389258QnqUrc','Firma\x20AS','has-file','</span>\x0a\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22upload-hint\x22>','cssText','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22info\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22name\x22\x20style=\x22font-family:\x27','Faroe\x20Islands','entriesHeader','pt\x22>','square','display','stilling','center','1RjtkyL','Sweden','textContent','active','<img\x20src=\x22','split','</span>\x0a\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22file\x22\x20accept=\x22image/*\x22\x20onchange=\x22loadLogo(event)\x22>','.layout-row','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20','logoControls','qrArea','logoArea','.csv','layoutDesc','1465oBiBKZ','Liste\x20(','7631523mDToqB','\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20<button\x20class=\x22remove-btn\x22\x20onclick=\x22removeEntry(','array','2223264NzCJFu','forEach','Stilling','trim','logoWidthVal','remove','<div\x20class=\x22country\x22\x20style=\x22font-family:\x27','readAsDataURL','.sidebar-section','.tab','.design-section','navn','utils','\x22\x20alt=\x22Logo\x22\x20style=\x22width:','max-width:80px;max-height:80px;border:1px\x20solid\x20#ccc','Venstrestilt\x20—\x20info\x20venstre,\x20QR\x20høyre','style','appendChild','Denmark',':wght@300;400;700;900&display=swap','mm;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22badge-top\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','.tab-content','innerHTML','436648USgGTb','<div\x20class=\x22entry-commission\x22>','https://fonts.googleapis.com/css2?family=','\x20navneskilt\x20/\x20','Finland','join','entries','readAsArrayBuffer','fontSize_name','fontSelect','SheetNames','<div\x20class=\x22commission\x22\x20style=\x22font-family:\x27','Ingen\x20deltakere.\x20Importer\x20data\x20forst.','Norway','badgeHeight','\x27,sans-serif;font-size:','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20','canvas','utf-8','\x22><img\x20class=\x22logo-img\x22\x20src=\x22'];a0_0x2a78=function(){return _0x7b654e;};return a0_0x2a78();}function setQrStyle(_0x3f96bc,_0x2b0c48){const _0x4c3810=a0_0x3aa3f8;qrDotStyle=_0x3f96bc,document[_0x4c3810(0x24b)]('.qr-style-btn')[_0x4c3810(0x1fc)](_0x40f0ad=>_0x40f0ad[_0x4c3810(0x239)][_0x4c3810(0x200)](_0x4c3810(0x1eb))),_0x2b0c48[_0x4c3810(0x239)][_0x4c3810(0x25f)](_0x4c3810(0x1eb)),generateQR();}function generateQR(){const _0x51bdc6=a0_0x3aa3f8,_0x238423=document[_0x51bdc6(0x24d)]('qrUrl')[_0x51bdc6(0x25e)][_0x51bdc6(0x1fe)](),_0x141ce2=document[_0x51bdc6(0x24d)]('qrPreview');if(!_0x238423){_0x141ce2[_0x51bdc6(0x211)]='',qrDataUrl=null,renderBadges();return;}const _0x3b90d2=document['getElementById'](_0x51bdc6(0x258))[_0x51bdc6(0x25e)],_0x35b871={'square':'square','dots':'dots','rounded':'rounded'},_0x5b090f={'width':0x12c,'height':0x12c,'data':_0x238423,'dotsOptions':{'color':_0x3b90d2,'type':_0x35b871[qrDotStyle]||_0x51bdc6(0x1e4)},'backgroundOptions':{'color':_0x51bdc6(0x233)},'cornersDotOptions':{'color':_0x3b90d2},'cornersSquareOptions':{'color':_0x3b90d2},'qrOptions':{'errorCorrectionLevel':'M'}};qrCodeInstance&&(_0x141ce2[_0x51bdc6(0x211)]='');qrCodeInstance=new QRCodeStyling(_0x5b090f);const _0xcccde5=document['createElement'](_0x51bdc6(0x23b));_0x141ce2[_0x51bdc6(0x211)]='',_0x141ce2[_0x51bdc6(0x20c)](_0xcccde5),qrCodeInstance[_0x51bdc6(0x249)](_0xcccde5),setTimeout(()=>{const _0x3ebd36=_0x51bdc6,_0x857a60=_0xcccde5['querySelector'](_0x3ebd36(0x223));if(_0x857a60){qrDataUrl=_0x857a60['toDataURL'](_0x3ebd36(0x247));const _0x429767=document['createElement'](_0x3ebd36(0x253));_0x429767[_0x3ebd36(0x226)]=qrDataUrl,_0x429767[_0x3ebd36(0x20b)][_0x3ebd36(0x1df)]=_0x3ebd36(0x209),_0x141ce2['innerHTML']='',_0x141ce2[_0x3ebd36(0x20c)](_0x429767),renderBadges();}},0xc8);}function updateLogoWidth(){const _0x58b6f0=a0_0x3aa3f8;logoWidthPct=document['getElementById']('logoWidth')[_0x58b6f0(0x25e)],document[_0x58b6f0(0x24d)](_0x58b6f0(0x1ff))[_0x58b6f0(0x1ea)]=logoWidthPct+'%',renderBadges();}function setLogoAlign(_0x512813,_0x5ebc0c){const _0x4ee48f=a0_0x3aa3f8;logoAlign=_0x512813,_0x5ebc0c[_0x4ee48f(0x23e)](_0x4ee48f(0x1ef))[_0x4ee48f(0x24b)](_0x4ee48f(0x23d))[_0x4ee48f(0x1fc)](_0x1ad3dd=>_0x1ad3dd[_0x4ee48f(0x239)][_0x4ee48f(0x200)](_0x4ee48f(0x1eb))),_0x5ebc0c[_0x4ee48f(0x239)][_0x4ee48f(0x25f)]('active'),renderBadges();}function setLayout(_0x2671cb,_0x1e24ed){const _0x1f24d5=a0_0x3aa3f8;currentLayout=_0x2671cb,document['querySelectorAll']('.layout-btn')['forEach'](_0x19b38d=>_0x19b38d[_0x1f24d5(0x239)][_0x1f24d5(0x200)](_0x1f24d5(0x1eb))),_0x1e24ed[_0x1f24d5(0x239)][_0x1f24d5(0x25f)](_0x1f24d5(0x1eb)),document[_0x1f24d5(0x24d)](_0x1f24d5(0x1f5))[_0x1f24d5(0x211)]=layoutDescriptions[_0x2671cb],renderBadges();}function changeFont(){const _0x49d6f6=a0_0x3aa3f8;currentFont=document[_0x49d6f6(0x24d)](_0x49d6f6(0x21b))[_0x49d6f6(0x25e)];const _0x297e6f=document[_0x49d6f6(0x24d)](_0x49d6f6(0x23c)),_0x1c7501=currentFont[_0x49d6f6(0x24e)](/ /g,'+');_0x297e6f['href']=_0x49d6f6(0x214)+_0x1c7501+_0x49d6f6(0x20e),setTimeout(renderBadges,0x64);}function a0_0x4979(_0x3075d3,_0x519a42){_0x3075d3=_0x3075d3-0x1d5;const _0x2a781c=a0_0x2a78();let _0x49796f=_0x2a781c[_0x3075d3];return _0x49796f;}function loadExcel(_0xf3635){const _0x4ffc9f=a0_0x3aa3f8,_0x2ec03f=_0xf3635[_0x4ffc9f(0x242)][_0x4ffc9f(0x22d)][0x0];if(!_0x2ec03f)return;const _0x32d8d2=document[_0x4ffc9f(0x24d)](_0x4ffc9f(0x232)),_0x1abf7e=new FileReader();_0x1abf7e[_0x4ffc9f(0x246)]=function(_0x510dbc){const _0x530305=_0x4ffc9f,_0x322e70=new Uint8Array(_0x510dbc['target'][_0x530305(0x241)]);let _0x58813d={'type':_0x530305(0x1fa)};if(_0x2ec03f[_0x530305(0x238)][_0x530305(0x24c)]()['endsWith'](_0x530305(0x1f4))){const _0x17071e=new TextDecoder(_0x530305(0x224))[_0x530305(0x23f)](_0x322e70),_0x53741f=_0x17071e['split']('\x0a')[0x0]||'';_0x58813d['FS']=_0x53741f[_0x530305(0x231)](';')?';':',';}const _0x53241e=XLSX['read'](_0x322e70,_0x58813d),_0x27202a=_0x53241e[_0x530305(0x259)][_0x53241e[_0x530305(0x21c)][0x0]],_0x52b378=XLSX[_0x530305(0x207)]['sheet_to_json'](_0x27202a,{'header':0x1});let _0x5f1be5=0x0;if(_0x52b378[_0x530305(0x237)]>0x0){const _0x54ea90=_0x52b378[0x0][_0x530305(0x254)](_0x5d3cc1=>(_0x5d3cc1||'')[_0x530305(0x1d6)]()[_0x530305(0x24c)]()[_0x530305(0x1fe)]());(_0x54ea90['includes'](_0x530305(0x206))||_0x54ea90[_0x530305(0x231)](_0x530305(0x238))||_0x54ea90['includes'](_0x530305(0x1e6))||_0x54ea90['includes']('title')||_0x54ea90[_0x530305(0x231)]('firma')||_0x54ea90['includes']('company'))&&(_0x5f1be5=0x1);}entries=[];for(let _0x1869fc=_0x5f1be5;_0x1869fc<_0x52b378[_0x530305(0x237)];_0x1869fc++){const _0x42df63=_0x52b378[_0x1869fc];if(!_0x42df63||_0x42df63['length']<0x1)continue;const _0x1d3e02=(_0x42df63[0x0]||'')['toString']()[_0x530305(0x1fe)]();if(!_0x1d3e02)continue;const _0x27f360=_0x42df63[_0x530305(0x237)]>=0x2?(_0x42df63[0x1]||'')[_0x530305(0x1d6)]()['trim']():'',_0x25e28d=_0x42df63[_0x530305(0x237)]>=0x3?(_0x42df63[0x2]||'')[_0x530305(0x1d6)]()[_0x530305(0x1fe)]():'';entries[_0x530305(0x22c)]({'name':_0x1d3e02,'title':_0x27f360,'company':_0x25e28d});}_0x32d8d2['classList'][_0x530305(0x25f)](_0x530305(0x1dd)),_0x32d8d2[_0x530305(0x211)]=_0x530305(0x25c)+esc(_0x2ec03f[_0x530305(0x238)])+_0x530305(0x1de)+entries['length']+'\x20importert</span>\x0a\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22file\x22\x20accept=\x22.xlsx,.xls,.csv\x22\x20onchange=\x22loadExcel(event)\x22>',renderEntries(),renderBadges();},_0x1abf7e[_0x4ffc9f(0x219)](_0x2ec03f);}function parseTextInput(){const _0x66009f=a0_0x3aa3f8,_0x4a7e1f=document['getElementById'](_0x66009f(0x240))[_0x66009f(0x25e)][_0x66009f(0x1fe)]();if(!_0x4a7e1f)return;const _0x1d01d0=_0x4a7e1f[_0x66009f(0x1ed)]('\x0a')['map'](_0x5b5bf3=>_0x5b5bf3[_0x66009f(0x1fe)]()[_0x66009f(0x24e)](/,+$/,''))[_0x66009f(0x23a)](_0x23002f=>_0x23002f['length']>0x0);entries=[];for(let _0x106d1f=0x0;_0x106d1f<_0x1d01d0[_0x66009f(0x237)];_0x106d1f+=0x3){const _0xf37db1=_0x1d01d0[_0x106d1f],_0x5df4f7=_0x1d01d0[_0x106d1f+0x1]||'',_0x3d20f8=_0x1d01d0[_0x106d1f+0x2]||'';_0xf37db1&&entries[_0x66009f(0x22c)]({'name':_0xf37db1,'title':_0x5df4f7,'company':_0x3d20f8});}renderEntries(),renderBadges();}function renderEntries(){const _0x44a771=a0_0x3aa3f8,_0x50f1fb=document['getElementById'](_0x44a771(0x244));document[_0x44a771(0x24d)](_0x44a771(0x1e2))[_0x44a771(0x1ea)]=_0x44a771(0x1f7)+entries[_0x44a771(0x237)]+')',_0x50f1fb['innerHTML']=entries[_0x44a771(0x254)]((_0x20b5bf,_0x2e2c18)=>_0x44a771(0x1da)+esc(_0x20b5bf[_0x44a771(0x238)])+_0x44a771(0x222)+(_0x20b5bf[_0x44a771(0x22b)]?_0x44a771(0x213)+esc(_0x20b5bf[_0x44a771(0x22b)])+_0x44a771(0x24f):'')+_0x44a771(0x227)+(_0x20b5bf[_0x44a771(0x260)]?_0x44a771(0x252)+esc(_0x20b5bf[_0x44a771(0x260)])+'</div>':'')+_0x44a771(0x1f9)+_0x2e2c18+_0x44a771(0x22f))[_0x44a771(0x217)]('');}function esc(_0x3e0dba){const _0x4f6b51=document['createElement']('div');return _0x4f6b51['textContent']=_0x3e0dba,_0x4f6b51['innerHTML'];}function removeEntry(_0x42c241){entries['splice'](_0x42c241,0x1),renderEntries(),renderBadges();}function clearAll(){entries=[],renderEntries(),renderBadges();}function renderBadges(){const _0x2d5aef=a0_0x3aa3f8,_0x278a3c=document['getElementById']('previewArea'),_0x25e778=document['getElementById'](_0x2d5aef(0x261))[_0x2d5aef(0x25e)]||0x5c,_0x404748=document[_0x2d5aef(0x24d)](_0x2d5aef(0x220))[_0x2d5aef(0x25e)]||0x3b,_0x4605c9=document[_0x2d5aef(0x24d)](_0x2d5aef(0x21a))[_0x2d5aef(0x25e)]||0x12,_0x1c65cd=document[_0x2d5aef(0x24d)](_0x2d5aef(0x245))[_0x2d5aef(0x25e)]||0xc,_0x4ccae6=document[_0x2d5aef(0x24d)]('fontSize_company')['value']||0x9,_0xfdc113=entries['length']>0x0||logoDataUrl||qrDataUrl;if(!_0xfdc113){_0x278a3c[_0x2d5aef(0x211)]='<div\x20class=\x22empty-state\x22></div>';return;}document[_0x2d5aef(0x24b)](_0x2d5aef(0x205))['forEach'](_0x2a32ed=>_0x2a32ed[_0x2d5aef(0x20b)][_0x2d5aef(0x1e5)]='');const _0x350053=0x8,_0x4d0b3d=qrDataUrl?_0x2d5aef(0x1ec)+qrDataUrl+_0x2d5aef(0x236):'',_0x5acd1a=_0x2d5aef(0x1d7)+currentLayout,_0x3bfa1a={'left':_0x2d5aef(0x229),'center':_0x2d5aef(0x1e7),'right':'flex-end'},_0x115b63=logoDataUrl?_0x2d5aef(0x1d9)+_0x3bfa1a[logoAlign]+_0x2d5aef(0x225)+logoDataUrl+_0x2d5aef(0x208)+logoWidthPct+_0x2d5aef(0x255):'',_0x2f4fa8=entries[_0x2d5aef(0x237)]>0x0?entries:[{'name':_0x2d5aef(0x235),'title':_0x2d5aef(0x1fd),'company':_0x2d5aef(0x1dc)}];let _0x43bc52=entries['length']>0x0?_0x2d5aef(0x230)+entries[_0x2d5aef(0x237)]+_0x2d5aef(0x215)+Math['ceil'](entries[_0x2d5aef(0x237)]/_0x350053)+'\x20sider</div>':'';for(let _0x55b3bf=0x0;_0x55b3bf<_0x2f4fa8[_0x2d5aef(0x237)];_0x55b3bf++){if(_0x55b3bf%_0x350053===0x0){if(_0x55b3bf>0x0)_0x43bc52+=_0x2d5aef(0x24f);_0x43bc52+=_0x2d5aef(0x24a);}const _0xda8aa=_0x2f4fa8[_0x55b3bf];_0x43bc52+='\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22badge\x20'+_0x5acd1a+'\x22\x20style=\x22width:'+_0x25e778+'mm;height:'+_0x404748+_0x2d5aef(0x20f)+_0x115b63+_0x2d5aef(0x25b)+_0x4d0b3d+_0x2d5aef(0x1e0)+currentFont+_0x2d5aef(0x221)+_0x4605c9+_0x2d5aef(0x1e3)+esc(_0xda8aa['name'])+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0xda8aa['title']?_0x2d5aef(0x21d)+currentFont+_0x2d5aef(0x221)+_0x1c65cd+_0x2d5aef(0x1e3)+esc(_0xda8aa['title'])+'</div>':'')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0xda8aa[_0x2d5aef(0x260)]?_0x2d5aef(0x201)+currentFont+'\x27,sans-serif;font-size:'+_0x4ccae6+_0x2d5aef(0x1e3)+esc(_0xda8aa[_0x2d5aef(0x260)])+'</div>':'')+_0x2d5aef(0x1f0);}_0x43bc52+=_0x2d5aef(0x24f),_0x278a3c[_0x2d5aef(0x211)]=_0x43bc52;}function printBadges(){const _0x20d6d9=a0_0x3aa3f8;if(entries[_0x20d6d9(0x237)]===0x0){alert(_0x20d6d9(0x21e));return;}window[_0x20d6d9(0x251)]();}
+const a0_0x150316=a0_0x173c;(function(_0x3af28d,_0x7844b){const _0x434ef0=a0_0x173c,_0x25e186=_0x3af28d();while(!![]){try{const _0x1b084f=parseInt(_0x434ef0(0x233))/0x1+parseInt(_0x434ef0(0x1e5))/0x2+parseInt(_0x434ef0(0x209))/0x3*(parseInt(_0x434ef0(0x267))/0x4)+-parseInt(_0x434ef0(0x26e))/0x5+-parseInt(_0x434ef0(0x222))/0x6+parseInt(_0x434ef0(0x270))/0x7*(parseInt(_0x434ef0(0x1e3))/0x8)+parseInt(_0x434ef0(0x22e))/0x9;if(_0x1b084f===_0x7844b)break;else _0x25e186['push'](_0x25e186['shift']());}catch(_0x3e55b0){_0x25e186['push'](_0x25e186['shift']());}}}(a0_0xf69f,0x78846));let entries=[],qrDataUrl=null,logoDataUrl=null,currentLayout='a',currentFont=a0_0x150316(0x1c1),qrDotStyle=a0_0x150316(0x1d5),qrCodeInstance=null,logoWidthPct=0x64,logoAlign=a0_0x150316(0x20a);const layoutDescriptions={'a':a0_0x150316(0x1c0),'c':a0_0x150316(0x1ba)};function loadLogo(_0x3d9e60){const _0x4deeb3=a0_0x150316,_0x22fd82={'BTFNX':'logoArea','TieSq':function(_0x4be962,_0x57ff52){return _0x4be962(_0x57ff52);},'THhSi':function(_0xa1c0a7){return _0xa1c0a7();}},_0x501c5a=_0x3d9e60[_0x4deeb3(0x1f7)]['files'][0x0];if(!_0x501c5a)return;const _0x39baea=new FileReader();_0x39baea[_0x4deeb3(0x26c)]=function(_0x3b7855){const _0x56f250=_0x4deeb3;logoDataUrl=_0x3b7855[_0x56f250(0x1f7)][_0x56f250(0x204)];const _0x315036=document[_0x56f250(0x237)](_0x22fd82['BTFNX']);_0x315036['classList'][_0x56f250(0x1fe)](_0x56f250(0x230)),_0x315036[_0x56f250(0x22d)]=_0x56f250(0x1c9)+logoDataUrl+_0x56f250(0x240)+_0x22fd82[_0x56f250(0x1be)](esc,_0x501c5a[_0x56f250(0x255)])+_0x56f250(0x271),document[_0x56f250(0x237)](_0x56f250(0x22f))[_0x56f250(0x1d7)][_0x56f250(0x1c6)]='',_0x22fd82[_0x56f250(0x22b)](renderBadges);},_0x39baea[_0x4deeb3(0x276)](_0x501c5a);}const countryMap={'faroe':a0_0x150316(0x272),'finland':a0_0x150316(0x1de),'finnish':'Finland','tampere':'Finland','lapland':a0_0x150316(0x1de),'greenland':a0_0x150316(0x1e6),'film\x20gl':a0_0x150316(0x1e6),'iceland':a0_0x150316(0x207),'norway':a0_0x150316(0x20c),'norwegian':a0_0x150316(0x20c),'oslo':a0_0x150316(0x20c),'arktisk':a0_0x150316(0x20c),'midgard':a0_0x150316(0x20c),'western\x20norway':a0_0x150316(0x20c),'eastern\x20norway':a0_0x150316(0x20c),'sweden':a0_0x150316(0x246),'swedish':'Sweden','stockholm':a0_0x150316(0x246),'gotland':a0_0x150316(0x246),'åland':a0_0x150316(0x257),'film.ax':a0_0x150316(0x257),'denmark':'Denmark','danish':a0_0x150316(0x258),'vision\x20denmark':a0_0x150316(0x258),'north\x20finland':a0_0x150316(0x1de),'west\x20finland':a0_0x150316(0x1de),'east\x20finland':a0_0x150316(0x1de),'southern\x20sweden':a0_0x150316(0x246)};function detectCountry(_0x285fe9){const _0x4e43c6=a0_0x150316,_0x306be0=_0x285fe9[_0x4e43c6(0x1f1)]();for(const [_0x338a02,_0x566663]of Object[_0x4e43c6(0x259)](countryMap)){if(_0x306be0[_0x4e43c6(0x260)](_0x338a02))return _0x566663;}return'';}function a0_0x173c(_0x559fd3,_0x5d46f9){_0x559fd3=_0x559fd3-0x1b9;const _0xf69f5a=a0_0xf69f();let _0x173c19=_0xf69f5a[_0x559fd3];if(a0_0x173c['WNgyqm']===undefined){var _0x3e0982=function(_0x3eb7cc){const _0x13a856='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x2ed25a='',_0x73ebb0='';for(let _0xfa154d=0x0,_0x4ecb04,_0x54cd0d,_0x1f6238=0x0;_0x54cd0d=_0x3eb7cc['charAt'](_0x1f6238++);~_0x54cd0d&&(_0x4ecb04=_0xfa154d%0x4?_0x4ecb04*0x40+_0x54cd0d:_0x54cd0d,_0xfa154d++%0x4)?_0x2ed25a+=String['fromCharCode'](0xff&_0x4ecb04>>(-0x2*_0xfa154d&0x6)):0x0){_0x54cd0d=_0x13a856['indexOf'](_0x54cd0d);}for(let _0x533a08=0x0,_0x2daf2e=_0x2ed25a['length'];_0x533a08<_0x2daf2e;_0x533a08++){_0x73ebb0+='%'+('00'+_0x2ed25a['charCodeAt'](_0x533a08)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x73ebb0);};a0_0x173c['gkCero']=_0x3e0982,a0_0x173c['SIuNJH']={},a0_0x173c['WNgyqm']=!![];}const _0x411787=_0xf69f5a[0x0],_0x5d0bc2=_0x559fd3+_0x411787,_0x47d688=a0_0x173c['SIuNJH'][_0x5d0bc2];return!_0x47d688?(_0x173c19=a0_0x173c['gkCero'](_0x173c19),a0_0x173c['SIuNJH'][_0x5d0bc2]=_0x173c19):_0x173c19=_0x47d688,_0x173c19;}function switchTab(_0x568ad3,_0x3403fc){const _0x23276e=a0_0x150316,_0x460b93={'qQwlp':_0x23276e(0x1c2),'bRrDT':_0x23276e(0x275),'mwjZo':_0x23276e(0x1dd),'sfZfl':function(_0x2db716,_0x3a1c8d){return _0x2db716+_0x3a1c8d;},'OPGVG':_0x23276e(0x264)},_0x565df5=_0x3403fc[_0x23276e(0x1dc)](_0x460b93[_0x23276e(0x261)]);_0x565df5['querySelectorAll'](_0x460b93[_0x23276e(0x231)])[_0x23276e(0x1ce)](_0x2726d1=>_0x2726d1[_0x23276e(0x1f8)][_0x23276e(0x20f)]('active')),_0x565df5[_0x23276e(0x226)](_0x460b93[_0x23276e(0x21e)])[_0x23276e(0x1ce)](_0x4a71bd=>_0x4a71bd[_0x23276e(0x1f8)][_0x23276e(0x20f)](_0x23276e(0x264))),_0x3403fc[_0x23276e(0x1f8)][_0x23276e(0x1fe)]('active'),_0x565df5['querySelector'](_0x460b93['sfZfl']('#tab-',_0x568ad3))[_0x23276e(0x1f8)][_0x23276e(0x1fe)](_0x460b93[_0x23276e(0x20b)]);}function switchQrTab(_0x41a1d4,_0xb90cd2){const _0x3b49c5=a0_0x150316,_0x24c809={'XlgKP':_0x3b49c5(0x1c2),'UHBZV':_0x3b49c5(0x275),'tabzq':'.tab-content','zqOeB':_0x3b49c5(0x24d),'EJsqJ':_0x3b49c5(0x264)},_0x56c793=_0xb90cd2[_0x3b49c5(0x1dc)](_0x24c809['XlgKP']);_0x56c793[_0x3b49c5(0x226)](_0x24c809[_0x3b49c5(0x1d3)])[_0x3b49c5(0x1ce)](_0x53bff9=>_0x53bff9['classList'][_0x3b49c5(0x20f)]('active')),_0x56c793[_0x3b49c5(0x226)](_0x24c809['tabzq'])['forEach'](_0x5cc7cc=>_0x5cc7cc[_0x3b49c5(0x1f8)][_0x3b49c5(0x20f)](_0x3b49c5(0x264))),_0xb90cd2['classList'][_0x3b49c5(0x1fe)]('active'),_0x56c793[_0x3b49c5(0x21f)](_0x24c809[_0x3b49c5(0x215)]+_0x41a1d4)[_0x3b49c5(0x1f8)][_0x3b49c5(0x1fe)](_0x24c809[_0x3b49c5(0x1f0)]);}function loadQR(_0x3738b1){const _0x1d7794=a0_0x150316,_0x15112b={'iiRFQ':'qrArea','nRBoQ':function(_0x2241e5){return _0x2241e5();}},_0x31b633=_0x3738b1['target'][_0x1d7794(0x227)][0x0];if(!_0x31b633)return;const _0x3a1f1b=new FileReader();_0x3a1f1b[_0x1d7794(0x26c)]=function(_0x47e226){const _0x2f2c3f=_0x1d7794;qrDataUrl=_0x47e226['target']['result'];const _0x437971=document['getElementById'](_0x15112b[_0x2f2c3f(0x1e2)]);_0x437971[_0x2f2c3f(0x1f8)][_0x2f2c3f(0x1fe)](_0x2f2c3f(0x230)),_0x437971['innerHTML']=_0x2f2c3f(0x1c9)+qrDataUrl+_0x2f2c3f(0x269)+esc(_0x31b633[_0x2f2c3f(0x255)])+_0x2f2c3f(0x1cf),_0x15112b[_0x2f2c3f(0x1cd)](renderBadges);},_0x3a1f1b[_0x1d7794(0x276)](_0x31b633);}function setQrStyle(_0x88bfa8,_0x3b0be0){const _0x48c7af=a0_0x150316,_0x1d67da={'JiyEF':_0x48c7af(0x1df),'XSJaJ':_0x48c7af(0x264)};qrDotStyle=_0x88bfa8,document[_0x48c7af(0x226)](_0x1d67da[_0x48c7af(0x1ef)])['forEach'](_0x2e2775=>_0x2e2775[_0x48c7af(0x1f8)][_0x48c7af(0x20f)]('active')),_0x3b0be0['classList'][_0x48c7af(0x1fe)](_0x1d67da[_0x48c7af(0x249)]),generateQR();}function a0_0xf69f(){const _0x1f7030=['DgfYz2v0','y2XHC3nmAxn0','Aw5WDxrmAxn0','pgrPDIbJBgfZCZ0Izw50CNKTy29TBwLZC2LVBIi+','y3nZvgv4Da','rK52rfO','suTXAhe','ywrK','pc9KAxy+cIaGicaGicaGica8zgL2ignSyxnZpsjPBMzViJ4kicaGicaGicaGicaGpgrPDIbJBgfZCZ0IBMfTzsiGC3r5Bgu9iMzVBNqTzMfTAwX5oIC','zw50CMLLC0XPC3q','Bwf4lxDPzhrOoJGWChG7Bwf4lwHLAwDODdO4mhb4o2jVCMrLCJOXChGGC29SAwqGi2nJyW','CxjqCMv2Awv3','igLTCg9YDgvYDdWVC3bHBJ4kicaGicaGidXPBNb1Dcb0ExbLpsjMAwXLiIbHy2nLChq9iI54Bhn4lc54BhmSlMnZDIiGB25JAgfUz2u9iMXVywrfEgnLBcHLDMvUDcKIpG','CMvZDwX0','q01Kt1m','C2HLzxrFDg9FANnVBG','swnLBgfUza','vNj0DuS','odriueXtz3O','y2vUDgvY','t1bhvKC','tM9YD2f5','ChvZAa','jYXZyw5ZlxnLCMLMo2zVBNqTC2L6ztO','CMvTB3zL','BwfW','lMXHEw91Dc1IDg4','C3bSAxq','Bg9NB1DPzhrO','Dg9eyxrHvvjm','ENfpzui','y2vPBa','zw5KC1DPDgG','r0LODNO','yNHlzMS','pgrPDIbJBgfZCZ0Iy29TBwLZC2LVBIiGC3r5Bgu9iMzVBNqTzMfTAwX5oIC','tgLZDguGka','CM91BMrLza','cIaGica8zgL2ignSyxnZpsjLBNrYEs1PDgvTiJ4kicaGicaGpgrPDJ4kicaGicaGica8zgL2ignSyxnZpsjLBNrYEs1Uyw1LiJ4','BxDQwM8','CxvLCNLtzwXLy3rVCG','vvfYyLO','wLjdqLe','ntKWmdC5mevwzxfyAW','ihnPzgvYpc9KAxy+','zM9UDfnPEMvFy29TBwLZC2LVBG','iIbHBhq9iLfsiJ4','CxvLCNLtzwXLy3rVCKfSBa','zMLSzxm','BMzoEeG','yxjYyxK','C3bSAwnL','veHOu2K','AfrqvLm','Aw5Uzxjive1m','mteXmdy5yLLIt0Td','Bg9NB0nVBNrYB2XZ','AgfZlwzPBgu','yLjYrfq','ELHvyve','mJKZodCWtxPkueHi','qLLJu1K','yMfKz2vgB250tgLUAW','ksi+EdWVyNv0Dg9UpGOGicaGpc9KAxy+cIaG','z2v0rwXLBwvUDej5swq','Ag1MEgG','iIbHBhq9iKXVz28Iihn0EwXLpsj3Awr0AdO','CxjdB2XVCG','wLLAEeW','pc9ZCgfUpGOGicaGicaGphnWyw4Gy2XHC3m9iNvWBg9Hzc1OAw50iJ4','oNDNAhramZaWoZqWmdS3mda7otaWjMrPC3bSyxK9C3DHCa','uxHjBe0','BNzkwgm','iIbHBhq9iKXVz28Iihn0EwXLpsjTyxGTD2LKDgG6mJaWChG7Bwf4lwHLAwDODdO1mhb4iJ4kicaGicaGidXZCgfUignSyxnZpsj1CgXVywqTzMLSzw5HBwuIpG','DgL0Bgu','u2HLzxrZ','rKLjDvG','vvnMCKi','v2nswNm','u3DLzgvU','lMXHEw91Dc1YB3C','D0XqqLe','wfnkyuO','ELLoBNa','CxjvCMW','lMrLC2LNBI1Zzwn0Aw9U','i3fYDgfIlq','vvrmzNO','Aw1N','lMnZDG','phnWyw4Gy2XHC3m9iNvWBg9Hzc1MAwXLBMfTzsi+','pc9KAxy+cIaGicaGicaG','jtTOzwLNAhq6yxv0BYi+pc9KAxy+','v1Pirg8','BMfTzq','zMXLEc1LBMq','W4vSyw5K','rgvUBwfYAW','zw50CMLLCW','pgrPDIbJBgfZCZ0IyMfKz2uTy291BNqIpG','t1LRrNK','cIaGicaGidWVzgL2pGOGicaGica8yNv0Dg9UignSyxnZpsjYzw1VDMuTyNrUiIbVBMnSAwnRpsjYzw1VDMvfBNrYEsG','q2THA2O','cIaGicaGicaGicaGia','ChjPBNq','Aw5JBhvKzxm','Cvf3Bha','CMvWBgfJzq','Bw07AgvPz2H0oG','ywn0AxzL','u2HLzxroyw1LCW','zM9UDfnPEMvFBMfTzq','nJq2mdbosfHjrNm','q1vuq3q','iIbHBhq9iLfsiJ4kicaGicaGidXZCgfUignSyxnZpsj1CgXVywqTzMLSzw5HBwuIpG','BMrvCha','ALrRtNu','B25SB2fK','ANzJrfC','mJK4nda3nwrVwuP1sq','zgDWr3e','n1nxsw9UAq','pc9ZCgfUpGOGicaGicaGpgLUChv0ihr5Cgu9iMzPBguIigfJy2vWDd0IAw1Hz2uVkIiGB25JAgfUz2u9iMXVywrmB2DVkgv2zw50ksi+','rMfYB2uGsxnSyw5KCW','yMfKz2vizwLNAhq','pc9KAxy+','lNrHyG','CMvHzefZrgf0yvvsta','rMLYBweGqvm','txrsq3i','yxbWzw5Kq2HPBgq','ig5HDM5LC2TPBhqGlYa','Aw1Hz2uVCg5N','DhjPBq','Bw07iJ4kicaGicaGica8zgL2ignSyxnZpsjIywrNzs10B3aIpGOGicaGicaGicaG','twPIyxC','uxfXCLO','DMfSDwu','DxrMltG','cIaGicaGicaGpc9KAxy+cIaGicaGicaGpgrPDIbJBgfZCZ0IyMfKz2uTyM90Dg9TiJ4kicaGicaGicaGidXKAxyGy2XHC3m9iNfYiJ4','zM9UDfnLBgvJDa','vwLYENG','Dgv4DenVBNrLBNq','pgrPDIbJBgfZCZ0ICgfNzsi+','vMvUC3rYzxn0AwX0iokaLcbPBMzVihzLBNn0CMuSiffsigJdUhLYzq','A2nSrg8','pc9KAxy+cIaGicaGicaGicaGia','Ce5MCNu','vgLLu3e','BgvUz3rO','smo4ExjLC3rPBhqG4OcuiffsihzLBNn0CMuSigLUzM8GAmo4ExjL','tgf0BW','lNnPzgvIyxiTC2vJDgLVBG','sfLjvMC','Ahr0Chm6lY9MB250CY5NB29NBgvHCgLZlMnVBs9JC3mYp2zHBwLSEt0','CuXNC1K','zgLZCgXHEq','ChjLDMLLD0fYzwe','twH4De0','pgLTzYbZCMm9iG','yxnnzfa','cIaGicaGicaG','C3jJ','BLjcB1e','zM9YrwfJAa','pc9ZCgfUpGOGicaGicaGpgLUChv0ihr5Cgu9iMzPBguIigfJy2vWDd0IAw1Hz2uVkIiGB25JAgfUz2u9iMXVywrruIHLDMvUDcKIpG','zM9UDfnPEMvFy29TCgfUEq','CMvHzefZqxjYyxLcDwzMzxi','pgrPDIbJBgfZCZ0Izw1WDhKTC3rHDguIpJXWpLzLCNnQB24Gms4WiokaLcbHDIbiywXSDMfYiej1z2DLiePVAg5Zzw4GlYbOzwLaAgfSBhzHCI5UBZWVCd48l2rPDJ4','vuHcwLy','vxDTyLy','C3f1yxjL','zw50CMLLC0HLywrLCG','C3r5Bgu','ChqIpG','y3jLyxrLrwXLBwvUDa','yxbWzw5K','iIbZDhLSzt0ID2LKDgG6','y2XVC2vZDa','lNrHyI1JB250zw50','rMLUBgfUza','lNfYlxn0EwXLlwj0BG','vhL0Dxm','y29TCgfUEq','AwLsrLe','nJa5nJy0ohPKC0vjuq','yMfKz2uTlwXHEw91Dc0','mteWnJG1mLPRsgvMuq','r3jLzw5Syw5K','q0fbsfG','zMLYBwe','AM9PBG','BMf2BG','yMfKz2vxAwr0Aa','zMXLEc1ZDgfYDa','zgL2','teXlv3u','sML5ruy','ruPZCuO','Dg9mB3DLCKnHC2u','qKnduNe','AKXbsuG','Dg9tDhjPBMC','cIaGicaGicaGica8l2rPDJ4kicaGicaGica8l2rPDJ4kicaGicaGpc9KAxy+cIaGica','sw5Nzw4GzgvSDgfRzxjLlIbjBxbVCNrLCIbKyxrHigzVCNn0lG'];a0_0xf69f=function(){return _0x1f7030;};return a0_0xf69f();}function generateQR(){const _0x3dea6c=a0_0x150316,_0x1d17c8={'FNvDZ':'canvas','GpYqn':_0x3dea6c(0x27b),'uGIKw':_0x3dea6c(0x24f),'KwUqk':_0x3dea6c(0x201),'asMdP':function(_0x2a5d4b){return _0x2a5d4b();},'hmfxh':_0x3dea6c(0x202),'jTkNu':function(_0x17c4ec){return _0x17c4ec();},'WZHDo':'square','BCCRq':_0x3dea6c(0x21c),'UGBJM':'#ffffff','MtRCr':_0x3dea6c(0x1ed),'pNfru':function(_0x294df4,_0x54df3a,_0x4117d6){return _0x294df4(_0x54df3a,_0x4117d6);}},_0x1ac929=document[_0x3dea6c(0x237)](_0x3dea6c(0x24b))[_0x3dea6c(0x280)][_0x3dea6c(0x27c)](),_0x554816=document[_0x3dea6c(0x237)](_0x1d17c8[_0x3dea6c(0x238)]);if(!_0x1ac929){_0x554816['innerHTML']='',qrDataUrl=null,_0x1d17c8[_0x3dea6c(0x26b)](renderBadges);return;}const _0xad0a1c=document[_0x3dea6c(0x237)](_0x3dea6c(0x23a))[_0x3dea6c(0x280)],_0x2faa85={'square':_0x1d17c8[_0x3dea6c(0x254)],'dots':'dots','rounded':_0x1d17c8[_0x3dea6c(0x1f2)]},_0x1860e0={'width':0x12c,'height':0x12c,'data':_0x1ac929,'dotsOptions':{'color':_0xad0a1c,'type':_0x2faa85[qrDotStyle]||_0x1d17c8[_0x3dea6c(0x254)]},'backgroundOptions':{'color':_0x1d17c8['UGBJM']},'cornersDotOptions':{'color':_0xad0a1c},'cornersSquareOptions':{'color':_0xad0a1c},'qrOptions':{'errorCorrectionLevel':'M'}};qrCodeInstance&&(_0x554816[_0x3dea6c(0x22d)]='');qrCodeInstance=new QRCodeStyling(_0x1860e0);const _0x1a2f71=document[_0x3dea6c(0x1d9)](_0x1d17c8[_0x3dea6c(0x278)]);_0x554816[_0x3dea6c(0x22d)]='',_0x554816[_0x3dea6c(0x279)](_0x1a2f71),qrCodeInstance[_0x3dea6c(0x1da)](_0x1a2f71),_0x1d17c8[_0x3dea6c(0x1bd)](setTimeout,()=>{const _0x46fe75=_0x3dea6c,_0x1177ba=_0x1a2f71[_0x46fe75(0x21f)](_0x1d17c8[_0x46fe75(0x1fc)]);if(_0x1177ba){qrDataUrl=_0x1177ba[_0x46fe75(0x214)](_0x1d17c8['GpYqn']);const _0x13795d=document[_0x46fe75(0x1d9)](_0x1d17c8['uGIKw']);_0x13795d[_0x46fe75(0x1cc)]=qrDataUrl,_0x13795d['style'][_0x46fe75(0x1fb)]=_0x1d17c8['KwUqk'],_0x554816['innerHTML']='',_0x554816['appendChild'](_0x13795d),_0x1d17c8[_0x46fe75(0x1ca)](renderBadges);}},0xc8);}function updateLogoWidth(){const _0x2dfa88=a0_0x150316,_0x301d48={'WcRZs':_0x2dfa88(0x213),'OYkFy':function(_0x2244ec,_0x519278){return _0x2244ec+_0x519278;},'dBEXO':function(_0x329de7){return _0x329de7();}};logoWidthPct=document[_0x2dfa88(0x237)](_0x301d48[_0x2dfa88(0x245)])['value'],document[_0x2dfa88(0x237)]('logoWidthVal')[_0x2dfa88(0x285)]=_0x301d48[_0x2dfa88(0x25b)](logoWidthPct,'%'),_0x301d48['dBEXO'](renderBadges);}function setLogoAlign(_0x1c9a1c,_0x2b78c8){const _0x1a7a55=a0_0x150316,_0x208d2f={'jLAIH':_0x1a7a55(0x211),'YWgRN':_0x1a7a55(0x264),'OGTYM':function(_0x28f408){return _0x28f408();}};logoAlign=_0x1c9a1c,_0x2b78c8[_0x1a7a55(0x1dc)](_0x1a7a55(0x247))['querySelectorAll'](_0x208d2f[_0x1a7a55(0x1f3)])[_0x1a7a55(0x1ce)](_0x12bb87=>_0x12bb87[_0x1a7a55(0x1f8)]['remove'](_0x1a7a55(0x264))),_0x2b78c8[_0x1a7a55(0x1f8)]['add'](_0x208d2f['YWgRN']),_0x208d2f['OGTYM'](renderBadges);}function setLayout(_0x5dce5f,_0x495155){const _0x22014d=a0_0x150316,_0x2651de={'BYcSY':'.layout-btn','zpuMO':'layoutDesc','USfrB':function(_0x36ebde){return _0x36ebde();}};currentLayout=_0x5dce5f,document[_0x22014d(0x226)](_0x2651de[_0x22014d(0x234)])[_0x22014d(0x1ce)](_0x11aed8=>_0x11aed8[_0x22014d(0x1f8)][_0x22014d(0x20f)]('active')),_0x495155[_0x22014d(0x1f8)][_0x22014d(0x1fe)](_0x22014d(0x264)),document[_0x22014d(0x237)](_0x2651de['zpuMO'])[_0x22014d(0x22d)]=layoutDescriptions[_0x5dce5f],_0x2651de[_0x22014d(0x244)](renderBadges);}function changeFont(){const _0x34429a=a0_0x150316,_0x281f9a={'ndUpp':_0x34429a(0x235),'FIIuX':function(_0x3e23a2,_0x29d319,_0x4f27db){return _0x3e23a2(_0x29d319,_0x4f27db);}};currentFont=document[_0x34429a(0x237)](_0x34429a(0x283))[_0x34429a(0x280)];const _0x3d9e95=document['getElementById'](_0x281f9a[_0x34429a(0x26a)]),_0x476ba5=currentFont[_0x34429a(0x262)](/ /g,'+');_0x3d9e95['href']=_0x34429a(0x1c4)+_0x476ba5+_0x34429a(0x23d),_0x281f9a[_0x34429a(0x243)](setTimeout,renderBadges,0x64);}function loadExcel(_0x3f3b63){const _0x533ff9=a0_0x150316,_0xc00d52={'CUTCt':_0x533ff9(0x229),'dgpGq':_0x533ff9(0x250),'zXUaQ':_0x533ff9(0x281),'LLKWu':function(_0x156c66,_0x87ed3e){return _0x156c66>_0x87ed3e;},'hTPVS':'name','UwmbV':'stilling','Mjbaw':_0x533ff9(0x241),'qLgsY':_0x533ff9(0x1e8),'MhxtM':function(_0x5449a6,_0x180d78){return _0x5449a6<_0x180d78;},'ZRCBQ':function(_0x53fa07,_0x23091d){return _0x53fa07<_0x23091d;},'CMdOS':function(_0x53a62e,_0x455261){return _0x53a62e>=_0x455261;},'VrtuK':function(_0x33bb38){return _0x33bb38();}},_0x5f4608=_0x3f3b63[_0x533ff9(0x1f7)][_0x533ff9(0x227)][0x0];if(!_0x5f4608)return;const _0x50d54f=document[_0x533ff9(0x237)]('excelArea'),_0x18185c=new FileReader();_0x18185c[_0x533ff9(0x26c)]=function(_0x5547bb){const _0x385b0a=_0x533ff9,_0x4329f4=new Uint8Array(_0x5547bb[_0x385b0a(0x1f7)]['result']);let _0x2f6d47={'type':_0xc00d52[_0x385b0a(0x268)]};if(_0x5f4608[_0x385b0a(0x255)][_0x385b0a(0x1f1)]()[_0x385b0a(0x217)](_0xc00d52[_0x385b0a(0x26f)])){const _0x4532f2=new TextDecoder(_0xc00d52[_0x385b0a(0x232)])['decode'](_0x4329f4),_0x5b4db0=_0x4532f2[_0x385b0a(0x212)]('\x0a')[0x0]||'';_0x2f6d47['FS']=_0x5b4db0[_0x385b0a(0x260)](';')?';':',';}const _0x5285f9=XLSX['read'](_0x4329f4,_0x2f6d47),_0xd30b1=_0x5285f9[_0x385b0a(0x242)][_0x5285f9[_0x385b0a(0x265)][0x0]],_0x153f06=XLSX['utils'][_0x385b0a(0x206)](_0xd30b1,{'header':0x1});let _0x3914f1=0x0;if(_0xc00d52[_0x385b0a(0x1ee)](_0x153f06[_0x385b0a(0x1bf)],0x0)){const _0x19fcbf=_0x153f06[0x0][_0x385b0a(0x210)](_0x5b8753=>(_0x5b8753||'')[_0x385b0a(0x1f4)]()[_0x385b0a(0x1f1)]()[_0x385b0a(0x27c)]());(_0x19fcbf[_0x385b0a(0x260)](_0x385b0a(0x1ea))||_0x19fcbf[_0x385b0a(0x260)](_0xc00d52[_0x385b0a(0x22c)])||_0x19fcbf[_0x385b0a(0x260)](_0xc00d52[_0x385b0a(0x1d4)])||_0x19fcbf[_0x385b0a(0x260)](_0xc00d52[_0x385b0a(0x27e)])||_0x19fcbf[_0x385b0a(0x260)](_0xc00d52[_0x385b0a(0x1c5)])||_0x19fcbf[_0x385b0a(0x260)](_0x385b0a(0x1e1)))&&(_0x3914f1=0x1);}entries=[];for(let _0x94887d=_0x3914f1;_0xc00d52[_0x385b0a(0x1c8)](_0x94887d,_0x153f06[_0x385b0a(0x1bf)]);_0x94887d++){const _0x21936c=_0x153f06[_0x94887d];if(!_0x21936c||_0xc00d52[_0x385b0a(0x221)](_0x21936c['length'],0x1))continue;const _0x254f27=(_0x21936c[0x0]||'')[_0x385b0a(0x1f4)]()[_0x385b0a(0x27c)]();if(!_0x254f27)continue;const _0xa5389c=_0xc00d52[_0x385b0a(0x205)](_0x21936c[_0x385b0a(0x1bf)],0x2)?(_0x21936c[0x1]||'')[_0x385b0a(0x1f4)]()[_0x385b0a(0x27c)]():'',_0x1902a6=_0xc00d52[_0x385b0a(0x205)](_0x21936c[_0x385b0a(0x1bf)],0x3)?(_0x21936c[0x2]||'')[_0x385b0a(0x1f4)]()['trim']():'';entries[_0x385b0a(0x20d)]({'name':_0x254f27,'title':_0xa5389c,'company':_0x1902a6});}_0x50d54f[_0x385b0a(0x1f8)][_0x385b0a(0x1fe)](_0x385b0a(0x230)),_0x50d54f[_0x385b0a(0x22d)]=_0x385b0a(0x251)+esc(_0x5f4608[_0x385b0a(0x255)])+_0x385b0a(0x23c)+entries['length']+_0x385b0a(0x203),_0xc00d52[_0x385b0a(0x208)](renderEntries),_0xc00d52['VrtuK'](renderBadges);},_0x18185c[_0x533ff9(0x1d1)](_0x5f4608);}function parseTextInput(){const _0x571491=a0_0x150316,_0x343281={'gbiLQ':_0x571491(0x1f9),'UQrbZ':function(_0x56d5f3,_0x23e0c6){return _0x56d5f3<_0x23e0c6;},'zYNnp':function(_0x2d016a,_0x2ff001){return _0x2d016a+_0x2ff001;},'Tytus':function(_0x14f4e0){return _0x14f4e0();}},_0x47edcc=document[_0x571491(0x237)](_0x343281['gbiLQ'])[_0x571491(0x280)][_0x571491(0x27c)]();if(!_0x47edcc)return;const _0x403cf8=_0x47edcc[_0x571491(0x212)]('\x0a')[_0x571491(0x210)](_0x130e98=>_0x130e98[_0x571491(0x27c)]()[_0x571491(0x262)](/,+$/,''))['filter'](_0x52b8ed=>_0x52b8ed['length']>0x0);entries=[];for(let _0x558863=0x0;_0x343281[_0x571491(0x220)](_0x558863,_0x403cf8[_0x571491(0x1bf)]);_0x558863+=0x3){const _0x474cc5=_0x403cf8[_0x558863],_0x3c795d=_0x403cf8[_0x343281[_0x571491(0x24a)](_0x558863,0x1)]||'',_0x5e926a=_0x403cf8[_0x558863+0x2]||'';_0x474cc5&&entries[_0x571491(0x20d)]({'name':_0x474cc5,'title':_0x3c795d,'company':_0x5e926a});}_0x343281[_0x571491(0x1e0)](renderEntries),renderBadges();}function renderEntries(){const _0x20e861=a0_0x150316,_0xb82c0={'nvJXc':_0x20e861(0x200),'Edmtm':_0x20e861(0x1d6)},_0x252bfb=document[_0x20e861(0x237)](_0xb82c0[_0x20e861(0x23f)]);document[_0x20e861(0x237)](_0xb82c0['Edmtm'])[_0x20e861(0x285)]=_0x20e861(0x21b)+entries['length']+')',_0x252bfb['innerHTML']=entries[_0x20e861(0x210)]((_0x33fe92,_0x49c51d)=>_0x20e861(0x21d)+esc(_0x33fe92[_0x20e861(0x255)])+_0x20e861(0x252)+(_0x33fe92[_0x20e861(0x241)]?_0x20e861(0x1fa)+esc(_0x33fe92['title'])+_0x20e861(0x274):'')+_0x20e861(0x1cb)+(_0x33fe92[_0x20e861(0x1e1)]?'<div\x20class=\x22entry-country\x22>'+esc(_0x33fe92[_0x20e861(0x1e1)])+_0x20e861(0x274):'')+_0x20e861(0x25c)+_0x49c51d+_0x20e861(0x236))[_0x20e861(0x1e9)]('');}function esc(_0x9cbfd1){const _0x54fb41=a0_0x150316,_0x69d29f=document[_0x54fb41(0x1d9)](_0x54fb41(0x1ed));return _0x69d29f['textContent']=_0x9cbfd1,_0x69d29f[_0x54fb41(0x22d)];}function removeEntry(_0x509b37){const _0x115849=a0_0x150316,_0x2ecae5={'WgDKo':function(_0x40ff52){return _0x40ff52();}};entries[_0x115849(0x22a)](_0x509b37,0x1),_0x2ecae5['WgDKo'](renderEntries),_0x2ecae5['WgDKo'](renderBadges);}function clearAll(){const _0x3a41c4=a0_0x150316,_0x6211f={'jvcDW':function(_0x251d87){return _0x251d87();}};entries=[],_0x6211f[_0x3a41c4(0x26d)](renderEntries),renderBadges();}function renderBadges(){const _0xbeda57=a0_0x150316,_0x151572={'kclDo':_0xbeda57(0x266),'eqjQY':_0xbeda57(0x224),'SwcCY':_0xbeda57(0x1d0),'HYIVg':function(_0x151968,_0x27d19a){return _0x151968>_0x27d19a;},'UjYjN':_0xbeda57(0x1d2),'pFFYA':_0xbeda57(0x24c),'bxKfk':_0xbeda57(0x1ec),'PqhGX':_0xbeda57(0x20a),'ZkZuj':_0xbeda57(0x256),'QxIlM':function(_0x39bcbb,_0x4fdb4a){return _0x39bcbb>_0x4fdb4a;},'nfNxH':'Fornavn\x20Etternavn','wLPBQ':'Stilling','GIhvz':_0xbeda57(0x277),'Uirzx':function(_0x87ddc3,_0x6c8e07){return _0x87ddc3>_0x6c8e07;},'lPkCj':function(_0x4c6b51,_0xbcea5b){return _0x4c6b51/_0xbcea5b;},'UTLfz':function(_0x10d848,_0x3513df){return _0x10d848<_0x3513df;},'IKqhq':function(_0x35a1c1,_0x335932){return _0x35a1c1===_0x335932;},'ZYZxL':function(_0x62bcbb,_0x1e72b){return _0x62bcbb%_0x1e72b;},'zSRrt':function(_0x132794,_0x38d7a5){return _0x132794>_0x38d7a5;},'QqqrZ':_0xbeda57(0x274),'CAAHX':function(_0x3ea6df,_0x1193db){return _0x3ea6df(_0x1193db);},'QPClt':function(_0xc8ce12,_0x2967da){return _0xc8ce12(_0x2967da);}},_0x42efdd=document['getElementById'](_0xbeda57(0x1c7)),_0xe4d7c8=document[_0xbeda57(0x237)](_0xbeda57(0x1eb))['value']||0x5c,_0x24dc44=document[_0xbeda57(0x237)](_0xbeda57(0x273))[_0xbeda57(0x280)]||0x3b,_0x59bfce=document['getElementById'](_0x151572[_0xbeda57(0x1bb)])['value']||0x12,_0x2f1a04=document[_0xbeda57(0x237)](_0x151572['eqjQY'])[_0xbeda57(0x280)]||0xc,_0x1f39e3=document[_0xbeda57(0x237)](_0x151572['SwcCY'])['value']||0x9,_0x393627=_0x151572[_0xbeda57(0x1c3)](entries['length'],0x0)||logoDataUrl||qrDataUrl;if(!_0x393627){_0x42efdd[_0xbeda57(0x22d)]=_0x151572['UjYjN'];return;}document[_0xbeda57(0x226)](_0x151572['pFFYA'])['forEach'](_0x575bce=>_0x575bce[_0xbeda57(0x1d7)][_0xbeda57(0x1c6)]='');const _0x12277c=0x8,_0x3733ee=qrDataUrl?_0xbeda57(0x1c9)+qrDataUrl+_0xbeda57(0x225):'',_0x57933c=_0xbeda57(0x1e4)+currentLayout,_0x505b12={'left':_0x151572[_0xbeda57(0x219)],'center':_0x151572['PqhGX'],'right':_0x151572['ZkZuj']},_0x50d3f6=logoDataUrl?'<div\x20style=\x22display:flex;justify-content:'+_0x505b12[logoAlign]+'\x22><img\x20class=\x22logo-img\x22\x20src=\x22'+logoDataUrl+_0xbeda57(0x239)+logoWidthPct+_0xbeda57(0x253):'',_0x1a9a37=_0x151572[_0xbeda57(0x23e)](entries[_0xbeda57(0x1bf)],0x0)?entries:[{'name':_0x151572[_0xbeda57(0x228)],'title':_0x151572[_0xbeda57(0x248)],'company':_0x151572[_0xbeda57(0x218)]}];let _0x3f0827=_0x151572[_0xbeda57(0x284)](entries['length'],0x0)?_0xbeda57(0x25a)+entries[_0xbeda57(0x1bf)]+_0xbeda57(0x27a)+Math[_0xbeda57(0x216)](_0x151572['lPkCj'](entries[_0xbeda57(0x1bf)],_0x12277c))+_0xbeda57(0x223):'';for(let _0x312164=0x0;_0x151572[_0xbeda57(0x24e)](_0x312164,_0x1a9a37['length']);_0x312164++){if(_0x151572[_0xbeda57(0x1fd)](_0x151572[_0xbeda57(0x23b)](_0x312164,_0x12277c),0x0)){if(_0x151572['zSRrt'](_0x312164,0x0))_0x3f0827+=_0x151572[_0xbeda57(0x27f)];_0x3f0827+=_0xbeda57(0x1b9);}const _0x84107f=_0x1a9a37[_0x312164];_0x3f0827+='\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22badge\x20'+_0x57933c+_0xbeda57(0x1db)+_0xe4d7c8+_0xbeda57(0x263)+_0x24dc44+_0xbeda57(0x27d)+_0x50d3f6+_0xbeda57(0x282)+_0x3733ee+_0xbeda57(0x1ff)+currentFont+_0xbeda57(0x20e)+_0x59bfce+_0xbeda57(0x1d8)+_0x151572[_0xbeda57(0x1e7)](esc,_0x84107f[_0xbeda57(0x255)])+_0xbeda57(0x1bc)+(_0x84107f[_0xbeda57(0x241)]?_0xbeda57(0x21a)+currentFont+_0xbeda57(0x20e)+_0x2f1a04+_0xbeda57(0x1d8)+_0x151572['QPClt'](esc,_0x84107f[_0xbeda57(0x241)])+'</div>':'')+_0xbeda57(0x25e)+(_0x84107f[_0xbeda57(0x1e1)]?'<div\x20class=\x22country\x22\x20style=\x22font-family:\x27'+currentFont+'\x27,sans-serif;font-size:'+_0x1f39e3+_0xbeda57(0x1d8)+_0x151572['CAAHX'](esc,_0x84107f[_0xbeda57(0x1e1)])+_0xbeda57(0x274):'')+_0xbeda57(0x1f5);}_0x3f0827+=_0xbeda57(0x274),_0x42efdd[_0xbeda57(0x22d)]=_0x3f0827;}function printBadges(){const _0x30af13=a0_0x150316,_0x29fc51={'Ckakj':function(_0x3178db,_0x52c890){return _0x3178db(_0x52c890);}};if(entries[_0x30af13(0x1bf)]===0x0){_0x29fc51[_0x30af13(0x25d)](alert,_0x30af13(0x1f6));return;}window[_0x30af13(0x25f)]();}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #f5f3f0;
+    --surface: #ffffff;
+    --border: #1a1a1a;
+    --text: #1a1a1a;
+    --text-muted: #6b6560;
+    --accent: #1a1a1a;
+    --mono: 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
+  }
+
+  body {
+    font-family: var(--mono);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 12px;
+  }
+
+  .app-header {
+    background: var(--surface);
+    padding: 16px 28px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .app-header h1 {
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .container {
+    display: flex;
+    height: calc(100vh - 52px);
+  }
+
+  .sidebar {
+    width: 380px;
+    min-width: 380px;
+    background: var(--surface);
+    border-right: 2px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .sidebar-section {
+    padding: 20px 24px;
+    border-bottom: 1px solid #d4d0cc;
+  }
+
+  .sidebar-section h3 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+
+  .sidebar-section label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    margin-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .sidebar-section label:first-of-type {
+    margin-top: 0;
+  }
+
+  textarea {
+    width: 100%;
+    height: 160px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 10px;
+    resize: vertical;
+  }
+
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--border);
+  }
+
+  textarea::placeholder {
+    color: #aaa5a0;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: var(--border);
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--border);
+    border: 2px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--border);
+    cursor: pointer;
+  }
+
+  .format-hint {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  input[type="number"], input[type="text"], input[type="url"], select {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 6px 8px;
+    width: 100%;
+  }
+
+  select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231a1a1a'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 24px;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--border);
+  }
+
+  .size-row {
+    display: flex;
+    gap: 12px;
+  }
+
+  .size-row > div { flex: 1; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.1s;
+    color: var(--text);
+  }
+
+  .btn:hover {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  .btn-primary {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  .btn-primary:hover {
+    background: var(--surface);
+    color: var(--border);
+  }
+
+  .btn-full {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .upload-area {
+    border: 1px dashed var(--border);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s;
+    position: relative;
+    background: var(--bg);
+  }
+
+  .upload-area:hover {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  #logoArea:hover {
+    background: #c4d9c4;
+    color: var(--text);
+    border-color: #6a9a6a;
+  }
+
+  .upload-area.has-file {
+    border-style: solid;
+    background: var(--surface);
+  }
+
+  .upload-area .upload-text {
+    font-size: 14px;
+    display: block;
+  }
+
+  .upload-area .upload-filename {
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .upload-area .upload-hint {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    display: block;
+  }
+
+  .upload-area input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .upload-area img {
+    max-width: 60px;
+    max-height: 60px;
+    display: block;
+    margin: 0 auto 6px auto;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+  }
+
+  .tab {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--mono);
+    cursor: pointer;
+    background: var(--bg);
+    color: var(--text-muted);
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.1s;
+  }
+
+  .tab:not(:last-child) { border-right: 1px solid var(--border); }
+
+  .tab.active {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .preview-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
+    background: var(--bg);
+  }
+
+  .preview-area .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto 24px auto;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 10mm;
+    gap: 4mm;
+    box-shadow: 4px 4px 0 var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .badge {
+    width: 92mm;
+    height: 59mm;
+    border: 0.3mm solid #ccc;
+    overflow: hidden;
+    position: relative;
+    padding: 5mm;
+    background: white;
+    color: #000;
+  }
+
+  .badge-top {
+    position: absolute;
+    top: 5mm;
+    left: 5mm;
+    right: 5mm;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .badge-top .logo-img {
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .badge-bottom {
+    position: absolute;
+    bottom: 5mm;
+    left: 5mm;
+    right: 5mm;
+    z-index: 1;
+  }
+
+  /* Layout A: Klassisk (default) */
+  .badge--layout-a .badge-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 4mm;
+  }
+
+  .badge--layout-a .badge-bottom .qr {
+    width: 18mm;
+    height: 18mm;
+    flex-shrink: 0;
+  }
+
+  .badge--layout-a .badge-bottom .qr img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left bottom;
+  }
+
+  .badge--layout-a .badge-bottom .info {
+    text-align: right;
+    flex: 1;
+  }
+
+  /* Layout C: Speilvendt */
+  .badge--layout-c .badge-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 4mm;
+    flex-direction: row-reverse;
+  }
+
+  .badge--layout-c .badge-bottom .qr {
+    width: 18mm;
+    height: 18mm;
+    flex-shrink: 0;
+  }
+
+  .badge--layout-c .badge-bottom .qr img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right bottom;
+  }
+
+  .badge--layout-c .badge-bottom .info {
+    text-align: left;
+    flex: 1;
+  }
+
+  /* Badge text styles (default) */
+  .badge .info .name {
+    font-family: 'Lato', sans-serif;
+    font-size: 12pt;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.2;
+  }
+
+  .badge .info .commission {
+    font-family: 'Lato', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.2;
+    margin-top: 0.5mm;
+  }
+
+  .badge .info .country {
+    font-family: 'Lato', sans-serif;
+    font-size: 8pt;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.5mm;
+  }
+
+  .badge-count {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .entries-list {
+    border: 1px solid var(--border);
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .entry-item {
+    padding: 8px 10px;
+    border-bottom: 1px solid #d4d0cc;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .entry-item:last-child { border-bottom: none; }
+
+  .entry-item .entry-name { font-weight: 700; font-size: 11px; }
+  .entry-item .entry-commission { color: var(--text-muted); font-size: 13px; }
+  .entry-item .entry-country { color: var(--text-muted); font-size: 9px; text-transform: uppercase; letter-spacing: 1px; }
+
+  .entry-item .remove-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 2px 6px;
+    line-height: 1;
+    transition: all 0.1s;
+  }
+
+  .entry-item .remove-btn:hover {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 80px 30px;
+    color: var(--text-muted);
+  }
+
+  .empty-state p {
+    font-size: 12px;
+    line-height: 1.8;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* Layout selector */
+  .layout-row {
+    display: flex;
+    gap: 6px;
+  }
+
+  .layout-btn {
+    flex: 1;
+    padding: 8px 4px;
+    border: 2px solid var(--border);
+    background: var(--bg);
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.1s;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .layout-btn:hover {
+    background: #e8e5e2;
+  }
+
+  .layout-btn.active {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  .layout-btn .layout-icon {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+
+  /* QR style selector */
+  .qr-style-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .qr-style-btn {
+    flex: 1;
+    padding: 7px 4px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.1s;
+    color: var(--text);
+  }
+
+  .qr-style-btn:hover { background: #e8e5e2; }
+
+  .qr-style-btn.active {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  /* QR color inputs */
+  .qr-color-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .qr-color-row > div {
+    flex: 1;
+  }
+
+  .qr-color-row input[type="color"] {
+    width: 100%;
+    height: 30px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    cursor: pointer;
+    padding: 2px;
+  }
+
+  .qr-color-row input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+  .qr-color-row input[type="color"]::-webkit-color-swatch { border: none; }
+
+  /* Font size row */
+  .font-size-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .font-size-row > div { flex: 1; }
+
+  .excel-columns {
+    margin-top: 10px;
+    padding: 10px;
+    background: var(--bg);
+    border: 1px solid #d4d0cc;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .excel-columns strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body {
+      background: white;
+      margin: 0;
+      padding: 0;
+      width: 210mm;
+      height: auto;
+      overflow: visible;
+    }
+    .app-header, .sidebar, .badge-count, .empty-state { display: none !important; }
+    .container {
+      display: block;
+      width: auto;
+      height: auto;
+      overflow: visible;
+    }
+    .preview-area {
+      padding: 0;
+      margin: 0;
+      background: white;
+      overflow: visible;
+      width: auto;
+      height: auto;
+    }
+    .preview-area .page {
+      width: 210mm;
+      height: 297mm;
+      box-shadow: none;
+      border: none;
+      margin: 0;
+      padding: 10mm;
+      overflow: visible;
+      page-break-after: always;
+      break-after: page;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .preview-area .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+    .badge {
+      border: 0.2mm solid #ccc;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <div style="display:flex;align-items:center;gap:10px">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="96" height="96" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18 C28 10, 22 12, 26 22"/><path d="M68 18 C72 10, 78 12, 74 22"/><path d="M26 22 C24 30, 22 38, 30 50 L44 68"/><path d="M74 22 C76 30, 78 38, 70 50 L56 68"/><path d="M38 20 C42 32, 44 46, 46 64"/><path d="M62 20 C58 32, 56 46, 54 64"/><path d="M46 64 C46 68, 48 72, 50 72 C52 72, 54 68, 54 64"/><path d="M44 68 C46 74, 48 76, 50 76 C52 76, 54 74, 56 68"/><ellipse cx="50" cy="68" rx="4" ry="3" fill="#1a1a1a" stroke="none"/><circle cx="39" cy="42" r="3" fill="#1a1a1a" stroke="none"/><circle cx="61" cy="42" r="3" fill="#1a1a1a" stroke="none"/></svg>
+    <div>
+      <h1 style="margin:0;line-height:1">Badger</h1>
+      <div style="font-size:10px;font-weight:400;text-transform:uppercase;color:var(--text-muted);letter-spacing:1px;margin-top:-1px;padding-left:3px">Konferanselapper minus hodepine</div>
+    </div>
+  </div>
+  <button class="btn btn-primary" onclick="printBadges()">Eksporter</button>
+</div>
+
+<div class="container">
+  <div class="sidebar">
+
+    <!-- 0. Skiltformat -->
+    <div class="sidebar-section">
+      <h3>Skiltformat</h3>
+      <div class="size-row">
+        <div>
+          <label>Bredde mm</label>
+          <input type="number" id="badgeWidth" value="92" onchange="renderBadges()">
+        </div>
+        <div>
+          <label>Hoyde mm</label>
+          <input type="number" id="badgeHeight" value="59" onchange="renderBadges()">
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. Logo -->
+    <div class="sidebar-section">
+      <h3>Logo</h3>
+      <div class="upload-area" id="logoArea" style="background:#f0f7f0;border-color:#8cb88c">
+        <span class="upload-text">Last opp logo</span>
+        <span class="upload-hint">.png / .jpg</span>
+        <input type="file" accept="image/*" onchange="loadLogo(event)">
+      </div>
+      <div class="format-hint">
+        Min. 300px bredde for god utskriftskvalitet.
+      </div>
+      <div id="logoControls" style="display:none">
+        <label>Bredde</label>
+        <div style="display:flex;align-items:center;gap:10px">
+          <input type="range" id="logoWidth" min="20" max="100" value="100" oninput="updateLogoWidth()" style="flex:1">
+          <span id="logoWidthVal" style="font-size:11px;min-width:32px">100%</span>
+        </div>
+        <label>Justering</label>
+        <div class="layout-row">
+          <button class="layout-btn" data-align="left" onclick="setLogoAlign('left', this)">Venstre</button>
+          <button class="layout-btn active" data-align="center" onclick="setLogoAlign('center', this)">Sentrert</button>
+          <button class="layout-btn" data-align="right" onclick="setLogoAlign('right', this)">H&oslash;yre</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. QR-kode med Generer/Last opp tabs -->
+    <div class="sidebar-section">
+      <h3>QR-kode</h3>
+        <label style="margin-top:0">URL</label>
+        <input type="url" id="qrUrl" placeholder="https://example.com" oninput="generateQR()">
+        <div style="margin-top:10px">
+          <label>Farge</label>
+          <input type="color" id="qrColor" value="#000000" onchange="generateQR()" style="width:30px;height:30px;border:1px solid var(--border);background:var(--bg);cursor:pointer;padding:2px">
+        </div>
+        <div class="qr-style-row">
+          <button class="qr-style-btn active" data-style="square" onclick="setQrStyle('square', this)">&#9632; Kantet</button>
+          <button class="qr-style-btn" data-style="dots" onclick="setQrStyle('dots', this)">&#9679; Prikker</button>
+          <button class="qr-style-btn" data-style="rounded" onclick="setQrStyle('rounded', this)">&#9673; Avrundet</button>
+        </div>
+        <div id="qrPreview" style="margin-top:12px;text-align:center"></div>
+    </div>
+
+    <!-- 3. Deltakere -->
+    <div class="sidebar-section">
+      <h3>Deltakere</h3>
+
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab('excel', this)">Regneark</button>
+        <button class="tab" onclick="switchTab('text', this)">Tekst</button>
+      </div>
+
+      <div class="tab-content active" id="tab-excel">
+        <div class="upload-area" id="excelArea">
+          <span class="upload-text">Last opp regneark</span>
+          <span class="upload-hint">.xlsx / .csv</span>
+          <input type="file" accept=".xlsx,.xls,.csv" onchange="loadExcel(event)">
+        </div>
+        <div class="excel-columns">
+          Tre kolonner: <strong>Navn</strong>, <strong>Stilling</strong>, <strong>Firma</strong>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-text">
+        <label>Navn, stilling og firma &mdash; tre linjer per person</label>
+        <textarea id="inputList" placeholder="Ola Nordmann&#10;Daglig leder&#10;Norsk Industri AS&#10;&#10;Kari Hansen&#10;Prosjektleder&#10;Bergen Consulting&#10;&#10;Erik Johansen&#10;Markedssjef&#10;Stavanger Tech" oninput="parseTextInput()"></textarea>
+      </div>
+    </div>
+
+    <!-- 4. Layout -->
+    <div class="sidebar-section design-section" style="display:none">
+      <h3>Layout</h3>
+      <div class="layout-row">
+        <button class="layout-btn active" data-layout="a" onclick="setLayout('a', this)">
+          <span class="layout-icon">&#9638;</span>H&oslash;yrestilt
+        </button>
+        <button class="layout-btn" data-layout="c" onclick="setLayout('c', this)">
+          <span class="layout-icon">&#9639;</span>Venstrestilt
+        </button>
+      </div>
+      <div class="format-hint" id="layoutDesc">H&oslash;yrestilt &mdash; QR venstre, info h&oslash;yre</div>
+    </div>
+
+    <!-- 5. Skrift -->
+    <div class="sidebar-section design-section" style="display:none">
+      <h3>Skrift</h3>
+      <label style="margin-top:0">Font</label>
+      <select id="fontSelect" onchange="changeFont()">
+        <option value="Lato" selected>Lato</option>
+        <option value="Inter">Inter</option>
+        <option value="Roboto">Roboto</option>
+        <option value="Open Sans">Open Sans</option>
+        <option value="Playfair Display">Playfair Display</option>
+        <option value="Merriweather">Merriweather</option>
+        <option value="Oswald">Oswald</option>
+        <option value="Montserrat">Montserrat</option>
+      </select>
+      <div class="font-size-row" style="margin-top:12px">
+        <div>
+          <label>Navn pt</label>
+          <input type="number" id="fontSize_name" value="18" min="6" max="30" onchange="renderBadges()">
+        </div>
+        <div>
+          <label>Stilling pt</label>
+          <input type="number" id="fontSize_commission" value="12" min="5" max="24" onchange="renderBadges()">
+        </div>
+        <div>
+          <label>Firma pt</label>
+          <input type="number" id="fontSize_company" value="9" min="5" max="20" onchange="renderBadges()">
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 7. Liste -->
+    <div class="sidebar-section">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+        <h3 id="entriesHeader" style="margin-bottom:0">Liste (0)</h3>
+        <button class="btn" onclick="clearAll()" style="padding:4px 8px;font-size:9px">Nullstill</button>
+      </div>
+      <div class="entries-list" id="entriesList"></div>
+    </div>
+
+  </div>
+
+  <div class="preview-area" id="previewArea">
+    <div class="empty-state">
+      <p>Versjon 1.0 — av Hallvar Bugge Johnsen / hei@hallvar.no</p>
+    </div>
+  </div>
+</div>
+
+<script>
+let entries = [];
+let qrDataUrl = null;
+let logoDataUrl = null;
+let currentLayout = 'a';
+let currentFont = 'Lato';
+let qrDotStyle = 'square';
+let qrCodeInstance = null;
+let logoWidthPct = 100;
+let logoAlign = 'center';
+
+const layoutDescriptions = {
+  a: 'H\u00f8yrestilt \u2014 QR venstre, info h\u00f8yre',
+  c: 'Venstrestilt \u2014 info venstre, QR h\u00f8yre'
+};
+
+function loadLogo(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    logoDataUrl = e.target.result;
+    const area = document.getElementById('logoArea');
+    area.classList.add('has-file');
+    area.innerHTML =
+      `<img src="${logoDataUrl}" alt="Logo" style="max-width:200px;max-height:50px">
+       <span class="upload-filename">${esc(file.name)}</span>
+       <input type="file" accept="image/*" onchange="loadLogo(event)">`;
+    document.getElementById('logoControls').style.display = '';
+    renderBadges();
+  };
+  reader.readAsDataURL(file);
+}
+
+const countryMap = {
+  'faroe': 'Faroe Islands',
+  'finland': 'Finland',
+  'finnish': 'Finland',
+  'tampere': 'Finland',
+  'lapland': 'Finland',
+  'greenland': 'Greenland',
+  'film gl': 'Greenland',
+  'iceland': 'Iceland',
+  'norway': 'Norway',
+  'norwegian': 'Norway',
+  'oslo': 'Norway',
+  'arktisk': 'Norway',
+  'midgard': 'Norway',
+  'western norway': 'Norway',
+  'eastern norway': 'Norway',
+  'sweden': 'Sweden',
+  'swedish': 'Sweden',
+  'stockholm': 'Sweden',
+  'gotland': 'Sweden',
+  '\u00e5land': '\u00c5land',
+  'film.ax': '\u00c5land',
+  'denmark': 'Denmark',
+  'danish': 'Denmark',
+  'vision denmark': 'Denmark',
+  'north finland': 'Finland',
+  'west finland': 'Finland',
+  'east finland': 'Finland',
+  'southern sweden': 'Sweden',
+};
+
+function detectCountry(commission) {
+  const lower = commission.toLowerCase();
+  for (const [key, country] of Object.entries(countryMap)) {
+    if (lower.includes(key)) return country;
+  }
+  return '';
+}
+
+function switchTab(tab, el) {
+  const section = el.closest('.sidebar-section');
+  section.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  section.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  section.querySelector('#tab-' + tab).classList.add('active');
+}
+
+function switchQrTab(tab, el) {
+  const section = el.closest('.sidebar-section');
+  section.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  section.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  section.querySelector('#qrtab-' + tab).classList.add('active');
+}
+
+function loadQR(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    qrDataUrl = e.target.result;
+    const area = document.getElementById('qrArea');
+    area.classList.add('has-file');
+    area.innerHTML =
+      `<img src="${qrDataUrl}" alt="QR">
+       <span class="upload-filename">${esc(file.name)}</span>
+       <input type="file" accept="image/*" onchange="loadQR(event)">`;
+    renderBadges();
+  };
+  reader.readAsDataURL(file);
+}
+
+function setQrStyle(style, el) {
+  qrDotStyle = style;
+  document.querySelectorAll('.qr-style-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  generateQR();
+}
+
+function generateQR() {
+  const url = document.getElementById('qrUrl').value.trim();
+  const preview = document.getElementById('qrPreview');
+  if (!url) {
+    preview.innerHTML = '';
+    qrDataUrl = null;
+    renderBadges();
+    return;
+  }
+
+  const color = document.getElementById('qrColor').value;
+
+  const dotTypeMap = {
+    square: 'square',
+    dots: 'dots',
+    rounded: 'rounded'
+  };
+
+  const opts = {
+    width: 300,
+    height: 300,
+    data: url,
+    dotsOptions: {
+      color: color,
+      type: dotTypeMap[qrDotStyle] || 'square'
+    },
+    backgroundOptions: {
+      color: '#ffffff'
+    },
+    cornersDotOptions: {
+      color: color
+    },
+    cornersSquareOptions: {
+      color: color
+    },
+    qrOptions: {
+      errorCorrectionLevel: 'M'
+    }
+  };
+
+  if (qrCodeInstance) {
+    preview.innerHTML = '';
+  }
+
+  qrCodeInstance = new QRCodeStyling(opts);
+
+  const container = document.createElement('div');
+  preview.innerHTML = '';
+  preview.appendChild(container);
+  qrCodeInstance.append(container);
+
+  setTimeout(() => {
+    const canvas = container.querySelector('canvas');
+    if (canvas) {
+      qrDataUrl = canvas.toDataURL('image/png');
+      const img = document.createElement('img');
+      img.src = qrDataUrl;
+      img.style.cssText = 'max-width:80px;max-height:80px;border:1px solid #ccc';
+      preview.innerHTML = '';
+      preview.appendChild(img);
+      renderBadges();
+    }
+  }, 200);
+}
+
+function updateLogoWidth() {
+  logoWidthPct = document.getElementById('logoWidth').value;
+  document.getElementById('logoWidthVal').textContent = logoWidthPct + '%';
+  renderBadges();
+}
+
+function setLogoAlign(align, el) {
+  logoAlign = align;
+  el.closest('.layout-row').querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  renderBadges();
+}
+
+function setLayout(layout, el) {
+  currentLayout = layout;
+  document.querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('layoutDesc').innerHTML = layoutDescriptions[layout];
+  renderBadges();
+}
+
+function changeFont() {
+  currentFont = document.getElementById('fontSelect').value;
+  const link = document.getElementById('badgeFontLink');
+  const fontName = currentFont.replace(/ /g, '+');
+  link.href = `https://fonts.googleapis.com/css2?family=${fontName}:wght@300;400;700;900&display=swap`;
+  setTimeout(renderBadges, 100);
+}
+
+function loadExcel(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const area = document.getElementById('excelArea');
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const data = new Uint8Array(e.target.result);
+    let opts = { type: 'array' };
+    if (file.name.toLowerCase().endsWith('.csv')) {
+      const text = new TextDecoder('utf-8').decode(data);
+      const firstLine = text.split('\n')[0] || '';
+      opts.FS = firstLine.includes(';') ? ';' : ',';
+    }
+    const workbook = XLSX.read(data, opts);
+    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+    let start = 0;
+    if (rows.length > 0) {
+      const first = rows[0].map(c => (c || '').toString().toLowerCase().trim());
+      if (first.includes('navn') || first.includes('name') ||
+          first.includes('stilling') || first.includes('title') ||
+          first.includes('firma') || first.includes('company')) {
+        start = 1;
+      }
+    }
+
+    entries = [];
+    for (let i = start; i < rows.length; i++) {
+      const row = rows[i];
+      if (!row || row.length < 1) continue;
+      const name = (row[0] || '').toString().trim();
+      if (!name) continue;
+      const title = row.length >= 2 ? (row[1] || '').toString().trim() : '';
+      const company = row.length >= 3 ? (row[2] || '').toString().trim() : '';
+      entries.push({ name, title, company });
+    }
+
+    area.classList.add('has-file');
+    area.innerHTML =
+      `<span class="upload-filename">${esc(file.name)}</span>
+       <span class="upload-hint">${entries.length} importert</span>
+       <input type="file" accept=".xlsx,.xls,.csv" onchange="loadExcel(event)">`;
+
+    renderEntries();
+    renderBadges();
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function parseTextInput() {
+  const raw = document.getElementById('inputList').value.trim();
+  if (!raw) return;
+
+  const lines = raw.split('\n').map(l => l.trim().replace(/,+$/, '')).filter(l => l.length > 0);
+
+  entries = [];
+  for (let i = 0; i < lines.length; i += 3) {
+    const name = lines[i];
+    const title = lines[i + 1] || '';
+    const company = lines[i + 2] || '';
+    if (name) {
+      entries.push({ name, title, company });
+    }
+  }
+
+  renderEntries();
+  renderBadges();
+}
+
+function renderEntries() {
+  const list = document.getElementById('entriesList');
+  document.getElementById('entriesHeader').textContent = `Liste (${entries.length})`;
+
+  list.innerHTML = entries.map((e, i) => `
+    <div class="entry-item">
+      <div>
+        <div class="entry-name">${esc(e.name)}</div>
+        ${e.title ? `<div class="entry-commission">${esc(e.title)}</div>` : ''}
+        ${e.company ? `<div class="entry-country">${esc(e.company)}</div>` : ''}
+      </div>
+      <button class="remove-btn" onclick="removeEntry(${i})">x</button>
+    </div>
+  `).join('');
+}
+
+function esc(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function removeEntry(index) {
+  entries.splice(index, 1);
+  renderEntries();
+  renderBadges();
+}
+
+function clearAll() {
+  entries = [];
+  renderEntries();
+  renderBadges();
+}
+
+function renderBadges() {
+  const area = document.getElementById('previewArea');
+  const w = document.getElementById('badgeWidth').value || 92;
+  const h = document.getElementById('badgeHeight').value || 59;
+  const fontName = document.getElementById('fontSize_name').value || 18;
+  const fontComm = document.getElementById('fontSize_commission').value || 12;
+  const fontCompany = document.getElementById('fontSize_company').value || 9;
+
+  const hasContent = entries.length > 0 || logoDataUrl || qrDataUrl;
+  if (!hasContent) {
+    area.innerHTML = '<div class="empty-state"><p>Versjon 1.0 — av Hallvar Bugge Johnsen / hei@hallvar.no</p></div>';
+    return;
+  }
+
+  document.querySelectorAll('.design-section').forEach(s => s.style.display = '');
+
+  const badgesPerPage = 8;
+  const qrImg = qrDataUrl ? `<img src="${qrDataUrl}" alt="QR">` : '';
+  const layoutClass = `badge--layout-${currentLayout}`;
+  const alignMap = { left: 'flex-start', center: 'center', right: 'flex-end' };
+  const logoHtml = logoDataUrl
+    ? `<div style="display:flex;justify-content:${alignMap[logoAlign]}"><img class="logo-img" src="${logoDataUrl}" alt="Logo" style="width:${logoWidthPct}%;height:auto"></div>`
+    : '';
+
+  const displayEntries = entries.length > 0
+    ? entries
+    : [{ name: 'Fornavn Etternavn', title: 'Stilling', company: 'Firma AS' }];
+
+  let html = entries.length > 0
+    ? `<div class="badge-count">${entries.length} navneskilt / ${Math.ceil(entries.length / badgesPerPage)} sider</div>`
+    : '';
+
+  for (let i = 0; i < displayEntries.length; i++) {
+    if (i % badgesPerPage === 0) {
+      if (i > 0) html += '</div>';
+      html += '<div class="page">';
+    }
+    const e = displayEntries[i];
+    html += `
+      <div class="badge ${layoutClass}" style="width:${w}mm;height:${h}mm;">
+        <div class="badge-top">
+          ${logoHtml}
+        </div>
+        <div class="badge-bottom">
+          <div class="qr">${qrImg}</div>
+          <div class="info">
+            <div class="name" style="font-family:'${currentFont}',sans-serif;font-size:${fontName}pt">${esc(e.name)}</div>
+            ${e.title ? `<div class="commission" style="font-family:'${currentFont}',sans-serif;font-size:${fontComm}pt">${esc(e.title)}</div>` : ''}
+            ${e.company ? `<div class="country" style="font-family:'${currentFont}',sans-serif;font-size:${fontCompany}pt">${esc(e.company)}</div>` : ''}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  html += '</div>';
+
+  area.innerHTML = html;
+}
+
+function printBadges() {
+  if (entries.length === 0) {
+    alert('Ingen deltakere. Importer data forst.');
+    return;
+  }
+  window.print();
+}
 </script>
 
 </body>
