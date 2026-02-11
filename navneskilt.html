@@ -821,7 +821,7 @@
 
   <div class="preview-area" id="previewArea">
     <div class="empty-state">
-      <p>Versjon 1.0 — av Hallvar Bugge Johnsen / hei@hallvar.no</p>
+      <p>Versjon 1.0<br>Hallvar Bugge Johnsen<br>hei@hallvar.no</p>
     </div>
   </div>
 </div>
@@ -1149,7 +1149,7 @@ function renderBadges() {
 
   const hasContent = entries.length > 0 || logoDataUrl || qrDataUrl;
   if (!hasContent) {
-    area.innerHTML = '<div class="empty-state"><p>Versjon 1.0 — av Hallvar Bugge Johnsen / hei@hallvar.no</p></div>';
+    area.innerHTML = '<div class="empty-state"><p>Versjon 1.0<br>Hallvar Bugge Johnsen<br>hei@hallvar.no</p></div>';
     return;
   }
 
