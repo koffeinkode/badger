@@ -670,7 +670,10 @@
       <div style="font-size:10px;font-weight:400;text-transform:uppercase;color:var(--text-muted);letter-spacing:1px;margin-top:-1px;padding-left:3px">Konferanselapper minus hodepine</div>
     </div>
   </div>
-  <button class="btn btn-primary" onclick="printBadges()">Eksporter</button>
+  <div style="display:flex;gap:8px">
+    <button class="btn" id="resetBtn" onclick="resetAll()">Nullstill</button>
+    <button class="btn btn-primary" onclick="printBadges()">Eksporter</button>
+  </div>
 </div>
 
 <div class="container">
@@ -1194,6 +1197,75 @@ function renderBadges() {
 
   area.innerHTML = html;
 }
+
+let resetPending = false;
+
+function resetAll() {
+  const btn = document.getElementById('resetBtn');
+  if (!resetPending) {
+    resetPending = true;
+    btn.textContent = 'Sikker?';
+    btn.style.background = '#c0392b';
+    btn.style.color = '#fff';
+    btn.style.borderColor = '#c0392b';
+    return;
+  }
+  resetPending = false;
+  btn.textContent = 'Nullstill';
+  btn.style.background = '';
+  btn.style.color = '';
+  btn.style.borderColor = '';
+
+  entries = [];
+  logoDataUrl = null;
+  qrDataUrl = null;
+  qrCodeInstance = null;
+  logoWidthPct = 100;
+  logoAlign = 'center';
+  currentLayout = 'a';
+  currentFont = 'Lato';
+  qrDotStyle = 'square';
+
+  document.getElementById('badgeWidth').value = 92;
+  document.getElementById('badgeHeight').value = 59;
+  document.getElementById('qrUrl').value = '';
+  document.getElementById('qrColor').value = '#000000';
+  document.getElementById('qrPreview').innerHTML = '';
+  document.getElementById('inputList').value = '';
+  document.getElementById('fontSize_name').value = 18;
+  document.getElementById('fontSize_commission').value = 12;
+  document.getElementById('fontSize_company').value = 9;
+  document.getElementById('fontSelect').value = 'Lato';
+  document.getElementById('logoWidth').value = 100;
+  document.getElementById('logoWidthVal').textContent = '100%';
+
+  const logoArea = document.getElementById('logoArea');
+  logoArea.classList.remove('has-file');
+  logoArea.innerHTML = '<span class="upload-text">Last opp logo</span><span class="upload-hint">.png / .jpg</span><input type="file" accept="image/*" onchange="loadLogo(event)">';
+  document.getElementById('logoControls').style.display = 'none';
+
+  const excelArea = document.getElementById('excelArea');
+  excelArea.classList.remove('has-file');
+  excelArea.innerHTML = '<span class="upload-text">Last opp regneark</span><span class="upload-hint">.xlsx / .csv</span><input type="file" accept=".xlsx,.xls,.csv" onchange="loadExcel(event)">';
+
+  document.querySelectorAll('.design-section').forEach(s => s.style.display = 'none');
+  document.querySelectorAll('.qr-style-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.qr-style-btn[data-style="square"]').classList.add('active');
+
+  renderEntries();
+  renderBadges();
+}
+
+document.addEventListener('click', function(e) {
+  if (resetPending && e.target.id !== 'resetBtn') {
+    resetPending = false;
+    const btn = document.getElementById('resetBtn');
+    btn.textContent = 'Nullstill';
+    btn.style.background = '';
+    btn.style.color = '';
+    btn.style.borderColor = '';
+  }
+});
 
 function printBadges() {
   if (entries.length === 0) {
