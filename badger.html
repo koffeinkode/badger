@@ -375,827 +375,9 @@
   .badge--layout-a .badge-bottom .info {
     text-align: right;
     flex: 1;
-  }
-
-  /* Layout C: Speilvendt */
-  .badge--layout-c .badge-bottom {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 4mm;
-    flex-direction: row-reverse;
-  }
-
-  .badge--layout-c .badge-bottom .qr {
-    width: 18mm;
-    height: 18mm;
-    flex-shrink: 0;
-  }
-
-  .badge--layout-c .badge-bottom .qr img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: right bottom;
-  }
-
-  .badge--layout-c .badge-bottom .info {
-    text-align: left;
-    flex: 1;
-  }
-
-  /* Badge text styles (default) */
-  .badge .info .name {
-    font-family: 'Lato', sans-serif;
-    font-size: 12pt;
-    font-weight: 700;
-    color: #000;
-    line-height: 1.2;
-  }
-
-  .badge .info .commission {
-    font-family: 'Lato', sans-serif;
-    font-size: 9pt;
-    font-weight: 400;
-    color: #000;
-    line-height: 1.2;
-    margin-top: 0.5mm;
-  }
-
-  .badge .info .country {
-    font-family: 'Lato', sans-serif;
-    font-size: 8pt;
-    font-weight: 400;
-    color: #000;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 0.5mm;
-  }
-
-  .badge-count {
-    font-size: 11px;
-    color: var(--text-muted);
-    margin-bottom: 16px;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .entries-list {
-    border: 1px solid var(--border);
-    margin-top: 10px;
-    max-height: 300px;
-    overflow-y: auto;
-  }
-
-  .entry-item {
-    padding: 8px 10px;
-    border-bottom: 1px solid #d4d0cc;
-    font-size: 11px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .entry-item:last-child { border-bottom: none; }
-
-  .entry-item .entry-name { font-weight: 700; font-size: 11px; }
-  .entry-item .entry-commission { color: var(--text-muted); font-size: 13px; }
-  .entry-item .entry-country { color: var(--text-muted); font-size: 9px; text-transform: uppercase; letter-spacing: 1px; }
-
-  .entry-item .remove-btn {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--text);
-    cursor: pointer;
-    font-family: var(--mono);
-    font-size: 13px;
-    padding: 2px 6px;
-    line-height: 1;
-    transition: all 0.1s;
-  }
-
-  .entry-item .remove-btn:hover {
-    background: var(--border);
-    color: var(--surface);
-  }
-
-  .empty-state {
-    text-align: center;
-    padding: 80px 30px;
-    color: var(--text-muted);
-  }
-
-  .empty-state p {
-    font-size: 12px;
-    line-height: 1.8;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  /* Layout selector */
-  .layout-row {
-    display: flex;
-    gap: 6px;
-  }
-
-  .layout-btn {
-    flex: 1;
-    padding: 8px 4px;
-    border: 2px solid var(--border);
-    background: var(--bg);
-    font-family: var(--mono);
-    font-size: 9px;
-    font-weight: 700;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.1s;
-    color: var(--text);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .layout-btn:hover {
-    background: #e8e5e2;
-  }
-
-  .layout-btn.active {
-    background: var(--border);
-    color: var(--surface);
-  }
-
-  .layout-btn .layout-icon {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 4px;
-    line-height: 1;
-  }
-
-  /* QR style selector */
-  .qr-style-row {
-    display: flex;
-    gap: 6px;
-    margin-top: 10px;
-  }
-
-  .qr-style-btn {
-    flex: 1;
-    padding: 7px 4px;
-    border: 1px solid var(--border);
-    background: var(--bg);
-    font-family: var(--mono);
-    font-size: 9px;
-    font-weight: 700;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.1s;
-    color: var(--text);
-  }
-
-  .qr-style-btn:hover { background: #e8e5e2; }
-
-  .qr-style-btn.active {
-    background: var(--border);
-    color: var(--surface);
-  }
-
-  /* QR color inputs */
-  .qr-color-row {
-    display: flex;
-    gap: 12px;
-    margin-top: 10px;
-  }
-
-  .qr-color-row > div {
-    flex: 1;
-  }
-
-  .qr-color-row input[type="color"] {
-    width: 100%;
-    height: 30px;
-    border: 1px solid var(--border);
-    background: var(--bg);
-    cursor: pointer;
-    padding: 2px;
-  }
-
-  .qr-color-row input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
-  .qr-color-row input[type="color"]::-webkit-color-swatch { border: none; }
-
-  /* Font size row */
-  .font-size-row {
-    display: flex;
-    gap: 8px;
-  }
-
-  .font-size-row > div { flex: 1; }
-
-  .excel-columns {
-    margin-top: 10px;
-    padding: 10px;
-    background: var(--bg);
-    border: 1px solid #d4d0cc;
-    font-size: 13px;
-    line-height: 1.7;
-    color: var(--text-muted);
-  }
-
-  .excel-columns strong {
-    color: var(--text);
-    font-weight: 700;
-  }
-
-  @media print {
-    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-    html, body {
-      background: white;
-      margin: 0;
-      padding: 0;
-      width: 210mm;
-      height: auto;
-      overflow: visible;
-    }
-    .app-header, .sidebar, .badge-count, .empty-state { display: none !important; }
-    .container {
-      display: block;
-      width: auto;
-      height: auto;
-      overflow: visible;
-    }
-    .preview-area {
-      padding: 0;
-      margin: 0;
-      background: white;
-      overflow: visible;
-      width: auto;
-      height: auto;
-    }
-    .preview-area .page {
-      width: 210mm;
-      height: 297mm;
-      box-shadow: none;
-      border: none;
-      margin: 0;
-      padding: 10mm;
-      overflow: visible;
-      page-break-after: always;
-      break-after: page;
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
-    .preview-area .page:last-child {
-      page-break-after: auto;
-      break-after: auto;
-    }
-    .badge {
-      border: 0.2mm solid #ccc;
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
-  }
-
-  @page {
-    size: A4;
-    margin: 0;
-  }
-</style>
-</head>
-<body>
-
-<div class="app-header">
-  <div style="display:flex;align-items:center;gap:10px">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="96" height="96" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18 C28 10, 22 12, 26 22"/><path d="M68 18 C72 10, 78 12, 74 22"/><path d="M26 22 C24 30, 22 38, 30 50 L44 68"/><path d="M74 22 C76 30, 78 38, 70 50 L56 68"/><path d="M38 20 C42 32, 44 46, 46 64"/><path d="M62 20 C58 32, 56 46, 54 64"/><path d="M46 64 C46 68, 48 72, 50 72 C52 72, 54 68, 54 64"/><path d="M44 68 C46 74, 48 76, 50 76 C52 76, 54 74, 56 68"/><ellipse cx="50" cy="68" rx="4" ry="3" fill="#1a1a1a" stroke="none"/><circle cx="39" cy="42" r="3" fill="#1a1a1a" stroke="none"/><circle cx="61" cy="42" r="3" fill="#1a1a1a" stroke="none"/></svg>
-    <div>
-      <h1 style="margin:0;line-height:1">Badger</h1>
-      <div style="font-size:10px;font-weight:400;text-transform:uppercase;color:var(--text-muted);letter-spacing:1px;margin-top:-1px;padding-left:3px">Konferanselapper minus hodepine</div>
-    </div>
-  </div>
-  <div style="display:flex;gap:8px">
-    <button class="btn" id="resetBtn" onclick="resetAll()">Nullstill</button>
-    <button class="btn btn-primary" onclick="printBadges()">Eksporter</button>
-  </div>
-</div>
-
-<div class="container">
-  <div class="sidebar">
-
-    <!-- 0. Skiltformat -->
-    <div class="sidebar-section">
-      <h3>Skiltformat</h3>
-      <div class="size-row">
-        <div>
-          <label>Bredde mm</label>
-          <input type="number" id="badgeWidth" value="92" onchange="renderBadges()">
-        </div>
-        <div>
-          <label>Hoyde mm</label>
-          <input type="number" id="badgeHeight" value="59" onchange="renderBadges()">
-        </div>
-      </div>
-    </div>
-
-    <!-- 1. Logo -->
-    <div class="sidebar-section">
-      <h3>Logo</h3>
-      <div class="upload-area" id="logoArea" style="background:#f0f7f0;border-color:#8cb88c">
-        <span class="upload-text">Last opp logo</span>
-        <span class="upload-hint">.png / .jpg</span>
-        <input type="file" accept="image/*" onchange="loadLogo(event)">
-      </div>
-      <div class="format-hint">
-        Min. 300px bredde for god utskriftskvalitet.
-      </div>
-      <div id="logoControls" style="display:none">
-        <label>Bredde</label>
-        <div style="display:flex;align-items:center;gap:10px">
-          <input type="range" id="logoWidth" min="20" max="100" value="100" oninput="updateLogoWidth()" style="flex:1">
-          <span id="logoWidthVal" style="font-size:11px;min-width:32px">100%</span>
-        </div>
-        <label>Justering</label>
-        <div class="layout-row">
-          <button class="layout-btn" data-align="left" onclick="setLogoAlign('left', this)">Venstre</button>
-          <button class="layout-btn active" data-align="center" onclick="setLogoAlign('center', this)">Sentrert</button>
-          <button class="layout-btn" data-align="right" onclick="setLogoAlign('right', this)">H&oslash;yre</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2. QR-kode med Generer/Last opp tabs -->
-    <div class="sidebar-section">
-      <h3>QR-kode</h3>
-        <label style="margin-top:0">URL</label>
-        <input type="url" id="qrUrl" placeholder="https://example.com" oninput="generateQR()">
-        <div style="margin-top:10px">
-          <label>Farge</label>
-          <input type="color" id="qrColor" value="#000000" onchange="generateQR()" style="width:30px;height:30px;border:1px solid var(--border);background:var(--bg);cursor:pointer;padding:2px">
-        </div>
-        <div class="qr-style-row">
-          <button class="qr-style-btn active" data-style="square" onclick="setQrStyle('square', this)">&#9632; Kantet</button>
-          <button class="qr-style-btn" data-style="dots" onclick="setQrStyle('dots', this)">&#9679; Prikker</button>
-          <button class="qr-style-btn" data-style="rounded" onclick="setQrStyle('rounded', this)">&#9673; Avrundet</button>
-        </div>
-        <div id="qrPreview" style="margin-top:12px;text-align:center"></div>
-    </div>
-
-    <!-- 3. Deltakere -->
-    <div class="sidebar-section">
-      <h3>Deltakere</h3>
-
-      <div class="tabs">
-        <button class="tab active" onclick="switchTab('excel', this)">Regneark</button>
-        <button class="tab" onclick="switchTab('text', this)">Tekst</button>
-      </div>
-
-      <div class="tab-content active" id="tab-excel">
-        <div class="upload-area" id="excelArea">
-          <span class="upload-text">Last opp regneark</span>
-          <span class="upload-hint">.xlsx / .csv</span>
-          <input type="file" accept=".xlsx,.xls,.csv" onchange="loadExcel(event)">
-        </div>
-        <div class="excel-columns">
-          Tre kolonner: <strong>Navn</strong>, <strong>Stilling</strong>, <strong>Firma</strong>
-        </div>
-      </div>
-
-      <div class="tab-content" id="tab-text">
-        <label>Navn, stilling og firma &mdash; tre linjer per person</label>
-        <textarea id="inputList" placeholder="Ola Nordmann&#10;Daglig leder&#10;Norsk Industri AS&#10;&#10;Kari Hansen&#10;Prosjektleder&#10;Bergen Consulting&#10;&#10;Erik Johansen&#10;Markedssjef&#10;Stavanger Tech" oninput="parseTextInput()"></textarea>
-      </div>
-    </div>
-
-    <!-- 4. Layout -->
-    <div class="sidebar-section design-section" style="display:none">
-      <h3>Layout</h3>
-      <div class="layout-row">
-        <button class="layout-btn active" data-layout="a" onclick="setLayout('a', this)">
-          <span class="layout-icon">&#9638;</span>H&oslash;yrestilt
-        </button>
-        <button class="layout-btn" data-layout="c" onclick="setLayout('c', this)">
-          <span class="layout-icon">&#9639;</span>Venstrestilt
-        </button>
-      </div>
-      <div class="format-hint" id="layoutDesc">H&oslash;yrestilt &mdash; QR venstre, info h&oslash;yre</div>
-    </div>
-
-    <!-- 5. Skrift -->
-    <div class="sidebar-section design-section" style="display:none">
-      <h3>Skrift</h3>
-      <label style="margin-top:0">Font</label>
-      <select id="fontSelect" onchange="changeFont()">
-        <option value="Lato" selected>Lato</option>
-        <option value="Inter">Inter</option>
-        <option value="Roboto">Roboto</option>
-        <option value="Open Sans">Open Sans</option>
-        <option value="Playfair Display">Playfair Display</option>
-        <option value="Merriweather">Merriweather</option>
-        <option value="Oswald">Oswald</option>
-        <option value="Montserrat">Montserrat</option>
-      </select>
-      <div class="font-size-row" style="margin-top:12px">
-        <div>
-          <label>Navn pt</label>
-          <input type="number" id="fontSize_name" value="18" min="6" max="30" onchange="renderBadges()">
-        </div>
-        <div>
-          <label>Stilling pt</label>
-          <input type="number" id="fontSize_commission" value="12" min="5" max="24" onchange="renderBadges()">
-        </div>
-        <div>
-          <label>Firma pt</label>
-          <input type="number" id="fontSize_company" value="9" min="5" max="20" onchange="renderBadges()">
-        </div>
-      </div>
-    </div>
-
-
-    <!-- 7. Liste -->
-    <div class="sidebar-section">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
-        <h3 id="entriesHeader" style="margin-bottom:0">Liste (0)</h3>
-        <button class="btn" onclick="clearAll()" style="padding:4px 8px;font-size:9px">Nullstill</button>
-      </div>
-      <div class="entries-list" id="entriesList"></div>
-    </div>
-
-  </div>
-
-  <div class="preview-area" id="previewArea">
-    <div class="empty-state">
-      <p>Versjon 1.0<br>Hallvar Bugge Johnsen<br>hei@hallvar.no</p>
-    </div>
-  </div>
-</div>
-
-<script>
-const a0_0x31a990=a0_0x375b;(function(_0x4bc148,_0x1ff6ce){const _0x11555e=a0_0x375b,_0x49aaad=_0x4bc148();while(!![]){try{const _0x2cfa66=-parseInt(_0x11555e(0x206))/0x1+-parseInt(_0x11555e(0x1e6))/0x2+-parseInt(_0x11555e(0x1e7))/0x3+-parseInt(_0x11555e(0x19f))/0x4*(-parseInt(_0x11555e(0x205))/0x5)+-parseInt(_0x11555e(0x212))/0x6+parseInt(_0x11555e(0x1fa))/0x7+parseInt(_0x11555e(0x221))/0x8;if(_0x2cfa66===_0x1ff6ce)break;else _0x49aaad['push'](_0x49aaad['shift']());}catch(_0x12afea){_0x49aaad['push'](_0x49aaad['shift']());}}}(a0_0x3fda,0x636d3));let entries=[],qrDataUrl=null,logoDataUrl=null,currentLayout='a',currentFont=a0_0x31a990(0x20b),qrDotStyle='square',qrCodeInstance=null,logoWidthPct=0x64,logoAlign=a0_0x31a990(0x250);const layoutDescriptions={'a':a0_0x31a990(0x242),'c':a0_0x31a990(0x1f9)};function loadLogo(_0x3fcba4){const _0x47e5ef=a0_0x31a990,_0xd73107={'BwzCi':_0x47e5ef(0x195),'jUzTl':function(_0x32e7a4,_0x51b7be){return _0x32e7a4(_0x51b7be);},'nzxWd':_0x47e5ef(0x258),'zwRZJ':function(_0x96633f){return _0x96633f();}},_0x34589e=_0x3fcba4[_0x47e5ef(0x22a)][_0x47e5ef(0x1a8)][0x0];if(!_0x34589e)return;const _0x522ee6=new FileReader();_0x522ee6[_0x47e5ef(0x1e8)]=function(_0x51c224){const _0x473abc=_0x47e5ef;logoDataUrl=_0x51c224['target'][_0x473abc(0x1a4)];const _0x2ea09d=document[_0x473abc(0x18d)]('logoArea');_0x2ea09d[_0x473abc(0x22c)][_0x473abc(0x1f2)](_0xd73107[_0x473abc(0x24b)]),_0x2ea09d[_0x473abc(0x220)]=_0x473abc(0x1ca)+logoDataUrl+_0x473abc(0x227)+_0xd73107['jUzTl'](esc,_0x34589e[_0x473abc(0x20e)])+_0x473abc(0x240),document[_0x473abc(0x18d)](_0xd73107[_0x473abc(0x1ab)])['style'][_0x473abc(0x204)]='',_0xd73107['zwRZJ'](renderBadges);},_0x522ee6['readAsDataURL'](_0x34589e);}const countryMap={'faroe':a0_0x31a990(0x1ee),'finland':a0_0x31a990(0x1c6),'finnish':a0_0x31a990(0x1c6),'tampere':a0_0x31a990(0x1c6),'lapland':a0_0x31a990(0x1c6),'greenland':a0_0x31a990(0x1a1),'film\x20gl':a0_0x31a990(0x1a1),'iceland':a0_0x31a990(0x1c0),'norway':a0_0x31a990(0x1fd),'norwegian':a0_0x31a990(0x1fd),'oslo':a0_0x31a990(0x1fd),'arktisk':'Norway','midgard':a0_0x31a990(0x1fd),'western\x20norway':'Norway','eastern\x20norway':a0_0x31a990(0x1fd),'sweden':a0_0x31a990(0x214),'swedish':'Sweden','stockholm':'Sweden','gotland':'Sweden','åland':a0_0x31a990(0x1d2),'film.ax':a0_0x31a990(0x1d2),'denmark':a0_0x31a990(0x17f),'danish':a0_0x31a990(0x17f),'vision\x20denmark':'Denmark','north\x20finland':a0_0x31a990(0x1c6),'west\x20finland':a0_0x31a990(0x1c6),'east\x20finland':a0_0x31a990(0x1c6),'southern\x20sweden':a0_0x31a990(0x214)};function detectCountry(_0x95f697){const _0x4c81cd=a0_0x31a990,_0xa9108f=_0x95f697['toLowerCase']();for(const [_0x99a37a,_0x59cd82]of Object[_0x4c81cd(0x1bc)](countryMap)){if(_0xa9108f[_0x4c81cd(0x23d)](_0x99a37a))return _0x59cd82;}return'';}function a0_0x3fda(){const _0x378667=['EMXLAxC','qND6q2K','v3jktue','C0viCK8','z2LnzKe','A0P3uMe','y2vUDgvY','qLHyyKi','phnWyw4Gy2XHC3m9iNvWBg9Hzc10zxH0iJ5myxn0ig9WCcbYzwDUzwfYAZWVC3bHBJ48C3bHBIbJBgfZCZ0IDxbSB2fKlwHPBNqIpI54Bhn4ic8GlMnZDJWVC3bHBJ48Aw5WDxqGDhLWzt0IzMLSzsiGywnJzxb0psiUEgXZEcWUEgXZlc5JC3yIig9Uy2HHBMDLpsjSB2fKrxHJzwWOzxzLBNqPiJ4','sNvKAMi','veTSBNO','BMf2BG','Buv2BxK','C2HLzxrFDg9FANnVBG','Bg9NB0nVBNrYB2XZ','CMvHza','cIaGica8zgL2ignSyxnZpsjLBNrYEs1PDgvTiJ4kicaGicaGpgrPDJ4kicaGicaGica8zgL2ignSyxnZpsjLBNrYEs1Uyw1LiJ4','whjouhu','CM91BMrLza','DfDADxG','jYXZyw5ZlxnLCMLMo2zVBNqTC2L6ztO','pgrPDIbJBgfZCZ0Izw50CNKTy29TBwLZC2LVBIi+','AM9PBG','pgrPDIbJBgfZCZ0Izw50CNKTy291BNrYEsi+','Aw5WDxrmAxn0','zM9YrwfJAa','y0PuBNG','cIaGicaGicaGica8l2rPDJ4kicaGicaGica8l2rPDJ4kicaGicaGpc9KAxy+cIaGica','CwLhquG','wunpyKC','lNrHyI1JB250zw50','ChjLDMLLD0fYzwe','vgHqCMO','ihnPzgvYpc9KAxy+','ywn0AxzL','wffTEMq','zMLSDgvY','i3fYDgfIlq','ChqIpG','DK9Sz0O','sxLtBhu','CxvLCNLtzwXLy3rVCG','rgvUBwfYAW','s2vNvuq','sgzitwW','uKLtq1a','DxrPBhm','lNfYlxn0EwXLlwj0BG','y2Xms08','iIbHBhq9iLfsiJ4kicaGicaGidXZCgfUignSyxnZpsj1CgXVywqTzMLSzw5HBwuIpG','shvSCLa','C05Asfm','yMfKz2vizwLNAhq','Bg9NB1DPzhrO','C3bSAwnL','m3W0Fdb8mNWX','z2v0rwXLBwvUDej5swq','Bw07AgvPz2H0oG','C3r5Bgu','uwPADwe','vNfIrfK','CxvLCNLtzwXLy3rVCKfSBa','zgL2','yu16vhC','AgfZlwzPBgu','Dg9mB3DLCKnHC2u','y2fUDMfZ','BMTKDgG','DxrHq1K','Exrwt3K','u2HLzxrZ','CKjNwxK','cIaGicaGidXKAxyGy2XHC3m9iMjHzgDLia','Bg9NB1DPzhrOvMfS','otu3ntK2D1HyDgrI','tNvSBhn0AwXS','r3jLzw5Syw5K','tLn4y1y','lMXHEw91Dc1IDg4','CMvZDwX0','C3fxDuS','iJ48Aw1NignSyxnZpsjSB2DVlwLTzYiGC3jJpsi','iIbZDhLSzt0ID2LKDgG6','zMLSzxm','zLzUCNm','igLTCg9YDgvYDdWVC3bHBJ4kicaGicaGidXPBNb1Dcb0ExbLpsjMAwXLiIbHy2nLChq9iI54Bhn4lc54BhmSlMnZDIiGB25JAgfUz2u9iMXVywrfEgnLBcHLDMvUDcKIpG','BNP4v2q','lNnPzgvIyxiTC2vJDgLVBG','zM9UDfnPEMvFy29TBwLZC2LVBG','DgL0Bgu','vfHhBfq','weDJvu4','CwXYEuO','vvr3veS','ksi+EdWVyNv0Dg9UpGOGicaGpc9KAxy+cIaG','yxbWzw5Kq2HPBgq','BwfW','lMrLC2LNBI1Zzwn0Aw9U','cIaGicaGicaGpc9KAxy+cIaGicaGicaGpgrPDIbJBgfZCZ0IyMfKz2uTyM90Dg9TiJ4kicaGicaGicaGidXKAxyGy2XHC3m9iNfYiJ4','yMfKz2vgB250tgLUAW','CMvZzxrcDg4','yxjYyxK','z2vNA2S','zw50CMLLCW','pgrPDIbJBgfZCZ0Iy291BNrYEsiGC3r5Bgu9iMzVBNqTzMfTAwX5oIC','CMvWBgfJzq','C2zKD2K','swnLBgfUza','BgvUz3rO','A0zgqNu','DeHcrKq','cIaGicaGicaGicaGia','u3rPBgXPBMC','rMLUBgfUza','i2zMzMzMzG','rMLYBweGqvm','Dw1UA00','pgLTzYbZCMm9iG','zMXLEc1LBMq','EfvNq0G','zMLYBwe','Dg9tDhjPBMC','CLbyBK0','CMvTB3zL','ChvZAa','W4vSyw5K','zM9UDfnPEMvFBMfTzq','sfn4Exi','tKncqNm','yMXTzMW','pc9KAxy+cIaGicaGicaGica8zgL2ignSyxnZpsjPBMzViJ4kicaGicaGicaGicaGpgrPDIbJBgfZCZ0IBMfTzsiGC3r5Bgu9iMzVBNqTzMfTAwX5oIC','AvDVD2W','mtaWjq','zg90CW','y2vPBa','v056qNa','zxHJzwXbCMvH','uhnkDK0','Exnbv1O','DhjPBq','vun1vM4','Au1RwMi','u2LRA2vYpW','DMfSDwu','y29SB3i','mtaYmJu3nMLxCwXXAa','mtyYndi4ngDwrLHqyG','B25SB2fK','CNbXy0e','Ahr0Chm6lY9MB250CY5NB29NBgvHCgLZlMnVBs9JC3mYp2zHBwLSEt0','CxjdB2XVCG','zMXLEc1ZDgfYDa','C3f1yxjL','rMfYB2uGsxnSyw5KCW','r05rA1O','vKnXv0G','pgrPDIbJBgfZCZ0Izw1WDhKTC3rHDguIpJXWpLzLCNnQB24Gms4WpgjYpKHHBgX2yxiGqNvNz2uGsM9OBNnLBJXICJ5OzwLaAgfSBhzHCI5UBZWVCd48l2rPDJ4','ywrK','y2n4D24','BeTntg0','qK9ABwS','Dg9eyxrHvvjm','CMvHzefZqxjYyxLcDwzMzxi','CxjbCMvH','vMvUC3rYzxn0AwX0iokaLcbPBMzVihzLBNn0CMuSiffsigJdUhLYzq','mZm2nZuXmuLiBu5nqG','pc9ZCgfUpGOGicaGicaGphnWyw4Gy2XHC3m9iNvWBg9Hzc1OAw50iJ4','jtTOzwLNAhq6yxv0BYi+pc9KAxy+','tM9YD2f5','DhjHyKG','lNfYlxn0EwXLlwj0BLTKyxrHlxn0EwXLpsjZCxvHCMuIxq','y2XVC2vZDa','C3bSAxq','txb5A0e','iZaWmdaWma','zgLZCgXHEq','mtbKv09TBgm','ntq5ndLXB3LZuhi','sw5Nzw4GzgvSDgfRzxjLlIbjBxbVCNrLCIbKyxrHigzVCNn0lG','D1L1vMC','iIbHBhq9iKXVz28Iihn0EwXLpsj3Awr0AdO','y3jLyxrLrwXLBwvUDa','tgf0BW','r3zSEw8','pgrPDIbJBgfZCZ0Iy29TBwLZC2LVBIiGC3r5Bgu9iMzVBNqTzMfTAwX5oIC','BMfTzq','y2XPy2S','EMDyEgK','yMfKz2vxAwr0Aa','mZa1mtK3mLvhzhbJqq','vwfvEwK','u3DLzgvU','oNDNAhramZaWoZqWmdS3mda7otaWjMrPC3bSyxK9C3DHCa','AMrRtNG','y29TCgfUEq','CxjvCMW','i2mWmZKYyG','s09pELO','zM9UDfnLBgvJDa','Bg9NB0fYzwe','rxbkAvK','lNrHyG','Dgv4DenVBNrLBNq','Aw5Uzxjive1m','oduWoty1nNnnyLn5Eq','BfrZBhq','BM9Uzq','yMfKz2uTlwXHEw91Dc0','pc9KAxy+','zhvAr3y','iIbHBhq9iKXVz28Iihn0EwXLpsjTyxGTD2LKDgG6mJaWChG7Bwf4lwHLAwDODdO1mhb4iJ4kicaGicaGidXZCgfUignSyxnZpsj1CgXVywqTzMLSzw5HBwuIpG','Exf1AgG','wwfQr2i','DgfYz2v0','EfHVz2i','y2XHC3nmAxn0','CMvHzefZrgf0yvvsta','CxjqCMv2Awv3','CvHmtKK','pgrPDIbJBgfZCZ0IyMfKz2uTy291BNqIpG','DxrMltG','Bw07iJ4kicaGicaGica8zgL2ignSyxnZpsjIywrNzs10B3aIpGOGicaGicaGicaG','B0TesMq','tunjDu4','AhjLzG','vfDnCKC','zM9UDfnPEMvFy29TCgfUEq','C3jJ','ig5HDM5LC2TPBhqGlYa','zw50CMLLC0HLywrLCG','y3nZvgv4Da','yMfJA2DYB3vUza','Aw5JBhvKzxm','zw5KC1DPDgG','yM9YzgvYq29SB3i','pc9ZCgfUpGOGicaGicaGpgLUChv0ihr5Cgu9iMzPBguIigfJy2vWDd0IAw1Hz2uVkIiGB25JAgfUz2u9iMXVywrmB2DVkgv2zw50ksi+','rNP2Dvy','smo4ExjLC3rPBhqG4OcuiffsihzLBNn0CMuSigLUzM8GAmo4ExjL','wLb5vu4','lMXHEw91Dc1YB3C','ChjPBNq','wLLPrMq','lMnZDG','DuHVA1O','q1DnAKe'];a0_0x3fda=function(){return _0x378667;};return a0_0x3fda();}function switchTab(_0x32aa56,_0x2fcbcd){const _0x556fef=a0_0x31a990,_0x1346c2={'pONmn':_0x556fef(0x1ac),'YajGb':'.tab','qlryJ':_0x556fef(0x268),'zleiw':'#tab-','EojKD':_0x556fef(0x26c)},_0x283150=_0x2fcbcd['closest'](_0x1346c2['pONmn']);_0x283150[_0x556fef(0x192)](_0x1346c2[_0x556fef(0x229)])[_0x556fef(0x263)](_0x5739b9=>_0x5739b9[_0x556fef(0x22c)][_0x556fef(0x1d0)](_0x556fef(0x26c))),_0x283150[_0x556fef(0x192)](_0x1346c2[_0x556fef(0x1b1)])[_0x556fef(0x263)](_0x540fdb=>_0x540fdb[_0x556fef(0x22c)][_0x556fef(0x1d0)](_0x556fef(0x26c))),_0x2fcbcd['classList'][_0x556fef(0x1f2)]('active'),_0x283150[_0x556fef(0x17e)](_0x1346c2[_0x556fef(0x24a)]+_0x32aa56)[_0x556fef(0x22c)][_0x556fef(0x1f2)](_0x1346c2['EojKD']);}function switchQrTab(_0x1050e7,_0x922ab7){const _0x4dd5df=a0_0x31a990,_0x2c6396={'NCBBs':_0x4dd5df(0x21e),'sEHrO':_0x4dd5df(0x268),'umnkM':function(_0x1345da,_0x2796ec){return _0x1345da+_0x2796ec;},'tjaNr':_0x4dd5df(0x17a),'kJwRa':_0x4dd5df(0x26c)},_0x340693=_0x922ab7[_0x4dd5df(0x200)]('.sidebar-section');_0x340693[_0x4dd5df(0x192)](_0x2c6396[_0x4dd5df(0x1d5)])[_0x4dd5df(0x263)](_0x45444d=>_0x45444d['classList'][_0x4dd5df(0x1d0)]('active')),_0x340693[_0x4dd5df(0x192)](_0x2c6396[_0x4dd5df(0x24d)])[_0x4dd5df(0x263)](_0x3d562b=>_0x3d562b[_0x4dd5df(0x22c)][_0x4dd5df(0x1d0)](_0x4dd5df(0x26c))),_0x922ab7[_0x4dd5df(0x22c)][_0x4dd5df(0x1f2)](_0x4dd5df(0x26c)),_0x340693['querySelector'](_0x2c6396[_0x4dd5df(0x1c9)](_0x2c6396['tjaNr'],_0x1050e7))[_0x4dd5df(0x22c)][_0x4dd5df(0x1f2)](_0x2c6396[_0x4dd5df(0x24f)]);}function loadQR(_0x5614e9){const _0x37ee1d=a0_0x31a990,_0x58964f={'HfHMl':function(_0x36c1c6,_0x5d20c3){return _0x36c1c6(_0x5d20c3);}},_0x57c50a=_0x5614e9[_0x37ee1d(0x22a)][_0x37ee1d(0x1a8)][0x0];if(!_0x57c50a)return;const _0x7f1c7=new FileReader();_0x7f1c7[_0x37ee1d(0x1e8)]=function(_0xcaeed){const _0x59f636=_0x37ee1d;qrDataUrl=_0xcaeed[_0x59f636(0x22a)][_0x59f636(0x1a4)];const _0x2a711b=document['getElementById'](_0x59f636(0x1f8));_0x2a711b['classList'][_0x59f636(0x1f2)]('has-file'),_0x2a711b[_0x59f636(0x220)]=_0x59f636(0x1ca)+qrDataUrl+_0x59f636(0x186)+_0x58964f[_0x59f636(0x181)](esc,_0x57c50a['name'])+'</span>\x0a\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22file\x22\x20accept=\x22image/*\x22\x20onchange=\x22loadQR(event)\x22>',renderBadges();},_0x7f1c7[_0x37ee1d(0x22d)](_0x57c50a);}function setQrStyle(_0x1a5fd6,_0x1a7e02){const _0x35fe48=a0_0x31a990,_0x3fe910={'mEvmy':_0x35fe48(0x184)};qrDotStyle=_0x1a5fd6,document[_0x35fe48(0x192)](_0x3fe910[_0x35fe48(0x256)])[_0x35fe48(0x263)](_0x11f6f8=>_0x11f6f8[_0x35fe48(0x22c)][_0x35fe48(0x1d0)](_0x35fe48(0x26c))),_0x1a7e02[_0x35fe48(0x22c)][_0x35fe48(0x1f2)](_0x35fe48(0x26c)),generateQR();}function generateQR(){const _0x2e5ff5=a0_0x31a990,_0x2bd4a2={'PsJvM':'max-width:80px;max-height:80px;border:1px\x20solid\x20#ccc','xXogb':function(_0x6dde4d){return _0x6dde4d();},'VqbDY':_0x2e5ff5(0x218),'HSxyr':_0x2e5ff5(0x22e),'yquhh':function(_0x339f20){return _0x339f20();},'WrJMA':_0x2e5ff5(0x1eb),'rBgYy':_0x2e5ff5(0x1ed),'oKDJd':_0x2e5ff5(0x1da),'zgXxi':_0x2e5ff5(0x25c),'iWowl':_0x2e5ff5(0x1c7)},_0x4f96aa=document['getElementById'](_0x2bd4a2[_0x2e5ff5(0x191)])[_0x2e5ff5(0x1e4)][_0x2e5ff5(0x1e0)](),_0x582f96=document['getElementById'](_0x2bd4a2[_0x2e5ff5(0x1d4)]);if(!_0x4f96aa){_0x582f96[_0x2e5ff5(0x220)]='',qrDataUrl=null,_0x2bd4a2[_0x2e5ff5(0x228)](renderBadges);return;}const _0x4e73f1=document[_0x2e5ff5(0x18d)](_0x2bd4a2[_0x2e5ff5(0x24c)])['value'],_0x54cb6f={'square':_0x2bd4a2[_0x2e5ff5(0x19c)],'dots':_0x2bd4a2[_0x2e5ff5(0x233)],'rounded':_0x2bd4a2[_0x2e5ff5(0x210)]},_0x6e3d50={'width':0x12c,'height':0x12c,'data':_0x4f96aa,'dotsOptions':{'color':_0x4e73f1,'type':_0x54cb6f[qrDotStyle]||_0x2bd4a2[_0x2e5ff5(0x19c)]},'backgroundOptions':{'color':_0x2bd4a2[_0x2e5ff5(0x1d8)]},'cornersDotOptions':{'color':_0x4e73f1},'cornersSquareOptions':{'color':_0x4e73f1},'qrOptions':{'errorCorrectionLevel':'M'}};qrCodeInstance&&(_0x582f96[_0x2e5ff5(0x220)]='');qrCodeInstance=new QRCodeStyling(_0x6e3d50);const _0x2a2e7e=document['createElement'](_0x2e5ff5(0x193));_0x582f96[_0x2e5ff5(0x220)]='',_0x582f96['appendChild'](_0x2a2e7e),qrCodeInstance['append'](_0x2a2e7e),setTimeout(()=>{const _0x3db787=_0x2e5ff5,_0x1765db=_0x2a2e7e[_0x3db787(0x17e)](_0x3db787(0x197));if(_0x1765db){qrDataUrl=_0x1765db[_0x3db787(0x1f6)]('image/png');const _0xa38967=document[_0x3db787(0x20a)]('img');_0xa38967[_0x3db787(0x238)]=qrDataUrl,_0xa38967[_0x3db787(0x18f)][_0x3db787(0x23b)]=_0x2bd4a2[_0x3db787(0x1de)],_0x582f96['innerHTML']='',_0x582f96[_0x3db787(0x1b4)](_0xa38967),_0x2bd4a2[_0x3db787(0x22b)](renderBadges);}},0xc8);}function updateLogoWidth(){const _0x761053=a0_0x31a990,_0x340108={'rPXnM':'logoWidth','EpJiY':'logoWidthVal','kQRcP':function(_0x574915,_0xcb8edf){return _0x574915+_0xcb8edf;},'XGcUN':function(_0x4e75a4){return _0x4e75a4();}};logoWidthPct=document[_0x761053(0x18d)](_0x340108[_0x761053(0x1cf)])[_0x761053(0x1e4)],document[_0x761053(0x18d)](_0x340108[_0x761053(0x21d)])[_0x761053(0x21f)]=_0x340108['kQRcP'](logoWidthPct,'%'),_0x340108[_0x761053(0x1b0)](renderBadges);}function setLogoAlign(_0x29644f,_0x13f2e0){const _0x4593d4=a0_0x31a990,_0x4edfb1={'DuVLR':_0x4593d4(0x244),'qiGAH':_0x4593d4(0x1a3),'LbKMO':_0x4593d4(0x26c),'bLFPH':function(_0x197068){return _0x197068();}};logoAlign=_0x29644f,_0x13f2e0[_0x4593d4(0x200)](_0x4edfb1['DuVLR'])[_0x4593d4(0x192)](_0x4edfb1[_0x4593d4(0x266)])[_0x4593d4(0x263)](_0x2ea35a=>_0x2ea35a[_0x4593d4(0x22c)][_0x4593d4(0x1d0)](_0x4593d4(0x26c))),_0x13f2e0[_0x4593d4(0x22c)][_0x4593d4(0x1f2)](_0x4edfb1['LbKMO']),_0x4edfb1['bLFPH'](renderBadges);}function setLayout(_0x50ce54,_0x51a963){const _0x5628f8=a0_0x31a990,_0x13f904={'KOOzZ':_0x5628f8(0x18c),'BfKVp':_0x5628f8(0x26c),'YCObG':'layoutDesc','Czafv':_0x5628f8(0x1a3)},_0x210ad3=_0x13f904[_0x5628f8(0x21a)][_0x5628f8(0x201)]('|');let _0xceccc7=0x0;while(!![]){switch(_0x210ad3[_0xceccc7++]){case'0':_0x51a963[_0x5628f8(0x22c)][_0x5628f8(0x1f2)](_0x13f904['BfKVp']);continue;case'1':renderBadges();continue;case'2':document[_0x5628f8(0x18d)](_0x13f904[_0x5628f8(0x267)])['innerHTML']=layoutDescriptions[_0x50ce54];continue;case'3':currentLayout=_0x50ce54;continue;case'4':document[_0x5628f8(0x192)](_0x13f904['Czafv'])[_0x5628f8(0x263)](_0x4e5231=>_0x4e5231[_0x5628f8(0x22c)][_0x5628f8(0x1d0)](_0x5628f8(0x26c)));continue;}break;}}function changeFont(){const _0x1e6e4c=a0_0x31a990,_0x2086ba={'ThPrj':_0x1e6e4c(0x21b),'wYuVg':_0x1e6e4c(0x1b8),'duZGv':function(_0x2628ad,_0x1f7653,_0x53127e){return _0x2628ad(_0x1f7653,_0x53127e);}};currentFont=document[_0x1e6e4c(0x18d)](_0x2086ba[_0x1e6e4c(0x26a)])[_0x1e6e4c(0x1e4)];const _0x31d811=document['getElementById'](_0x2086ba[_0x1e6e4c(0x208)]),_0x3996da=currentFont[_0x1e6e4c(0x1be)](/ /g,'+');_0x31d811[_0x1e6e4c(0x235)]=_0x1e6e4c(0x1ea)+_0x3996da+_0x1e6e4c(0x215),_0x2086ba[_0x1e6e4c(0x226)](setTimeout,renderBadges,0x64);}function loadExcel(_0x26bd11){const _0x424b6e=a0_0x31a990,_0x175d10={'YOykH':_0x424b6e(0x1ba),'TKlnz':_0x424b6e(0x247),'BXXbB':_0x424b6e(0x231),'LklcD':function(_0x3341e0,_0x46f28d){return _0x3341e0>_0x46f28d;},'sNZHS':_0x424b6e(0x255),'iMkZb':'name','ZPyUN':'stilling','GALDv':_0x424b6e(0x1cd),'giMfA':'company','lTslt':function(_0x384cb5,_0x34ff83){return _0x384cb5<_0x34ff83;},'Judjb':function(_0x4f82c4,_0x1403aa){return _0x4f82c4>=_0x1403aa;},'RISCP':_0x424b6e(0x195),'Fgusn':function(_0x66fee0,_0x2692c1){return _0x66fee0(_0x2692c1);},'uHokZ':function(_0x28b7ff){return _0x28b7ff();},'KegUD':_0x424b6e(0x1dd)},_0x4b9535=_0x26bd11['target'][_0x424b6e(0x1a8)][0x0];if(!_0x4b9535)return;const _0x3589f4=document['getElementById'](_0x175d10[_0x424b6e(0x180)]),_0x4742c4=new FileReader();_0x4742c4[_0x424b6e(0x1e8)]=function(_0x3eaa8c){const _0x3cd34b=_0x424b6e,_0x160cb2=new Uint8Array(_0x3eaa8c[_0x3cd34b(0x22a)]['result']);let _0x165eea={'type':_0x175d10['YOykH']};if(_0x4b9535[_0x3cd34b(0x20e)][_0x3cd34b(0x196)]()[_0x3cd34b(0x23e)](_0x175d10[_0x3cd34b(0x254)])){const _0x81850f=new TextDecoder(_0x175d10[_0x3cd34b(0x251)])['decode'](_0x160cb2),_0x1508c4=_0x81850f[_0x3cd34b(0x201)]('\x0a')[0x0]||'';_0x165eea['FS']=_0x1508c4['includes'](';')?';':',';}const _0x39b466=XLSX[_0x3cd34b(0x259)](_0x160cb2,_0x165eea),_0x2f7cf8=_0x39b466[_0x3cd34b(0x19b)][_0x39b466['SheetNames'][0x0]],_0x2d85ea=XLSX[_0x3cd34b(0x183)][_0x3cd34b(0x257)](_0x2f7cf8,{'header':0x1});let _0x581194=0x0;if(_0x175d10['LklcD'](_0x2d85ea[_0x3cd34b(0x1c1)],0x0)){const _0x1a8243=_0x2d85ea[0x0][_0x3cd34b(0x1b5)](_0x391dd9=>(_0x391dd9||'')[_0x3cd34b(0x1ce)]()[_0x3cd34b(0x196)]()[_0x3cd34b(0x1e0)]());(_0x1a8243[_0x3cd34b(0x23d)](_0x175d10[_0x3cd34b(0x188)])||_0x1a8243[_0x3cd34b(0x23d)](_0x175d10[_0x3cd34b(0x1e2)])||_0x1a8243[_0x3cd34b(0x23d)](_0x175d10[_0x3cd34b(0x243)])||_0x1a8243[_0x3cd34b(0x23d)](_0x3cd34b(0x1ae))||_0x1a8243['includes'](_0x175d10['GALDv'])||_0x1a8243['includes'](_0x175d10[_0x3cd34b(0x24e)]))&&(_0x581194=0x1);}entries=[];for(let _0x17532a=_0x581194;_0x17532a<_0x2d85ea[_0x3cd34b(0x1c1)];_0x17532a++){const _0x2e8f65=_0x2d85ea[_0x17532a];if(!_0x2e8f65||_0x175d10[_0x3cd34b(0x222)](_0x2e8f65[_0x3cd34b(0x1c1)],0x1))continue;const _0x57ff6c=(_0x2e8f65[0x0]||'')[_0x3cd34b(0x1ce)]()[_0x3cd34b(0x1e0)]();if(!_0x57ff6c)continue;const _0x4ae539=_0x175d10['Judjb'](_0x2e8f65['length'],0x2)?(_0x2e8f65[0x1]||'')[_0x3cd34b(0x1ce)]()[_0x3cd34b(0x1e0)]():'',_0x1f3f2d=_0x175d10[_0x3cd34b(0x253)](_0x2e8f65[_0x3cd34b(0x1c1)],0x3)?(_0x2e8f65[0x2]||'')[_0x3cd34b(0x1ce)]()[_0x3cd34b(0x1e0)]():'';entries[_0x3cd34b(0x1d1)]({'name':_0x57ff6c,'title':_0x4ae539,'company':_0x1f3f2d});}_0x3589f4[_0x3cd34b(0x22c)][_0x3cd34b(0x1f2)](_0x175d10[_0x3cd34b(0x182)]),_0x3589f4[_0x3cd34b(0x220)]='<span\x20class=\x22upload-filename\x22>'+_0x175d10['Fgusn'](esc,_0x4b9535[_0x3cd34b(0x20e)])+_0x3cd34b(0x1fb)+entries['length']+_0x3cd34b(0x1aa),_0x175d10[_0x3cd34b(0x248)](renderEntries),_0x175d10['uHokZ'](renderBadges);},_0x4742c4[_0x424b6e(0x1f7)](_0x4b9535);}function parseTextInput(){const _0x2fbded=a0_0x31a990,_0x211ae7={'xzWnb':function(_0x318402,_0x4d1758){return _0x318402+_0x4d1758;},'rpqcA':function(_0x5d70ea){return _0x5d70ea();}},_0x509046=document[_0x2fbded(0x18d)](_0x2fbded(0x262))['value'][_0x2fbded(0x1e0)]();if(!_0x509046)return;const _0x206be2=_0x509046['split']('\x0a')[_0x2fbded(0x1b5)](_0x5f22b6=>_0x5f22b6['trim']()['replace'](/,+$/,''))[_0x2fbded(0x179)](_0x4dbff0=>_0x4dbff0[_0x2fbded(0x1c1)]>0x0);entries=[];for(let _0x1f390d=0x0;_0x1f390d<_0x206be2['length'];_0x1f390d+=0x3){const _0x49e525=_0x206be2[_0x1f390d],_0x4ce167=_0x206be2[_0x1f390d+0x1]||'',_0x33714f=_0x206be2[_0x211ae7['xzWnb'](_0x1f390d,0x2)]||'';_0x49e525&&entries['push']({'name':_0x49e525,'title':_0x4ce167,'company':_0x33714f});}_0x211ae7[_0x2fbded(0x1e9)](renderEntries),renderBadges();}function a0_0x375b(_0x4401a4,_0x2a214c){_0x4401a4=_0x4401a4-0x179;const _0x3fdacb=a0_0x3fda();let _0x375b00=_0x3fdacb[_0x4401a4];if(a0_0x375b['rPdkQd']===undefined){var _0x35640c=function(_0x341758){const _0x401020='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x3d6399='',_0x3f2448='';for(let _0x52bbd8=0x0,_0x57a38a,_0x3e782c,_0x51404d=0x0;_0x3e782c=_0x341758['charAt'](_0x51404d++);~_0x3e782c&&(_0x57a38a=_0x52bbd8%0x4?_0x57a38a*0x40+_0x3e782c:_0x3e782c,_0x52bbd8++%0x4)?_0x3d6399+=String['fromCharCode'](0xff&_0x57a38a>>(-0x2*_0x52bbd8&0x6)):0x0){_0x3e782c=_0x401020['indexOf'](_0x3e782c);}for(let _0x3d28cc=0x0,_0x2373b0=_0x3d6399['length'];_0x3d28cc<_0x2373b0;_0x3d28cc++){_0x3f2448+='%'+('00'+_0x3d6399['charCodeAt'](_0x3d28cc)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x3f2448);};a0_0x375b['KwOYEM']=_0x35640c,a0_0x375b['IYPKjC']={},a0_0x375b['rPdkQd']=!![];}const _0x2414a3=_0x3fdacb[0x0],_0x442697=_0x4401a4+_0x2414a3,_0x35ac48=a0_0x375b['IYPKjC'][_0x442697];return!_0x35ac48?(_0x375b00=a0_0x375b['KwOYEM'](_0x375b00),a0_0x375b['IYPKjC'][_0x442697]=_0x375b00):_0x375b00=_0x35ac48,_0x375b00;}function renderEntries(){const _0x119e60=a0_0x31a990,_0x88ebf7={'trabH':_0x119e60(0x23a)},_0x5af756=document[_0x119e60(0x18d)]('entriesList');document[_0x119e60(0x18d)](_0x88ebf7[_0x119e60(0x1fe)])[_0x119e60(0x21f)]='Liste\x20('+entries[_0x119e60(0x1c1)]+')',_0x5af756[_0x119e60(0x220)]=entries[_0x119e60(0x1b5)]((_0x282cc8,_0x257567)=>_0x119e60(0x25a)+esc(_0x282cc8['name'])+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x282cc8[_0x119e60(0x1ae)]?_0x119e60(0x25f)+esc(_0x282cc8['title'])+_0x119e60(0x225):'')+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x282cc8[_0x119e60(0x217)]?_0x119e60(0x261)+esc(_0x282cc8[_0x119e60(0x217)])+'</div>':'')+'\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20<button\x20class=\x22remove-btn\x22\x20onclick=\x22removeEntry('+_0x257567+_0x119e60(0x1b3))[_0x119e60(0x260)]('');}function esc(_0x43249b){const _0x4023db=a0_0x31a990,_0x15b3d6={'nkdth':'div'},_0x5c6bec=document[_0x4023db(0x20a)](_0x15b3d6[_0x4023db(0x198)]);return _0x5c6bec['textContent']=_0x43249b,_0x5c6bec[_0x4023db(0x220)];}function removeEntry(_0x433c6f){const _0x81bbe0=a0_0x31a990,_0x1a7933={'MCIuN':function(_0x376326){return _0x376326();}};entries[_0x81bbe0(0x18b)](_0x433c6f,0x1),_0x1a7933[_0x81bbe0(0x234)](renderEntries),_0x1a7933[_0x81bbe0(0x234)](renderBadges);}function clearAll(){const _0x536681=a0_0x31a990,_0x5074b5={'GNQkZ':function(_0x470ad2){return _0x470ad2();}};entries=[],renderEntries(),_0x5074b5[_0x536681(0x1ef)](renderBadges);}function renderBadges(){const _0x24a17b=a0_0x31a990,_0xa3d118={'ccxwn':_0x24a17b(0x211),'zQIyX':_0x24a17b(0x189),'XrNPu':'fontSize_name','UaUyi':_0x24a17b(0x1ad),'tHBFD':_0x24a17b(0x237),'edduv':_0x24a17b(0x1f1),'TXGlT':_0x24a17b(0x1b6),'tWZux':_0x24a17b(0x1ec),'xUgCH':_0x24a17b(0x250),'utaCY':_0x24a17b(0x1cb),'BOZmk':function(_0x54e425,_0x347600){return _0x54e425>_0x347600;},'UCuVn':'Fornavn\x20Etternavn','TWMrG':_0x24a17b(0x1c5),'fVnrs':_0x24a17b(0x1c8),'aMzTw':function(_0x1e9565,_0x5fa0f){return _0x1e9565<_0x5fa0f;},'VCqWH':function(_0x4b0b3c,_0x51406b){return _0x4b0b3c>_0x51406b;},'clLKO':function(_0x313cba,_0x563712){return _0x313cba(_0x563712);}},_0x3f2527=document[_0x24a17b(0x18d)](_0x24a17b(0x269)),_0x18bcfe=document['getElementById'](_0xa3d118[_0x24a17b(0x1f3)])['value']||0x5c,_0x402c1f=document['getElementById'](_0xa3d118['zQIyX'])[_0x24a17b(0x1e4)]||0x3b,_0x6647ec=document['getElementById'](_0xa3d118[_0x24a17b(0x25b)])[_0x24a17b(0x1e4)]||0x12,_0x5141b4=document[_0x24a17b(0x18d)](_0xa3d118[_0x24a17b(0x213)])[_0x24a17b(0x1e4)]||0xc,_0x3dd732=document[_0x24a17b(0x18d)](_0xa3d118[_0x24a17b(0x1c3)])[_0x24a17b(0x1e4)]||0x9,_0x1cf080=entries['length']>0x0||logoDataUrl||qrDataUrl;if(!_0x1cf080){_0x3f2527[_0x24a17b(0x220)]=_0xa3d118['edduv'];return;}document[_0x24a17b(0x192)](_0xa3d118[_0x24a17b(0x1af)])[_0x24a17b(0x263)](_0x464cd8=>_0x464cd8[_0x24a17b(0x18f)][_0x24a17b(0x204)]='');const _0x5dd740=0x8,_0x18057f=qrDataUrl?_0x24a17b(0x1ca)+qrDataUrl+'\x22\x20alt=\x22QR\x22>':'',_0x483193=_0x24a17b(0x224)+currentLayout,_0x509d1b={'left':_0xa3d118[_0x24a17b(0x25d)],'center':_0xa3d118[_0x24a17b(0x1cc)],'right':_0xa3d118[_0x24a17b(0x199)]},_0x402532=logoDataUrl?'<div\x20style=\x22display:flex;justify-content:'+_0x509d1b[logoAlign]+_0x24a17b(0x1a6)+logoDataUrl+_0x24a17b(0x209)+logoWidthPct+_0x24a17b(0x1fc):'',_0x498e3a=_0xa3d118[_0x24a17b(0x1f5)](entries[_0x24a17b(0x1c1)],0x0)?entries:[{'name':_0xa3d118[_0x24a17b(0x1e1)],'title':_0xa3d118[_0x24a17b(0x236)],'company':_0xa3d118[_0x24a17b(0x1a9)]}];let _0xd56fd8=entries[_0x24a17b(0x1c1)]>0x0?_0x24a17b(0x230)+entries[_0x24a17b(0x1c1)]+_0x24a17b(0x239)+Math[_0x24a17b(0x1db)](entries[_0x24a17b(0x1c1)]/_0x5dd740)+_0x24a17b(0x26b):'';for(let _0x59ea3a=0x0;_0xa3d118[_0x24a17b(0x194)](_0x59ea3a,_0x498e3a[_0x24a17b(0x1c1)]);_0x59ea3a++){if(_0x59ea3a%_0x5dd740===0x0){if(_0xa3d118[_0x24a17b(0x1f0)](_0x59ea3a,0x0))_0xd56fd8+='</div>';_0xd56fd8+='<div\x20class=\x22page\x22>';}const _0x3cec71=_0x498e3a[_0x59ea3a];_0xd56fd8+=_0x24a17b(0x19d)+_0x483193+_0x24a17b(0x1a7)+_0x18bcfe+_0x24a17b(0x18e)+_0x402c1f+_0x24a17b(0x232)+_0x402532+_0x24a17b(0x1b7)+_0x18057f+_0x24a17b(0x1d7)+currentFont+_0x24a17b(0x25e)+_0x6647ec+_0x24a17b(0x17b)+_0xa3d118['clLKO'](esc,_0x3cec71['name'])+'</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20'+(_0x3cec71[_0x24a17b(0x1ae)]?_0x24a17b(0x20d)+currentFont+_0x24a17b(0x25e)+_0x5141b4+'pt\x22>'+_0xa3d118[_0x24a17b(0x185)](esc,_0x3cec71[_0x24a17b(0x1ae)])+_0x24a17b(0x225):'')+_0x24a17b(0x1c4)+(_0x3cec71['company']?_0x24a17b(0x1bd)+currentFont+'\x27,sans-serif;font-size:'+_0x3dd732+'pt\x22>'+esc(_0x3cec71[_0x24a17b(0x217)])+_0x24a17b(0x225):'')+_0x24a17b(0x265);}_0xd56fd8+='</div>',_0x3f2527[_0x24a17b(0x220)]=_0xd56fd8;}let resetPending=![];function resetAll(){const _0xc91794=a0_0x31a990,_0x237496={'boHgj':_0xc91794(0x219),'QJlil':'Nullstill','ZcWJm':_0xc91794(0x250),'Gvlyo':_0xc91794(0x20b),'kFFBu':_0xc91794(0x1ed),'WNzBp':'badgeHeight','sqWuK':_0xc91794(0x218),'HulrP':_0xc91794(0x1eb),'XQmzd':_0xc91794(0x262),'sfdwi':_0xc91794(0x1d3),'Xlzdm':_0xc91794(0x237),'ysAWZ':'fontSelect','ZYiFd':_0xc91794(0x18a),'qXLNI':_0xc91794(0x19e),'vOlgJ':_0xc91794(0x1d9),'RdMGG':_0xc91794(0x21c),'gegkk':'has-file','wMCws':'logoControls','FzvuV':_0xc91794(0x223),'cJTnx':_0xc91794(0x1dd),'lKMLm':_0xc91794(0x252),'QjZua':_0xc91794(0x1b6),'UTwTK':_0xc91794(0x184),'ytVOy':_0xc91794(0x1ff),'jdkNx':_0xc91794(0x26c),'IySlu':function(_0x5643cf){return _0x5643cf();},'NSxcV':function(_0x3e501a){return _0x3e501a();}},_0x6cd72=document[_0xc91794(0x18d)](_0xc91794(0x1b9));if(!resetPending){const _0x106d83='1|4|5|0|2|3'[_0xc91794(0x201)]('|');let _0x4b94d9=0x0;while(!![]){switch(_0x106d83[_0x4b94d9++]){case'0':_0x6cd72['style'][_0xc91794(0x1e5)]='#fff';continue;case'1':resetPending=!![];continue;case'2':_0x6cd72[_0xc91794(0x18f)][_0xc91794(0x23f)]='#c0392b';continue;case'3':return;case'4':_0x6cd72['textContent']=_0xc91794(0x1e3);continue;case'5':_0x6cd72[_0xc91794(0x18f)]['background']=_0x237496['boHgj'];continue;}break;}}resetPending=![],_0x6cd72[_0xc91794(0x21f)]=_0x237496['QJlil'],_0x6cd72[_0xc91794(0x18f)]['background']='',_0x6cd72['style'][_0xc91794(0x1e5)]='',_0x6cd72[_0xc91794(0x18f)][_0xc91794(0x23f)]='',entries=[],logoDataUrl=null,qrDataUrl=null,qrCodeInstance=null,logoWidthPct=0x64,logoAlign=_0x237496['ZcWJm'],currentLayout='a',currentFont=_0x237496[_0xc91794(0x20c)],qrDotStyle=_0x237496[_0xc91794(0x1c2)],document[_0xc91794(0x18d)]('badgeWidth')['value']=0x5c,document[_0xc91794(0x18d)](_0x237496[_0xc91794(0x1dc)])[_0xc91794(0x1e4)]=0x3b,document['getElementById'](_0x237496[_0xc91794(0x1a5)])['value']='',document[_0xc91794(0x18d)](_0x237496[_0xc91794(0x187)])[_0xc91794(0x1e4)]=_0xc91794(0x203),document['getElementById'](_0xc91794(0x22e))[_0xc91794(0x220)]='',document[_0xc91794(0x18d)](_0x237496[_0xc91794(0x26d)])[_0xc91794(0x1e4)]='',document[_0xc91794(0x18d)](_0x237496[_0xc91794(0x1bf)])[_0xc91794(0x1e4)]=0x12,document['getElementById'](_0xc91794(0x1ad))[_0xc91794(0x1e4)]=0xc,document['getElementById'](_0x237496['Xlzdm'])['value']=0x9,document[_0xc91794(0x18d)](_0x237496[_0xc91794(0x1df)])[_0xc91794(0x1e4)]=_0xc91794(0x20b),document[_0xc91794(0x18d)](_0x237496[_0xc91794(0x246)])[_0xc91794(0x1e4)]=0x64,document[_0xc91794(0x18d)](_0x237496[_0xc91794(0x22f)])['textContent']=_0x237496[_0xc91794(0x17c)];const _0x421db7=document['getElementById'](_0x237496['RdMGG']);_0x421db7['classList'][_0xc91794(0x1d0)](_0x237496[_0xc91794(0x1bb)]),_0x421db7[_0xc91794(0x220)]='<span\x20class=\x22upload-text\x22>Last\x20opp\x20logo</span><span\x20class=\x22upload-hint\x22>.png\x20/\x20.jpg</span><input\x20type=\x22file\x22\x20accept=\x22image/*\x22\x20onchange=\x22loadLogo(event)\x22>',document[_0xc91794(0x18d)](_0x237496['wMCws'])[_0xc91794(0x18f)][_0xc91794(0x204)]=_0x237496[_0xc91794(0x241)];const _0x2eae64=document['getElementById'](_0x237496[_0xc91794(0x264)]);_0x2eae64[_0xc91794(0x22c)]['remove'](_0x237496['gegkk']),_0x2eae64[_0xc91794(0x220)]=_0x237496[_0xc91794(0x1f4)],document[_0xc91794(0x192)](_0x237496[_0xc91794(0x190)])[_0xc91794(0x263)](_0x2ea1ea=>_0x2ea1ea[_0xc91794(0x18f)][_0xc91794(0x204)]=_0xc91794(0x223)),document[_0xc91794(0x192)](_0x237496[_0xc91794(0x1b2)])['forEach'](_0x10fed0=>_0x10fed0[_0xc91794(0x22c)][_0xc91794(0x1d0)](_0xc91794(0x26c))),document['querySelector'](_0x237496[_0xc91794(0x19a)])['classList'][_0xc91794(0x1f2)](_0x237496[_0xc91794(0x216)]),_0x237496[_0xc91794(0x17d)](renderEntries),_0x237496[_0xc91794(0x1a2)](renderBadges);}document['addEventListener'](a0_0x31a990(0x20f),function(_0x4656c5){const _0x5b608b=a0_0x31a990,_0x69f884={'MpykA':_0x5b608b(0x1b9)};if(resetPending&&_0x4656c5[_0x5b608b(0x22a)]['id']!==_0x69f884['MpykA']){resetPending=![];const _0x25a1d6=document[_0x5b608b(0x18d)](_0x69f884[_0x5b608b(0x202)]);_0x25a1d6[_0x5b608b(0x21f)]=_0x5b608b(0x1a0),_0x25a1d6[_0x5b608b(0x18f)][_0x5b608b(0x23c)]='',_0x25a1d6[_0x5b608b(0x18f)][_0x5b608b(0x1e5)]='',_0x25a1d6[_0x5b608b(0x18f)][_0x5b608b(0x23f)]='';}});function printBadges(){const _0x4a1e3c=a0_0x31a990,_0xa69e57={'CWMjA':function(_0x1626da,_0x1a8b1a){return _0x1626da===_0x1a8b1a;},'blmfl':function(_0x5396bb,_0x15a2a6){return _0x5396bb(_0x15a2a6);}};if(_0xa69e57[_0x4a1e3c(0x249)](entries['length'],0x0)){_0xa69e57[_0x4a1e3c(0x1d6)](alert,_0x4a1e3c(0x207));return;}window[_0x4a1e3c(0x245)]();}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-<script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --bg: #f5f3f0;
-    --surface: #ffffff;
-    --border: #1a1a1a;
-    --text: #1a1a1a;
-    --text-muted: #6b6560;
-    --accent: #1a1a1a;
-    --mono: 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
-  }
-
-  body {
-    font-family: var(--mono);
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    font-size: 12px;
-  }
-
-  .app-header {
-    background: var(--surface);
-    padding: 16px 28px;
-    border-bottom: 2px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .app-header h1 {
-    font-size: 56px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-
-  .container {
-    display: flex;
-    height: calc(100vh - 52px);
-  }
-
-  .sidebar {
-    width: 380px;
-    min-width: 380px;
-    background: var(--surface);
-    border-right: 2px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-  }
-
-  .sidebar-section {
-    padding: 20px 24px;
-    border-bottom: 1px solid #d4d0cc;
-  }
-
-  .sidebar-section h3 {
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-muted);
-    margin-bottom: 14px;
-  }
-
-  .sidebar-section label {
-    display: block;
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-    margin-top: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .sidebar-section label:first-of-type {
-    margin-top: 0;
-  }
-
-  textarea {
-    width: 100%;
-    height: 160px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 11px;
-    padding: 10px;
-    resize: vertical;
-  }
-
-  textarea:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--border);
-  }
-
-  textarea::placeholder {
-    color: #aaa5a0;
-  }
-
-  input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 4px;
-    background: var(--border);
-    outline: none;
-    cursor: pointer;
-  }
-
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 14px;
-    height: 14px;
-    background: var(--border);
-    border: 2px solid var(--surface);
-    box-shadow: 0 0 0 1px var(--border);
-    cursor: pointer;
-  }
-
-  .format-hint {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-top: 8px;
-    line-height: 1.5;
-  }
-
-  input[type="number"], input[type="text"], input[type="url"], select {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 12px;
-    padding: 6px 8px;
-    width: 100%;
-  }
-
-  select {
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231a1a1a'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 8px center;
-    padding-right: 24px;
-  }
-
-  input:focus, select:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--border);
-  }
-
-  .size-row {
-    display: flex;
-    gap: 12px;
-  }
-
-  .size-row > div { flex: 1; }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 16px;
-    border: 2px solid var(--border);
-    background: var(--surface);
-    font-family: var(--mono);
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    transition: all 0.1s;
-    color: var(--text);
-  }
-
-  .btn:hover {
-    background: var(--border);
-    color: var(--surface);
-  }
-
-  .btn-primary {
-    background: var(--border);
-    color: var(--surface);
-  }
-
-  .btn-primary:hover {
-    background: var(--surface);
-    color: var(--border);
-  }
-
-  .btn-full {
-    width: 100%;
-    margin-top: 12px;
-  }
-
-  .upload-area {
-    border: 1px dashed var(--border);
-    padding: 20px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.1s;
-    position: relative;
-    background: var(--bg);
-  }
-
-  .upload-area:hover {
-    background: var(--border);
-    color: var(--surface);
-  }
-
-  #logoArea:hover {
-    background: #c4d9c4;
-    color: var(--text);
-    border-color: #6a9a6a;
-  }
-
-  .upload-area.has-file {
-    border-style: solid;
-    background: var(--surface);
-  }
-
-  .upload-area .upload-text {
-    font-size: 14px;
-    display: block;
-  }
-
-  .upload-area .upload-filename {
-    font-size: 14px;
-    font-weight: 700;
-    margin-top: 4px;
-    display: block;
-  }
-
-  .upload-area .upload-hint {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-top: 4px;
-    display: block;
-  }
-
-  .upload-area input[type="file"] {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  .upload-area img {
-    max-width: 60px;
-    max-height: 60px;
-    display: block;
-    margin: 0 auto 6px auto;
-  }
-
-  .tabs {
-    display: flex;
-    gap: 0;
-    margin-bottom: 14px;
-    border: 1px solid var(--border);
-  }
-
-  .tab {
-    flex: 1;
-    padding: 8px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: 700;
-    font-family: var(--mono);
-    cursor: pointer;
-    background: var(--bg);
-    color: var(--text-muted);
-    border: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.1s;
-  }
-
-  .tab:not(:last-child) { border-right: 1px solid var(--border); }
-
-  .tab.active {
-    background: var(--border);
-    color: var(--surface);
-  }
-
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
-
-  .preview-area {
-    flex: 1;
-    overflow-y: auto;
-    padding: 30px;
-    background: var(--bg);
-  }
-
-  .preview-area .page {
-    width: 210mm;
-    height: 297mm;
-    margin: 0 auto 24px auto;
-    background: white;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    padding: 10mm;
-    gap: 4mm;
-    box-shadow: 4px 4px 0 var(--border);
-    border: 1px solid var(--border);
-  }
-
-  .badge {
-    width: 92mm;
-    height: 59mm;
-    border: 0.3mm solid #ccc;
+    min-width: 0;
     overflow: hidden;
-    position: relative;
-    padding: 5mm;
-    background: white;
-    color: #000;
-  }
-
-  .badge-top {
-    position: absolute;
-    top: 5mm;
-    left: 5mm;
-    right: 5mm;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  .badge-top .logo-img {
-    height: auto;
-    display: block;
-    object-fit: contain;
-  }
-
-  .badge-bottom {
-    position: absolute;
-    bottom: 5mm;
-    left: 5mm;
-    right: 5mm;
-    z-index: 1;
-  }
-
-  /* Layout A: Klassisk (default) */
-  .badge--layout-a .badge-bottom {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 4mm;
-  }
-
-  .badge--layout-a .badge-bottom .qr {
-    width: 18mm;
-    height: 18mm;
-    flex-shrink: 0;
-  }
-
-  .badge--layout-a .badge-bottom .qr img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: left bottom;
-  }
-
-  .badge--layout-a .badge-bottom .info {
-    text-align: right;
-    flex: 1;
+    word-break: break-word;
   }
 
   /* Layout C: Speilvendt */
@@ -1223,6 +405,9 @@ const a0_0x31a990=a0_0x375b;(function(_0x4bc148,_0x1ff6ce){const _0x11555e=a0_0x
   .badge--layout-c .badge-bottom .info {
     text-align: left;
     flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    word-break: break-word;
   }
 
   /* Badge text styles (default) */
@@ -1506,28 +691,30 @@ const a0_0x31a990=a0_0x375b;(function(_0x4bc148,_0x1ff6ce){const _0x11555e=a0_0x
       <div class="size-row">
         <div>
           <label>Bredde mm</label>
-          <input type="number" id="badgeWidth" value="92" onchange="renderBadges()">
+          <input type="number" id="badgeWidth" value="92" onchange="saveState(); renderBadges()">
         </div>
         <div>
           <label>Hoyde mm</label>
-          <input type="number" id="badgeHeight" value="59" onchange="renderBadges()">
+          <input type="number" id="badgeHeight" value="59" onchange="saveState(); renderBadges()">
         </div>
       </div>
+      <button onclick="resetBadgeSize()" style="margin-top:8px;font-size:11px;font-family:var(--mono);background:none;border:1px solid #ccc;padding:4px 10px;cursor:pointer;color:var(--text-muted);letter-spacing:0.5px">Nullstill (92×59)</button>
     </div>
 
     <!-- 1. Logo -->
     <div class="sidebar-section">
       <h3>Logo</h3>
       <div class="upload-area" id="logoArea" style="background:#f0f7f0;border-color:#8cb88c">
-        <span class="upload-text">Last opp logo</span>
+        <span class="upload-text">Slipp logo her, eller klikk</span>
         <span class="upload-hint">.png / .jpg</span>
         <input type="file" accept="image/*" onchange="loadLogo(event)">
       </div>
+      <button onclick="loadDemoLogo()" style="margin-top:8px;font-size:11px;font-family:var(--mono);background:none;border:1px solid #ccc;padding:4px 10px;cursor:pointer;color:var(--text-muted);letter-spacing:0.5px">Last inn eksempellogo</button>
       <div class="format-hint">
         Min. 300px bredde for god utskriftskvalitet.
       </div>
-      <div id="logoControls" style="display:none">
-        <label>Bredde</label>
+      <div id="logoControls" style="display:none;margin-top:12px">
+        <label>Størrelse</label>
         <div style="display:flex;align-items:center;gap:10px">
           <input type="range" id="logoWidth" min="20" max="100" value="100" oninput="updateLogoWidth()" style="flex:1">
           <span id="logoWidthVal" style="font-size:11px;min-width:32px">100%</span>
@@ -1537,6 +724,11 @@ const a0_0x31a990=a0_0x375b;(function(_0x4bc148,_0x1ff6ce){const _0x11555e=a0_0x
           <button class="layout-btn" data-align="left" onclick="setLogoAlign('left', this)">Venstre</button>
           <button class="layout-btn active" data-align="center" onclick="setLogoAlign('center', this)">Sentrert</button>
           <button class="layout-btn" data-align="right" onclick="setLogoAlign('right', this)">H&oslash;yre</button>
+        </div>
+        <label>Vertikal</label>
+        <div style="display:flex;align-items:center;gap:10px">
+          <input type="range" id="logoY" min="0" max="100" value="0" oninput="updateLogoY()" style="flex:1">
+          <span id="logoYVal" style="font-size:11px;min-width:32px">0%</span>
         </div>
       </div>
     </div>
@@ -1554,6 +746,13 @@ const a0_0x31a990=a0_0x375b;(function(_0x4bc148,_0x1ff6ce){const _0x11555e=a0_0x
           <button class="qr-style-btn active" data-style="square" onclick="setQrStyle('square', this)">&#9632; Kantet</button>
           <button class="qr-style-btn" data-style="dots" onclick="setQrStyle('dots', this)">&#9679; Prikker</button>
           <button class="qr-style-btn" data-style="rounded" onclick="setQrStyle('rounded', this)">&#9673; Avrundet</button>
+        </div>
+        <div style="margin-top:10px">
+          <label>Størrelse <span id="qrScanWarning" style="color:#c0392b;font-weight:400;display:none">(test skanning etter print)</span></label>
+          <div style="display:flex;align-items:center;gap:10px">
+            <input type="range" id="qrSize" min="5" max="40" value="18" oninput="updateQrSize()" style="flex:1">
+            <span id="qrSizeVal" style="font-size:11px;min-width:32px">18mm</span>
+          </div>
         </div>
         <div id="qrPreview" style="margin-top:12px;text-align:center"></div>
     </div>
@@ -1573,6 +772,7 @@ const a0_0x31a990=a0_0x375b;(function(_0x4bc148,_0x1ff6ce){const _0x11555e=a0_0x
           <span class="upload-hint">.xlsx / .csv</span>
           <input type="file" accept=".xlsx,.xls,.csv" onchange="loadExcel(event)">
         </div>
+        <button onclick="loadDemoData()" style="margin-top:8px;font-size:11px;font-family:var(--mono);background:none;border:1px solid #ccc;padding:4px 10px;cursor:pointer;color:var(--text-muted);letter-spacing:0.5px">Last inn eksempel-CSV</button>
         <div class="excel-columns">
           Tre kolonner: <strong>Navn</strong>, <strong>Stilling</strong>, <strong>Firma</strong>
         </div>
@@ -1642,7 +842,7 @@ const a0_0x31a990=a0_0x375b;(function(_0x4bc148,_0x1ff6ce){const _0x11555e=a0_0x
 
   <div class="preview-area" id="previewArea">
     <div class="empty-state">
-      <p>Versjon 1.0<br>Hallvar Bugge Johnsen<br>hei@hallvar.no</p>
+      <p>Badger versjon 1.0<br><br>Av Hallvar Bugge Johnsen<br>hei@hallvar.no</p>
     </div>
   </div>
 </div>
@@ -1657,15 +857,16 @@ let qrDotStyle = 'square';
 let qrCodeInstance = null;
 let logoWidthPct = 100;
 let logoAlign = 'center';
+let logoYPct = 0;
+let qrSizeMm = 18;
 
 const layoutDescriptions = {
   a: 'H\u00f8yrestilt \u2014 QR venstre, info h\u00f8yre',
   c: 'Venstrestilt \u2014 info venstre, QR h\u00f8yre'
 };
 
-function loadLogo(event) {
-  const file = event.target.files[0];
-  if (!file) return;
+function handleLogoFile(file) {
+  if (!file || !file.type.startsWith('image/')) return;
   const reader = new FileReader();
   reader.onload = function(e) {
     logoDataUrl = e.target.result;
@@ -1680,6 +881,51 @@ function loadLogo(event) {
   };
   reader.readAsDataURL(file);
 }
+
+function loadLogo(event) {
+  handleLogoFile(event.target.files[0]);
+}
+
+function loadDemoLogo() {
+  fetch('badger-demo-icon.svg')
+    .then(r => r.blob())
+    .then(blob => {
+      const file = new File([blob], 'badger-demo-icon.svg', { type: 'image/svg+xml' });
+      handleLogoFile(file);
+    })
+    .catch(() => {});
+}
+
+function loadDemoData() {
+  fetch('grevlingberget_ansatte.csv')
+    .then(r => r.blob())
+    .then(blob => {
+      const file = new File([blob], 'grevlingberget_ansatte.csv', { type: 'text/csv' });
+      loadExcel({ target: { files: [file] } });
+    })
+    .catch(() => {});
+}
+
+(function() {
+  const area = document.getElementById('logoArea');
+  area.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    area.style.background = '#c4d9c4';
+    area.style.borderColor = '#6a9a6a';
+  });
+  area.addEventListener('dragleave', function(e) {
+    e.preventDefault();
+    area.style.background = '';
+    area.style.borderColor = '';
+  });
+  area.addEventListener('drop', function(e) {
+    e.preventDefault();
+    area.style.background = '';
+    area.style.borderColor = '';
+    const file = e.dataTransfer.files[0];
+    handleLogoFile(file);
+  });
+})();
 
 const countryMap = {
   'faroe': 'Faroe Islands',
@@ -1831,10 +1077,22 @@ function updateLogoWidth() {
   renderBadges();
 }
 
+function updateQrSize() {
+  qrSizeMm = document.getElementById('qrSize').value;
+  document.getElementById('qrSizeVal').textContent = qrSizeMm + 'mm';
+  renderBadges();
+}
+
 function setLogoAlign(align, el) {
   logoAlign = align;
   el.closest('.layout-row').querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
+  renderBadges();
+}
+
+function updateLogoY() {
+  logoYPct = document.getElementById('logoY').value;
+  document.getElementById('logoYVal').textContent = logoYPct + '%';
   renderBadges();
 }
 
@@ -1967,10 +1225,13 @@ function renderBadges() {
   const fontName = document.getElementById('fontSize_name').value || 18;
   const fontComm = document.getElementById('fontSize_commission').value || 12;
   const fontCompany = document.getElementById('fontSize_company').value || 9;
+  qrSizeMm = document.getElementById('qrSize').value || 18;
+
+  document.getElementById('qrScanWarning').style.display = qrDataUrl ? 'inline' : 'none';
 
   const hasContent = entries.length > 0 || logoDataUrl || qrDataUrl;
   if (!hasContent) {
-    area.innerHTML = '<div class="empty-state"><p>Versjon 1.0<br>Hallvar Bugge Johnsen<br>hei@hallvar.no</p></div>';
+    area.innerHTML = '<div class="empty-state"><p>Badger versjon 1.0<br><br>Av Hallvar Bugge Johnsen<br>hei@hallvar.no</p></div>';
     return;
   }
 
@@ -1981,7 +1242,7 @@ function renderBadges() {
   const layoutClass = `badge--layout-${currentLayout}`;
   const alignMap = { left: 'flex-start', center: 'center', right: 'flex-end' };
   const logoHtml = logoDataUrl
-    ? `<div style="display:flex;justify-content:${alignMap[logoAlign]}"><img class="logo-img" src="${logoDataUrl}" alt="Logo" style="width:${logoWidthPct}%;height:auto"></div>`
+    ? `<div style="display:flex;justify-content:${alignMap[logoAlign]};margin-top:${logoYPct}%"><img class="logo-img" src="${logoDataUrl}" alt="Logo" style="width:${logoWidthPct}%;height:auto"></div>`
     : '';
 
   const displayEntries = entries.length > 0
@@ -2004,7 +1265,7 @@ function renderBadges() {
           ${logoHtml}
         </div>
         <div class="badge-bottom">
-          <div class="qr">${qrImg}</div>
+          <div class="qr" style="width:${qrSizeMm}mm;height:${qrSizeMm}mm">${qrImg}</div>
           <div class="info">
             <div class="name" style="font-family:'${currentFont}',sans-serif;font-size:${fontName}pt">${esc(e.name)}</div>
             ${e.title ? `<div class="commission" style="font-family:'${currentFont}',sans-serif;font-size:${fontComm}pt">${esc(e.title)}</div>` : ''}
@@ -2017,6 +1278,7 @@ function renderBadges() {
   html += '</div>';
 
   area.innerHTML = html;
+  saveState();
 }
 
 let resetPending = false;
@@ -2043,15 +1305,19 @@ function resetAll() {
   qrCodeInstance = null;
   logoWidthPct = 100;
   logoAlign = 'center';
+  logoYPct = 0;
   currentLayout = 'a';
   currentFont = 'Lato';
   qrDotStyle = 'square';
+  qrSizeMm = 18;
 
   document.getElementById('badgeWidth').value = 92;
   document.getElementById('badgeHeight').value = 59;
   document.getElementById('qrUrl').value = '';
   document.getElementById('qrColor').value = '#000000';
   document.getElementById('qrPreview').innerHTML = '';
+  document.getElementById('qrSize').value = 18;
+  document.getElementById('qrSizeVal').textContent = '18mm';
   document.getElementById('inputList').value = '';
   document.getElementById('fontSize_name').value = 18;
   document.getElementById('fontSize_commission').value = 12;
@@ -2059,10 +1325,12 @@ function resetAll() {
   document.getElementById('fontSelect').value = 'Lato';
   document.getElementById('logoWidth').value = 100;
   document.getElementById('logoWidthVal').textContent = '100%';
+  document.getElementById('logoY').value = 0;
+  document.getElementById('logoYVal').textContent = '0%';
 
   const logoArea = document.getElementById('logoArea');
   logoArea.classList.remove('has-file');
-  logoArea.innerHTML = '<span class="upload-text">Last opp logo</span><span class="upload-hint">.png / .jpg</span><input type="file" accept="image/*" onchange="loadLogo(event)">';
+  logoArea.innerHTML = '<span class="upload-text">Slipp logo her, eller klikk</span><span class="upload-hint">.png / .jpg</span><input type="file" accept="image/*" onchange="loadLogo(event)">';
   document.getElementById('logoControls').style.display = 'none';
 
   const excelArea = document.getElementById('excelArea');
@@ -2073,6 +1341,7 @@ function resetAll() {
   document.querySelectorAll('.qr-style-btn').forEach(b => b.classList.remove('active'));
   document.querySelector('.qr-style-btn[data-style="square"]').classList.add('active');
 
+  localStorage.removeItem('badger_state');
   renderEntries();
   renderBadges();
 }
@@ -2087,6 +1356,115 @@ document.addEventListener('click', function(e) {
     btn.style.borderColor = '';
   }
 });
+
+function saveState() {
+  const state = {
+    badgeWidth: document.getElementById('badgeWidth').value,
+    badgeHeight: document.getElementById('badgeHeight').value,
+    entries: entries,
+    logoDataUrl: logoDataUrl,
+    logoWidthPct: logoWidthPct,
+    logoAlign: logoAlign,
+    logoYPct: logoYPct,
+    qrDataUrl: qrDataUrl,
+    qrUrl: document.getElementById('qrUrl').value,
+    qrColor: document.getElementById('qrColor').value,
+    qrDotStyle: qrDotStyle,
+    qrSizeMm: qrSizeMm,
+    currentLayout: currentLayout,
+    currentFont: currentFont,
+    fontName: document.getElementById('fontSize_name').value,
+    fontComm: document.getElementById('fontSize_commission').value,
+    fontCompany: document.getElementById('fontSize_company').value
+  };
+  localStorage.setItem('badger_state', JSON.stringify(state));
+}
+
+function loadState() {
+  const raw = localStorage.getItem('badger_state');
+  if (!raw) return;
+  try {
+    const s = JSON.parse(raw);
+
+    if (s.badgeWidth) document.getElementById('badgeWidth').value = s.badgeWidth;
+    if (s.badgeHeight) document.getElementById('badgeHeight').value = s.badgeHeight;
+
+    if (s.entries && s.entries.length) {
+      entries = s.entries;
+      renderEntries();
+    }
+
+    if (s.logoDataUrl) {
+      logoDataUrl = s.logoDataUrl;
+      const area = document.getElementById('logoArea');
+      area.classList.add('has-file');
+      area.innerHTML = `<img src="${logoDataUrl}" alt="Logo" style="max-width:200px;max-height:50px">
+        <span class="upload-filename">Lagret logo</span>
+        <input type="file" accept="image/*" onchange="loadLogo(event)">`;
+      document.getElementById('logoControls').style.display = '';
+    }
+    if (s.logoWidthPct != null) {
+      logoWidthPct = s.logoWidthPct;
+      document.getElementById('logoWidth').value = logoWidthPct;
+      document.getElementById('logoWidthVal').textContent = logoWidthPct + '%';
+    }
+    if (s.logoAlign) {
+      logoAlign = s.logoAlign;
+      document.querySelectorAll('.layout-btn[data-align]').forEach(b => {
+        b.classList.toggle('active', b.dataset.align === logoAlign);
+      });
+    }
+    if (s.logoYPct != null) {
+      logoYPct = s.logoYPct;
+      document.getElementById('logoY').value = logoYPct;
+      document.getElementById('logoYVal').textContent = logoYPct + '%';
+    }
+
+    if (s.qrDataUrl) {
+      qrDataUrl = s.qrDataUrl;
+      const preview = document.getElementById('qrPreview');
+      preview.innerHTML = `<img src="${qrDataUrl}" style="max-width:80px;max-height:80px;border:1px solid #ccc">`;
+    }
+    if (s.qrUrl) document.getElementById('qrUrl').value = s.qrUrl;
+    if (s.qrColor) document.getElementById('qrColor').value = s.qrColor;
+    if (s.qrDotStyle) {
+      qrDotStyle = s.qrDotStyle;
+      document.querySelectorAll('.qr-style-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.style === qrDotStyle);
+      });
+    }
+    if (s.qrSizeMm != null) {
+      qrSizeMm = s.qrSizeMm;
+      document.getElementById('qrSize').value = qrSizeMm;
+      document.getElementById('qrSizeVal').textContent = qrSizeMm + 'mm';
+    }
+
+    if (s.currentLayout) {
+      currentLayout = s.currentLayout;
+      document.querySelectorAll('.layout-btn[data-layout]').forEach(b => {
+        b.classList.toggle('active', b.dataset.layout === currentLayout);
+      });
+    }
+    if (s.currentFont) {
+      currentFont = s.currentFont;
+      document.getElementById('fontSelect').value = currentFont;
+    }
+    if (s.fontName) document.getElementById('fontSize_name').value = s.fontName;
+    if (s.fontComm) document.getElementById('fontSize_commission').value = s.fontComm;
+    if (s.fontCompany) document.getElementById('fontSize_company').value = s.fontCompany;
+
+    renderBadges();
+  } catch(e) {}
+}
+
+function resetBadgeSize() {
+  document.getElementById('badgeWidth').value = 92;
+  document.getElementById('badgeHeight').value = 59;
+  saveState();
+  renderBadges();
+}
+
+loadState();
 
 function printBadges() {
   if (entries.length === 0) {

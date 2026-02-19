@@ -1,2 +1,1479 @@
 <!DOCTYPE html>
-<meta http-equiv="refresh" content="0;url=badger.html">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Badger</title>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link id="badgeFontLink" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #f5f3f0;
+    --surface: #ffffff;
+    --border: #1a1a1a;
+    --text: #1a1a1a;
+    --text-muted: #6b6560;
+    --accent: #1a1a1a;
+    --mono: 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
+  }
+
+  body {
+    font-family: var(--mono);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-size: 12px;
+  }
+
+  .app-header {
+    background: var(--surface);
+    padding: 16px 28px;
+    border-bottom: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .app-header h1 {
+    font-size: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+
+  .container {
+    display: flex;
+    height: calc(100vh - 52px);
+  }
+
+  .sidebar {
+    width: 380px;
+    min-width: 380px;
+    background: var(--surface);
+    border-right: 2px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .sidebar-section {
+    padding: 20px 24px;
+    border-bottom: 1px solid #d4d0cc;
+  }
+
+  .sidebar-section h3 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+  }
+
+  .sidebar-section label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    margin-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .sidebar-section label:first-of-type {
+    margin-top: 0;
+  }
+
+  textarea {
+    width: 100%;
+    height: 160px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 10px;
+    resize: vertical;
+  }
+
+  textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--border);
+  }
+
+  textarea::placeholder {
+    color: #aaa5a0;
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 4px;
+    background: var(--border);
+    outline: none;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    background: var(--border);
+    border: 2px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--border);
+    cursor: pointer;
+  }
+
+  .format-hint {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  input[type="number"], input[type="text"], input[type="url"], select {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 6px 8px;
+    width: 100%;
+  }
+
+  select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%231a1a1a'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 24px;
+  }
+
+  input:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--border);
+  }
+
+  .size-row {
+    display: flex;
+    gap: 12px;
+  }
+
+  .size-row > div { flex: 1; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border: 2px solid var(--border);
+    background: var(--surface);
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.1s;
+    color: var(--text);
+  }
+
+  .btn:hover {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  .btn-primary {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  .btn-primary:hover {
+    background: var(--surface);
+    color: var(--border);
+  }
+
+  .btn-full {
+    width: 100%;
+    margin-top: 12px;
+  }
+
+  .upload-area {
+    border: 1px dashed var(--border);
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.1s;
+    position: relative;
+    background: var(--bg);
+  }
+
+  .upload-area:hover {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  #logoArea:hover {
+    background: #c4d9c4;
+    color: var(--text);
+    border-color: #6a9a6a;
+  }
+
+  .upload-area.has-file {
+    border-style: solid;
+    background: var(--surface);
+  }
+
+  .upload-area .upload-text {
+    font-size: 14px;
+    display: block;
+  }
+
+  .upload-area .upload-filename {
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .upload-area .upload-hint {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    display: block;
+  }
+
+  .upload-area input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .upload-area img {
+    max-width: 60px;
+    max-height: 60px;
+    display: block;
+    margin: 0 auto 6px auto;
+  }
+
+  .tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+  }
+
+  .tab {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: var(--mono);
+    cursor: pointer;
+    background: var(--bg);
+    color: var(--text-muted);
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.1s;
+  }
+
+  .tab:not(:last-child) { border-right: 1px solid var(--border); }
+
+  .tab.active {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  .preview-area {
+    flex: 1;
+    overflow-y: auto;
+    padding: 30px;
+    background: var(--bg);
+  }
+
+  .preview-area .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto 24px auto;
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 10mm;
+    gap: 4mm;
+    box-shadow: 4px 4px 0 var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .badge {
+    width: 92mm;
+    height: 59mm;
+    border: 0.3mm solid #ccc;
+    overflow: hidden;
+    position: relative;
+    padding: 5mm;
+    background: white;
+    color: #000;
+  }
+
+  .badge-top {
+    position: absolute;
+    top: 5mm;
+    left: 5mm;
+    right: 5mm;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .badge-top .logo-img {
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .badge-bottom {
+    position: absolute;
+    bottom: 5mm;
+    left: 5mm;
+    right: 5mm;
+    z-index: 1;
+  }
+
+  /* Layout A: Klassisk (default) */
+  .badge--layout-a .badge-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 4mm;
+  }
+
+  .badge--layout-a .badge-bottom .qr {
+    width: 18mm;
+    height: 18mm;
+    flex-shrink: 0;
+  }
+
+  .badge--layout-a .badge-bottom .qr img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left bottom;
+  }
+
+  .badge--layout-a .badge-bottom .info {
+    text-align: right;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    word-break: break-word;
+  }
+
+  /* Layout C: Speilvendt */
+  .badge--layout-c .badge-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 4mm;
+    flex-direction: row-reverse;
+  }
+
+  .badge--layout-c .badge-bottom .qr {
+    width: 18mm;
+    height: 18mm;
+    flex-shrink: 0;
+  }
+
+  .badge--layout-c .badge-bottom .qr img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: right bottom;
+  }
+
+  .badge--layout-c .badge-bottom .info {
+    text-align: left;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    word-break: break-word;
+  }
+
+  /* Badge text styles (default) */
+  .badge .info .name {
+    font-family: 'Lato', sans-serif;
+    font-size: 12pt;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.2;
+  }
+
+  .badge .info .commission {
+    font-family: 'Lato', sans-serif;
+    font-size: 9pt;
+    font-weight: 400;
+    color: #000;
+    line-height: 1.2;
+    margin-top: 0.5mm;
+  }
+
+  .badge .info .country {
+    font-family: 'Lato', sans-serif;
+    font-size: 8pt;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.5mm;
+  }
+
+  .badge-count {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .entries-list {
+    border: 1px solid var(--border);
+    margin-top: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .entry-item {
+    padding: 8px 10px;
+    border-bottom: 1px solid #d4d0cc;
+    font-size: 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .entry-item:last-child { border-bottom: none; }
+
+  .entry-item .entry-name { font-weight: 700; font-size: 11px; }
+  .entry-item .entry-commission { color: var(--text-muted); font-size: 13px; }
+  .entry-item .entry-country { color: var(--text-muted); font-size: 9px; text-transform: uppercase; letter-spacing: 1px; }
+
+  .entry-item .remove-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 13px;
+    padding: 2px 6px;
+    line-height: 1;
+    transition: all 0.1s;
+  }
+
+  .entry-item .remove-btn:hover {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 80px 30px;
+    color: var(--text-muted);
+  }
+
+  .empty-state p {
+    font-size: 12px;
+    line-height: 1.8;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* Layout selector */
+  .layout-row {
+    display: flex;
+    gap: 6px;
+  }
+
+  .layout-btn {
+    flex: 1;
+    padding: 8px 4px;
+    border: 2px solid var(--border);
+    background: var(--bg);
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.1s;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .layout-btn:hover {
+    background: #e8e5e2;
+  }
+
+  .layout-btn.active {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  .layout-btn .layout-icon {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 4px;
+    line-height: 1;
+  }
+
+  /* QR style selector */
+  .qr-style-row {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .qr-style-btn {
+    flex: 1;
+    padding: 7px 4px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.1s;
+    color: var(--text);
+  }
+
+  .qr-style-btn:hover { background: #e8e5e2; }
+
+  .qr-style-btn.active {
+    background: var(--border);
+    color: var(--surface);
+  }
+
+  /* QR color inputs */
+  .qr-color-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  .qr-color-row > div {
+    flex: 1;
+  }
+
+  .qr-color-row input[type="color"] {
+    width: 100%;
+    height: 30px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    cursor: pointer;
+    padding: 2px;
+  }
+
+  .qr-color-row input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+  .qr-color-row input[type="color"]::-webkit-color-swatch { border: none; }
+
+  /* Font size row */
+  .font-size-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .font-size-row > div { flex: 1; }
+
+  .excel-columns {
+    margin-top: 10px;
+    padding: 10px;
+    background: var(--bg);
+    border: 1px solid #d4d0cc;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-muted);
+  }
+
+  .excel-columns strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+
+  @media print {
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    html, body {
+      background: white;
+      margin: 0;
+      padding: 0;
+      width: 210mm;
+      height: auto;
+      overflow: visible;
+    }
+    .app-header, .sidebar, .badge-count, .empty-state { display: none !important; }
+    .container {
+      display: block;
+      width: auto;
+      height: auto;
+      overflow: visible;
+    }
+    .preview-area {
+      padding: 0;
+      margin: 0;
+      background: white;
+      overflow: visible;
+      width: auto;
+      height: auto;
+    }
+    .preview-area .page {
+      width: 210mm;
+      height: 297mm;
+      box-shadow: none;
+      border: none;
+      margin: 0;
+      padding: 10mm;
+      overflow: visible;
+      page-break-after: always;
+      break-after: page;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .preview-area .page:last-child {
+      page-break-after: auto;
+      break-after: auto;
+    }
+    .badge {
+      border: 0.2mm solid #ccc;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="app-header">
+  <div style="display:flex;align-items:center;gap:10px">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="96" height="96" fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 18 C28 10, 22 12, 26 22"/><path d="M68 18 C72 10, 78 12, 74 22"/><path d="M26 22 C24 30, 22 38, 30 50 L44 68"/><path d="M74 22 C76 30, 78 38, 70 50 L56 68"/><path d="M38 20 C42 32, 44 46, 46 64"/><path d="M62 20 C58 32, 56 46, 54 64"/><path d="M46 64 C46 68, 48 72, 50 72 C52 72, 54 68, 54 64"/><path d="M44 68 C46 74, 48 76, 50 76 C52 76, 54 74, 56 68"/><ellipse cx="50" cy="68" rx="4" ry="3" fill="#1a1a1a" stroke="none"/><circle cx="39" cy="42" r="3" fill="#1a1a1a" stroke="none"/><circle cx="61" cy="42" r="3" fill="#1a1a1a" stroke="none"/></svg>
+    <div>
+      <h1 style="margin:0;line-height:1">Badger</h1>
+      <div style="font-size:10px;font-weight:400;text-transform:uppercase;color:var(--text-muted);letter-spacing:1px;margin-top:-1px;padding-left:3px">Konferanselapper minus hodepine</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px">
+    <button class="btn" id="resetBtn" onclick="resetAll()">Nullstill</button>
+    <button class="btn btn-primary" onclick="printBadges()">Eksporter</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="sidebar">
+
+    <!-- 0. Skiltformat -->
+    <div class="sidebar-section">
+      <h3>Skiltformat</h3>
+      <div class="size-row">
+        <div>
+          <label>Bredde mm</label>
+          <input type="number" id="badgeWidth" value="92" onchange="saveState(); renderBadges()">
+        </div>
+        <div>
+          <label>Hoyde mm</label>
+          <input type="number" id="badgeHeight" value="59" onchange="saveState(); renderBadges()">
+        </div>
+      </div>
+      <button onclick="resetBadgeSize()" style="margin-top:8px;font-size:11px;font-family:var(--mono);background:none;border:1px solid #ccc;padding:4px 10px;cursor:pointer;color:var(--text-muted);letter-spacing:0.5px">Nullstill (92×59)</button>
+    </div>
+
+    <!-- 1. Logo -->
+    <div class="sidebar-section">
+      <h3>Logo</h3>
+      <div class="upload-area" id="logoArea" style="background:#f0f7f0;border-color:#8cb88c">
+        <span class="upload-text">Slipp logo her, eller klikk</span>
+        <span class="upload-hint">.png / .jpg</span>
+        <input type="file" accept="image/*" onchange="loadLogo(event)">
+      </div>
+      <button onclick="loadDemoLogo()" style="margin-top:8px;font-size:11px;font-family:var(--mono);background:none;border:1px solid #ccc;padding:4px 10px;cursor:pointer;color:var(--text-muted);letter-spacing:0.5px">Last inn eksempellogo</button>
+      <div class="format-hint">
+        Min. 300px bredde for god utskriftskvalitet.
+      </div>
+      <div id="logoControls" style="display:none;margin-top:12px">
+        <label>Størrelse</label>
+        <div style="display:flex;align-items:center;gap:10px">
+          <input type="range" id="logoWidth" min="20" max="100" value="100" oninput="updateLogoWidth()" style="flex:1">
+          <span id="logoWidthVal" style="font-size:11px;min-width:32px">100%</span>
+        </div>
+        <label>Justering</label>
+        <div class="layout-row">
+          <button class="layout-btn" data-align="left" onclick="setLogoAlign('left', this)">Venstre</button>
+          <button class="layout-btn active" data-align="center" onclick="setLogoAlign('center', this)">Sentrert</button>
+          <button class="layout-btn" data-align="right" onclick="setLogoAlign('right', this)">H&oslash;yre</button>
+        </div>
+        <label>Vertikal</label>
+        <div style="display:flex;align-items:center;gap:10px">
+          <input type="range" id="logoY" min="0" max="100" value="0" oninput="updateLogoY()" style="flex:1">
+          <span id="logoYVal" style="font-size:11px;min-width:32px">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. QR-kode med Generer/Last opp tabs -->
+    <div class="sidebar-section">
+      <h3>QR-kode</h3>
+        <label style="margin-top:0">URL</label>
+        <input type="url" id="qrUrl" placeholder="https://example.com" oninput="generateQR()">
+        <div style="margin-top:10px">
+          <label>Farge</label>
+          <input type="color" id="qrColor" value="#000000" onchange="generateQR()" style="width:30px;height:30px;border:1px solid var(--border);background:var(--bg);cursor:pointer;padding:2px">
+        </div>
+        <div class="qr-style-row">
+          <button class="qr-style-btn active" data-style="square" onclick="setQrStyle('square', this)">&#9632; Kantet</button>
+          <button class="qr-style-btn" data-style="dots" onclick="setQrStyle('dots', this)">&#9679; Prikker</button>
+          <button class="qr-style-btn" data-style="rounded" onclick="setQrStyle('rounded', this)">&#9673; Avrundet</button>
+        </div>
+        <div style="margin-top:10px">
+          <label>Størrelse <span id="qrScanWarning" style="color:#c0392b;font-weight:400;display:none">(test skanning etter print)</span></label>
+          <div style="display:flex;align-items:center;gap:10px">
+            <input type="range" id="qrSize" min="5" max="40" value="18" oninput="updateQrSize()" style="flex:1">
+            <span id="qrSizeVal" style="font-size:11px;min-width:32px">18mm</span>
+          </div>
+        </div>
+        <div id="qrPreview" style="margin-top:12px;text-align:center"></div>
+    </div>
+
+    <!-- 3. Deltakere -->
+    <div class="sidebar-section">
+      <h3>Deltakere</h3>
+
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab('excel', this)">Regneark</button>
+        <button class="tab" onclick="switchTab('text', this)">Tekst</button>
+      </div>
+
+      <div class="tab-content active" id="tab-excel">
+        <div class="upload-area" id="excelArea">
+          <span class="upload-text">Last opp regneark</span>
+          <span class="upload-hint">.xlsx / .csv</span>
+          <input type="file" accept=".xlsx,.xls,.csv" onchange="loadExcel(event)">
+        </div>
+        <button onclick="loadDemoData()" style="margin-top:8px;font-size:11px;font-family:var(--mono);background:none;border:1px solid #ccc;padding:4px 10px;cursor:pointer;color:var(--text-muted);letter-spacing:0.5px">Last inn eksempel-CSV</button>
+        <div class="excel-columns">
+          Tre kolonner: <strong>Navn</strong>, <strong>Stilling</strong>, <strong>Firma</strong>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-text">
+        <label>Navn, stilling og firma &mdash; tre linjer per person</label>
+        <textarea id="inputList" placeholder="Ola Nordmann&#10;Daglig leder&#10;Norsk Industri AS&#10;&#10;Kari Hansen&#10;Prosjektleder&#10;Bergen Consulting&#10;&#10;Erik Johansen&#10;Markedssjef&#10;Stavanger Tech" oninput="parseTextInput()"></textarea>
+      </div>
+    </div>
+
+    <!-- 4. Layout -->
+    <div class="sidebar-section design-section" style="display:none">
+      <h3>Layout</h3>
+      <div class="layout-row">
+        <button class="layout-btn active" data-layout="a" onclick="setLayout('a', this)">
+          <span class="layout-icon">&#9638;</span>H&oslash;yrestilt
+        </button>
+        <button class="layout-btn" data-layout="c" onclick="setLayout('c', this)">
+          <span class="layout-icon">&#9639;</span>Venstrestilt
+        </button>
+      </div>
+      <div class="format-hint" id="layoutDesc">H&oslash;yrestilt &mdash; QR venstre, info h&oslash;yre</div>
+    </div>
+
+    <!-- 5. Skrift -->
+    <div class="sidebar-section design-section" style="display:none">
+      <h3>Skrift</h3>
+      <label style="margin-top:0">Font</label>
+      <select id="fontSelect" onchange="changeFont()">
+        <option value="Lato" selected>Lato</option>
+        <option value="Inter">Inter</option>
+        <option value="Roboto">Roboto</option>
+        <option value="Open Sans">Open Sans</option>
+        <option value="Playfair Display">Playfair Display</option>
+        <option value="Merriweather">Merriweather</option>
+        <option value="Oswald">Oswald</option>
+        <option value="Montserrat">Montserrat</option>
+      </select>
+      <div class="font-size-row" style="margin-top:12px">
+        <div>
+          <label>Navn pt</label>
+          <input type="number" id="fontSize_name" value="18" min="6" max="30" onchange="renderBadges()">
+        </div>
+        <div>
+          <label>Stilling pt</label>
+          <input type="number" id="fontSize_commission" value="12" min="5" max="24" onchange="renderBadges()">
+        </div>
+        <div>
+          <label>Firma pt</label>
+          <input type="number" id="fontSize_company" value="9" min="5" max="20" onchange="renderBadges()">
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 7. Liste -->
+    <div class="sidebar-section">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px">
+        <h3 id="entriesHeader" style="margin-bottom:0">Liste (0)</h3>
+        <button class="btn" onclick="clearAll()" style="padding:4px 8px;font-size:9px">Nullstill</button>
+      </div>
+      <div class="entries-list" id="entriesList"></div>
+    </div>
+
+  </div>
+
+  <div class="preview-area" id="previewArea">
+    <div class="empty-state">
+      <p>Badger versjon 1.0<br><br>Av Hallvar Bugge Johnsen<br>hei@hallvar.no</p>
+    </div>
+  </div>
+</div>
+
+<script>
+let entries = [];
+let qrDataUrl = null;
+let logoDataUrl = null;
+let currentLayout = 'a';
+let currentFont = 'Lato';
+let qrDotStyle = 'square';
+let qrCodeInstance = null;
+let logoWidthPct = 100;
+let logoAlign = 'center';
+let logoYPct = 0;
+let qrSizeMm = 18;
+
+const layoutDescriptions = {
+  a: 'H\u00f8yrestilt \u2014 QR venstre, info h\u00f8yre',
+  c: 'Venstrestilt \u2014 info venstre, QR h\u00f8yre'
+};
+
+function handleLogoFile(file) {
+  if (!file || !file.type.startsWith('image/')) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    logoDataUrl = e.target.result;
+    const area = document.getElementById('logoArea');
+    area.classList.add('has-file');
+    area.innerHTML =
+      `<img src="${logoDataUrl}" alt="Logo" style="max-width:200px;max-height:50px">
+       <span class="upload-filename">${esc(file.name)}</span>
+       <input type="file" accept="image/*" onchange="loadLogo(event)">`;
+    document.getElementById('logoControls').style.display = '';
+    renderBadges();
+  };
+  reader.readAsDataURL(file);
+}
+
+function loadLogo(event) {
+  handleLogoFile(event.target.files[0]);
+}
+
+function loadDemoLogo() {
+  fetch('badger-demo-icon.svg')
+    .then(r => r.blob())
+    .then(blob => {
+      const file = new File([blob], 'badger-demo-icon.svg', { type: 'image/svg+xml' });
+      handleLogoFile(file);
+    })
+    .catch(() => {});
+}
+
+function loadDemoData() {
+  fetch('grevlingberget_ansatte.csv')
+    .then(r => r.blob())
+    .then(blob => {
+      const file = new File([blob], 'grevlingberget_ansatte.csv', { type: 'text/csv' });
+      loadExcel({ target: { files: [file] } });
+    })
+    .catch(() => {});
+}
+
+(function() {
+  const area = document.getElementById('logoArea');
+  area.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    area.style.background = '#c4d9c4';
+    area.style.borderColor = '#6a9a6a';
+  });
+  area.addEventListener('dragleave', function(e) {
+    e.preventDefault();
+    area.style.background = '';
+    area.style.borderColor = '';
+  });
+  area.addEventListener('drop', function(e) {
+    e.preventDefault();
+    area.style.background = '';
+    area.style.borderColor = '';
+    const file = e.dataTransfer.files[0];
+    handleLogoFile(file);
+  });
+})();
+
+const countryMap = {
+  'faroe': 'Faroe Islands',
+  'finland': 'Finland',
+  'finnish': 'Finland',
+  'tampere': 'Finland',
+  'lapland': 'Finland',
+  'greenland': 'Greenland',
+  'film gl': 'Greenland',
+  'iceland': 'Iceland',
+  'norway': 'Norway',
+  'norwegian': 'Norway',
+  'oslo': 'Norway',
+  'arktisk': 'Norway',
+  'midgard': 'Norway',
+  'western norway': 'Norway',
+  'eastern norway': 'Norway',
+  'sweden': 'Sweden',
+  'swedish': 'Sweden',
+  'stockholm': 'Sweden',
+  'gotland': 'Sweden',
+  '\u00e5land': '\u00c5land',
+  'film.ax': '\u00c5land',
+  'denmark': 'Denmark',
+  'danish': 'Denmark',
+  'vision denmark': 'Denmark',
+  'north finland': 'Finland',
+  'west finland': 'Finland',
+  'east finland': 'Finland',
+  'southern sweden': 'Sweden',
+};
+
+function detectCountry(commission) {
+  const lower = commission.toLowerCase();
+  for (const [key, country] of Object.entries(countryMap)) {
+    if (lower.includes(key)) return country;
+  }
+  return '';
+}
+
+function switchTab(tab, el) {
+  const section = el.closest('.sidebar-section');
+  section.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  section.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  section.querySelector('#tab-' + tab).classList.add('active');
+}
+
+function switchQrTab(tab, el) {
+  const section = el.closest('.sidebar-section');
+  section.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  section.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  section.querySelector('#qrtab-' + tab).classList.add('active');
+}
+
+function loadQR(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    qrDataUrl = e.target.result;
+    const area = document.getElementById('qrArea');
+    area.classList.add('has-file');
+    area.innerHTML =
+      `<img src="${qrDataUrl}" alt="QR">
+       <span class="upload-filename">${esc(file.name)}</span>
+       <input type="file" accept="image/*" onchange="loadQR(event)">`;
+    renderBadges();
+  };
+  reader.readAsDataURL(file);
+}
+
+function setQrStyle(style, el) {
+  qrDotStyle = style;
+  document.querySelectorAll('.qr-style-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  generateQR();
+}
+
+function generateQR() {
+  const url = document.getElementById('qrUrl').value.trim();
+  const preview = document.getElementById('qrPreview');
+  if (!url) {
+    preview.innerHTML = '';
+    qrDataUrl = null;
+    renderBadges();
+    return;
+  }
+
+  const color = document.getElementById('qrColor').value;
+
+  const dotTypeMap = {
+    square: 'square',
+    dots: 'dots',
+    rounded: 'rounded'
+  };
+
+  const opts = {
+    width: 300,
+    height: 300,
+    data: url,
+    dotsOptions: {
+      color: color,
+      type: dotTypeMap[qrDotStyle] || 'square'
+    },
+    backgroundOptions: {
+      color: '#ffffff'
+    },
+    cornersDotOptions: {
+      color: color
+    },
+    cornersSquareOptions: {
+      color: color
+    },
+    qrOptions: {
+      errorCorrectionLevel: 'M'
+    }
+  };
+
+  if (qrCodeInstance) {
+    preview.innerHTML = '';
+  }
+
+  qrCodeInstance = new QRCodeStyling(opts);
+
+  const container = document.createElement('div');
+  preview.innerHTML = '';
+  preview.appendChild(container);
+  qrCodeInstance.append(container);
+
+  setTimeout(() => {
+    const canvas = container.querySelector('canvas');
+    if (canvas) {
+      qrDataUrl = canvas.toDataURL('image/png');
+      const img = document.createElement('img');
+      img.src = qrDataUrl;
+      img.style.cssText = 'max-width:80px;max-height:80px;border:1px solid #ccc';
+      preview.innerHTML = '';
+      preview.appendChild(img);
+      renderBadges();
+    }
+  }, 200);
+}
+
+function updateLogoWidth() {
+  logoWidthPct = document.getElementById('logoWidth').value;
+  document.getElementById('logoWidthVal').textContent = logoWidthPct + '%';
+  renderBadges();
+}
+
+function updateQrSize() {
+  qrSizeMm = document.getElementById('qrSize').value;
+  document.getElementById('qrSizeVal').textContent = qrSizeMm + 'mm';
+  renderBadges();
+}
+
+function setLogoAlign(align, el) {
+  logoAlign = align;
+  el.closest('.layout-row').querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  renderBadges();
+}
+
+function updateLogoY() {
+  logoYPct = document.getElementById('logoY').value;
+  document.getElementById('logoYVal').textContent = logoYPct + '%';
+  renderBadges();
+}
+
+function setLayout(layout, el) {
+  currentLayout = layout;
+  document.querySelectorAll('.layout-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('layoutDesc').innerHTML = layoutDescriptions[layout];
+  renderBadges();
+}
+
+function changeFont() {
+  currentFont = document.getElementById('fontSelect').value;
+  const link = document.getElementById('badgeFontLink');
+  const fontName = currentFont.replace(/ /g, '+');
+  link.href = `https://fonts.googleapis.com/css2?family=${fontName}:wght@300;400;700;900&display=swap`;
+  setTimeout(renderBadges, 100);
+}
+
+function loadExcel(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const area = document.getElementById('excelArea');
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const data = new Uint8Array(e.target.result);
+    let opts = { type: 'array' };
+    if (file.name.toLowerCase().endsWith('.csv')) {
+      const text = new TextDecoder('utf-8').decode(data);
+      const firstLine = text.split('\n')[0] || '';
+      opts.FS = firstLine.includes(';') ? ';' : ',';
+    }
+    const workbook = XLSX.read(data, opts);
+    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
+
+    let start = 0;
+    if (rows.length > 0) {
+      const first = rows[0].map(c => (c || '').toString().toLowerCase().trim());
+      if (first.includes('navn') || first.includes('name') ||
+          first.includes('stilling') || first.includes('title') ||
+          first.includes('firma') || first.includes('company')) {
+        start = 1;
+      }
+    }
+
+    entries = [];
+    for (let i = start; i < rows.length; i++) {
+      const row = rows[i];
+      if (!row || row.length < 1) continue;
+      const name = (row[0] || '').toString().trim();
+      if (!name) continue;
+      const title = row.length >= 2 ? (row[1] || '').toString().trim() : '';
+      const company = row.length >= 3 ? (row[2] || '').toString().trim() : '';
+      entries.push({ name, title, company });
+    }
+
+    area.classList.add('has-file');
+    area.innerHTML =
+      `<span class="upload-filename">${esc(file.name)}</span>
+       <span class="upload-hint">${entries.length} importert</span>
+       <input type="file" accept=".xlsx,.xls,.csv" onchange="loadExcel(event)">`;
+
+    renderEntries();
+    renderBadges();
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function parseTextInput() {
+  const raw = document.getElementById('inputList').value.trim();
+  if (!raw) return;
+
+  const lines = raw.split('\n').map(l => l.trim().replace(/,+$/, '')).filter(l => l.length > 0);
+
+  entries = [];
+  for (let i = 0; i < lines.length; i += 3) {
+    const name = lines[i];
+    const title = lines[i + 1] || '';
+    const company = lines[i + 2] || '';
+    if (name) {
+      entries.push({ name, title, company });
+    }
+  }
+
+  renderEntries();
+  renderBadges();
+}
+
+function renderEntries() {
+  const list = document.getElementById('entriesList');
+  document.getElementById('entriesHeader').textContent = `Liste (${entries.length})`;
+
+  list.innerHTML = entries.map((e, i) => `
+    <div class="entry-item">
+      <div>
+        <div class="entry-name">${esc(e.name)}</div>
+        ${e.title ? `<div class="entry-commission">${esc(e.title)}</div>` : ''}
+        ${e.company ? `<div class="entry-country">${esc(e.company)}</div>` : ''}
+      </div>
+      <button class="remove-btn" onclick="removeEntry(${i})">x</button>
+    </div>
+  `).join('');
+}
+
+function esc(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+function removeEntry(index) {
+  entries.splice(index, 1);
+  renderEntries();
+  renderBadges();
+}
+
+function clearAll() {
+  entries = [];
+  renderEntries();
+  renderBadges();
+}
+
+function renderBadges() {
+  const area = document.getElementById('previewArea');
+  const w = document.getElementById('badgeWidth').value || 92;
+  const h = document.getElementById('badgeHeight').value || 59;
+  const fontName = document.getElementById('fontSize_name').value || 18;
+  const fontComm = document.getElementById('fontSize_commission').value || 12;
+  const fontCompany = document.getElementById('fontSize_company').value || 9;
+  qrSizeMm = document.getElementById('qrSize').value || 18;
+
+  document.getElementById('qrScanWarning').style.display = qrDataUrl ? 'inline' : 'none';
+
+  const hasContent = entries.length > 0 || logoDataUrl || qrDataUrl;
+  if (!hasContent) {
+    area.innerHTML = '<div class="empty-state"><p>Badger versjon 1.0<br><br>Av Hallvar Bugge Johnsen<br>hei@hallvar.no</p></div>';
+    return;
+  }
+
+  document.querySelectorAll('.design-section').forEach(s => s.style.display = '');
+
+  const badgesPerPage = 8;
+  const qrImg = qrDataUrl ? `<img src="${qrDataUrl}" alt="QR">` : '';
+  const layoutClass = `badge--layout-${currentLayout}`;
+  const alignMap = { left: 'flex-start', center: 'center', right: 'flex-end' };
+  const logoHtml = logoDataUrl
+    ? `<div style="display:flex;justify-content:${alignMap[logoAlign]};margin-top:${logoYPct}%"><img class="logo-img" src="${logoDataUrl}" alt="Logo" style="width:${logoWidthPct}%;height:auto"></div>`
+    : '';
+
+  const displayEntries = entries.length > 0
+    ? entries
+    : [{ name: 'Fornavn Etternavn', title: 'Stilling', company: 'Firma AS' }];
+
+  let html = entries.length > 0
+    ? `<div class="badge-count">${entries.length} navneskilt / ${Math.ceil(entries.length / badgesPerPage)} sider</div>`
+    : '';
+
+  for (let i = 0; i < displayEntries.length; i++) {
+    if (i % badgesPerPage === 0) {
+      if (i > 0) html += '</div>';
+      html += '<div class="page">';
+    }
+    const e = displayEntries[i];
+    html += `
+      <div class="badge ${layoutClass}" style="width:${w}mm;height:${h}mm;">
+        <div class="badge-top">
+          ${logoHtml}
+        </div>
+        <div class="badge-bottom">
+          <div class="qr" style="width:${qrSizeMm}mm;height:${qrSizeMm}mm">${qrImg}</div>
+          <div class="info">
+            <div class="name" style="font-family:'${currentFont}',sans-serif;font-size:${fontName}pt">${esc(e.name)}</div>
+            ${e.title ? `<div class="commission" style="font-family:'${currentFont}',sans-serif;font-size:${fontComm}pt">${esc(e.title)}</div>` : ''}
+            ${e.company ? `<div class="country" style="font-family:'${currentFont}',sans-serif;font-size:${fontCompany}pt">${esc(e.company)}</div>` : ''}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+  html += '</div>';
+
+  area.innerHTML = html;
+  saveState();
+}
+
+let resetPending = false;
+
+function resetAll() {
+  const btn = document.getElementById('resetBtn');
+  if (!resetPending) {
+    resetPending = true;
+    btn.textContent = 'Sikker?';
+    btn.style.background = '#c0392b';
+    btn.style.color = '#fff';
+    btn.style.borderColor = '#c0392b';
+    return;
+  }
+  resetPending = false;
+  btn.textContent = 'Nullstill';
+  btn.style.background = '';
+  btn.style.color = '';
+  btn.style.borderColor = '';
+
+  entries = [];
+  logoDataUrl = null;
+  qrDataUrl = null;
+  qrCodeInstance = null;
+  logoWidthPct = 100;
+  logoAlign = 'center';
+  logoYPct = 0;
+  currentLayout = 'a';
+  currentFont = 'Lato';
+  qrDotStyle = 'square';
+  qrSizeMm = 18;
+
+  document.getElementById('badgeWidth').value = 92;
+  document.getElementById('badgeHeight').value = 59;
+  document.getElementById('qrUrl').value = '';
+  document.getElementById('qrColor').value = '#000000';
+  document.getElementById('qrPreview').innerHTML = '';
+  document.getElementById('qrSize').value = 18;
+  document.getElementById('qrSizeVal').textContent = '18mm';
+  document.getElementById('inputList').value = '';
+  document.getElementById('fontSize_name').value = 18;
+  document.getElementById('fontSize_commission').value = 12;
+  document.getElementById('fontSize_company').value = 9;
+  document.getElementById('fontSelect').value = 'Lato';
+  document.getElementById('logoWidth').value = 100;
+  document.getElementById('logoWidthVal').textContent = '100%';
+  document.getElementById('logoY').value = 0;
+  document.getElementById('logoYVal').textContent = '0%';
+
+  const logoArea = document.getElementById('logoArea');
+  logoArea.classList.remove('has-file');
+  logoArea.innerHTML = '<span class="upload-text">Slipp logo her, eller klikk</span><span class="upload-hint">.png / .jpg</span><input type="file" accept="image/*" onchange="loadLogo(event)">';
+  document.getElementById('logoControls').style.display = 'none';
+
+  const excelArea = document.getElementById('excelArea');
+  excelArea.classList.remove('has-file');
+  excelArea.innerHTML = '<span class="upload-text">Last opp regneark</span><span class="upload-hint">.xlsx / .csv</span><input type="file" accept=".xlsx,.xls,.csv" onchange="loadExcel(event)">';
+
+  document.querySelectorAll('.design-section').forEach(s => s.style.display = 'none');
+  document.querySelectorAll('.qr-style-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.qr-style-btn[data-style="square"]').classList.add('active');
+
+  localStorage.removeItem('badger_state');
+  renderEntries();
+  renderBadges();
+}
+
+document.addEventListener('click', function(e) {
+  if (resetPending && e.target.id !== 'resetBtn') {
+    resetPending = false;
+    const btn = document.getElementById('resetBtn');
+    btn.textContent = 'Nullstill';
+    btn.style.background = '';
+    btn.style.color = '';
+    btn.style.borderColor = '';
+  }
+});
+
+function saveState() {
+  const state = {
+    badgeWidth: document.getElementById('badgeWidth').value,
+    badgeHeight: document.getElementById('badgeHeight').value,
+    entries: entries,
+    logoDataUrl: logoDataUrl,
+    logoWidthPct: logoWidthPct,
+    logoAlign: logoAlign,
+    logoYPct: logoYPct,
+    qrDataUrl: qrDataUrl,
+    qrUrl: document.getElementById('qrUrl').value,
+    qrColor: document.getElementById('qrColor').value,
+    qrDotStyle: qrDotStyle,
+    qrSizeMm: qrSizeMm,
+    currentLayout: currentLayout,
+    currentFont: currentFont,
+    fontName: document.getElementById('fontSize_name').value,
+    fontComm: document.getElementById('fontSize_commission').value,
+    fontCompany: document.getElementById('fontSize_company').value
+  };
+  localStorage.setItem('badger_state', JSON.stringify(state));
+}
+
+function loadState() {
+  const raw = localStorage.getItem('badger_state');
+  if (!raw) return;
+  try {
+    const s = JSON.parse(raw);
+
+    if (s.badgeWidth) document.getElementById('badgeWidth').value = s.badgeWidth;
+    if (s.badgeHeight) document.getElementById('badgeHeight').value = s.badgeHeight;
+
+    if (s.entries && s.entries.length) {
+      entries = s.entries;
+      renderEntries();
+    }
+
+    if (s.logoDataUrl) {
+      logoDataUrl = s.logoDataUrl;
+      const area = document.getElementById('logoArea');
+      area.classList.add('has-file');
+      area.innerHTML = `<img src="${logoDataUrl}" alt="Logo" style="max-width:200px;max-height:50px">
+        <span class="upload-filename">Lagret logo</span>
+        <input type="file" accept="image/*" onchange="loadLogo(event)">`;
+      document.getElementById('logoControls').style.display = '';
+    }
+    if (s.logoWidthPct != null) {
+      logoWidthPct = s.logoWidthPct;
+      document.getElementById('logoWidth').value = logoWidthPct;
+      document.getElementById('logoWidthVal').textContent = logoWidthPct + '%';
+    }
+    if (s.logoAlign) {
+      logoAlign = s.logoAlign;
+      document.querySelectorAll('.layout-btn[data-align]').forEach(b => {
+        b.classList.toggle('active', b.dataset.align === logoAlign);
+      });
+    }
+    if (s.logoYPct != null) {
+      logoYPct = s.logoYPct;
+      document.getElementById('logoY').value = logoYPct;
+      document.getElementById('logoYVal').textContent = logoYPct + '%';
+    }
+
+    if (s.qrDataUrl) {
+      qrDataUrl = s.qrDataUrl;
+      const preview = document.getElementById('qrPreview');
+      preview.innerHTML = `<img src="${qrDataUrl}" style="max-width:80px;max-height:80px;border:1px solid #ccc">`;
+    }
+    if (s.qrUrl) document.getElementById('qrUrl').value = s.qrUrl;
+    if (s.qrColor) document.getElementById('qrColor').value = s.qrColor;
+    if (s.qrDotStyle) {
+      qrDotStyle = s.qrDotStyle;
+      document.querySelectorAll('.qr-style-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.style === qrDotStyle);
+      });
+    }
+    if (s.qrSizeMm != null) {
+      qrSizeMm = s.qrSizeMm;
+      document.getElementById('qrSize').value = qrSizeMm;
+      document.getElementById('qrSizeVal').textContent = qrSizeMm + 'mm';
+    }
+
+    if (s.currentLayout) {
+      currentLayout = s.currentLayout;
+      document.querySelectorAll('.layout-btn[data-layout]').forEach(b => {
+        b.classList.toggle('active', b.dataset.layout === currentLayout);
+      });
+    }
+    if (s.currentFont) {
+      currentFont = s.currentFont;
+      document.getElementById('fontSelect').value = currentFont;
+    }
+    if (s.fontName) document.getElementById('fontSize_name').value = s.fontName;
+    if (s.fontComm) document.getElementById('fontSize_commission').value = s.fontComm;
+    if (s.fontCompany) document.getElementById('fontSize_company').value = s.fontCompany;
+
+    renderBadges();
+  } catch(e) {}
+}
+
+function resetBadgeSize() {
+  document.getElementById('badgeWidth').value = 92;
+  document.getElementById('badgeHeight').value = 59;
+  saveState();
+  renderBadges();
+}
+
+loadState();
+
+function printBadges() {
+  if (entries.length === 0) {
+    alert('Ingen deltakere. Importer data forst.');
+    return;
+  }
+  window.print();
+}
+</script>
+
+</body>
+</html>
