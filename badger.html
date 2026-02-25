@@ -1157,7 +1157,13 @@ function loadExcel(event) {
     const data = new Uint8Array(e.target.result);
     let workbook;
     if (file.name.toLowerCase().endsWith('.csv')) {
-      const text = new TextDecoder('utf-8').decode(data);
+      let text;
+      try {
+        text = new TextDecoder('utf-8', { fatal: true }).decode(data);
+      } catch {
+        text = new TextDecoder('windows-1252').decode(data);
+      }
+      if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
       const firstLine = text.split('\n')[0] || '';
       const FS = firstLine.includes(';') ? ';' : ',';
       workbook = XLSX.read(text, { type: 'string', FS });
