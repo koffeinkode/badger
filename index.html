@@ -20,6 +20,12 @@
     --text-muted: #6b6560;
     --accent: #1a1a1a;
     --mono: 'JetBrains Mono', 'SF Mono', 'Menlo', monospace;
+    --page-pad-top: 10mm;
+    --page-pad-right: 10mm;
+    --page-pad-bottom: 10mm;
+    --page-pad-left: 10mm;
+    --page-row-gap: 4mm;
+    --page-col-gap: 4mm;
   }
 
   body {
@@ -311,8 +317,9 @@
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-    padding: 10mm;
-    gap: 4mm;
+    padding: var(--page-pad-top) var(--page-pad-right) var(--page-pad-bottom) var(--page-pad-left);
+    row-gap: var(--page-row-gap);
+    column-gap: var(--page-col-gap);
     box-shadow: 4px 4px 0 var(--border);
     border: 1px solid var(--border);
   }
@@ -642,7 +649,9 @@
       box-shadow: none;
       border: none;
       margin: 0;
-      padding: 10mm;
+      padding: var(--page-pad-top) var(--page-pad-right) var(--page-pad-bottom) var(--page-pad-left);
+      row-gap: var(--page-row-gap);
+      column-gap: var(--page-col-gap);
       overflow: visible;
       page-break-after: always;
       break-after: page;
@@ -688,7 +697,12 @@
     <!-- 0. Skiltformat -->
     <div class="sidebar-section">
       <h3>Skiltformat</h3>
-      <div class="size-row">
+      <label style="margin-top:0">Etikett</label>
+      <select id="presetSelect" onchange="applyPreset(this.value)" style="width:100%;font-family:var(--mono);font-size:11px;padding:6px 8px;border:1px solid var(--border);background:var(--surface);cursor:pointer">
+        <option value="clas-ohlson-34-2512">Clas Ohlson 34-2512 (92×59mm)</option>
+        <option value="herma-4350">Herma 4350 (96×63,5mm)</option>
+      </select>
+      <div class="size-row" style="margin-top:10px">
         <div>
           <label>Bredde mm</label>
           <input type="number" id="badgeWidth" value="92" onchange="saveState(); renderBadges()">
@@ -698,7 +712,6 @@
           <input type="number" id="badgeHeight" value="59" onchange="saveState(); renderBadges()">
         </div>
       </div>
-      <button onclick="resetBadgeSize()" style="margin-top:8px;font-size:11px;font-family:var(--mono);background:none;border:1px solid #ccc;padding:4px 10px;cursor:pointer;color:var(--text-muted);letter-spacing:0.5px">Nullstill (92×59)</button>
     </div>
 
     <!-- 1. Logo -->
@@ -864,6 +877,27 @@ const layoutDescriptions = {
   a: 'H\u00f8yrestilt \u2014 QR venstre, info h\u00f8yre',
   c: 'Venstrestilt \u2014 info venstre, QR h\u00f8yre'
 };
+
+const PRESETS = {
+  'clas-ohlson-34-2512': { w: 92, h: 59, padTop: '10mm', padRight: '10mm', padBottom: '10mm', padLeft: '10mm', rowGap: '4mm', colGap: '4mm' },
+  'herma-4350':          { w: 96, h: 63.5, padTop: '13.5mm', padRight: '6mm', padBottom: '18mm', padLeft: '7mm', rowGap: '3mm', colGap: '4mm' }
+};
+
+function applyPreset(id) {
+  const p = PRESETS[id];
+  if (!p) return;
+  document.getElementById('badgeWidth').value = p.w;
+  document.getElementById('badgeHeight').value = p.h;
+  const r = document.documentElement.style;
+  r.setProperty('--page-pad-top', p.padTop);
+  r.setProperty('--page-pad-right', p.padRight);
+  r.setProperty('--page-pad-bottom', p.padBottom);
+  r.setProperty('--page-pad-left', p.padLeft);
+  r.setProperty('--page-row-gap', p.rowGap);
+  r.setProperty('--page-col-gap', p.colGap);
+  saveState();
+  renderBadges();
+}
 
 function handleLogoFile(file) {
   if (!file || !file.type.startsWith('image/')) return;
@@ -1121,13 +1155,15 @@ function loadExcel(event) {
   const reader = new FileReader();
   reader.onload = function(e) {
     const data = new Uint8Array(e.target.result);
-    let opts = { type: 'array' };
+    let workbook;
     if (file.name.toLowerCase().endsWith('.csv')) {
       const text = new TextDecoder('utf-8').decode(data);
       const firstLine = text.split('\n')[0] || '';
-      opts.FS = firstLine.includes(';') ? ';' : ',';
+      const FS = firstLine.includes(';') ? ';' : ',';
+      workbook = XLSX.read(text, { type: 'string', FS });
+    } else {
+      workbook = XLSX.read(data, { type: 'array' });
     }
-    const workbook = XLSX.read(data, opts);
     const sheet = workbook.Sheets[workbook.SheetNames[0]];
     const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
@@ -1359,6 +1395,7 @@ document.addEventListener('click', function(e) {
 
 function saveState() {
   const state = {
+    presetId: document.getElementById('presetSelect').value,
     badgeWidth: document.getElementById('badgeWidth').value,
     badgeHeight: document.getElementById('badgeHeight').value,
     entries: entries,
@@ -1386,6 +1423,10 @@ function loadState() {
   try {
     const s = JSON.parse(raw);
 
+    if (s.presetId && PRESETS[s.presetId]) {
+      document.getElementById('presetSelect').value = s.presetId;
+      applyPreset(s.presetId);
+    }
     if (s.badgeWidth) document.getElementById('badgeWidth').value = s.badgeWidth;
     if (s.badgeHeight) document.getElementById('badgeHeight').value = s.badgeHeight;
 
@@ -1458,10 +1499,8 @@ function loadState() {
 }
 
 function resetBadgeSize() {
-  document.getElementById('badgeWidth').value = 92;
-  document.getElementById('badgeHeight').value = 59;
-  saveState();
-  renderBadges();
+  document.getElementById('presetSelect').value = 'clas-ohlson-34-2512';
+  applyPreset('clas-ohlson-34-2512');
 }
 
 loadState();
