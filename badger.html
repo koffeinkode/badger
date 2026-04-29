@@ -1435,7 +1435,7 @@ function renderBadges() {
       const qrRight = currentLayout === 'c';
       html += `
         <div class="badge badge--thermal" style="width:${w}mm;height:${h}mm;">
-          ${logoDataUrl ? `<div class="thermal-logo"><img src="${logoDataUrl}" alt="Logo"></div>` : ''}
+          ${logoDataUrl ? `<div class="thermal-logo" style="text-align:${logoAlign}"><img src="${logoDataUrl}" alt="Logo" style="width:${logoWidthPct}%;max-height:7mm;height:auto;object-fit:contain"></div>` : ''}
           <div class="thermal-body${qrRight ? ' qr-right' : ''}">
             ${qrDataUrl ? `<div class="thermal-qr" style="width:${qrSizeMm}mm;height:${qrSizeMm}mm">${qrImg}</div>` : ''}
             <div class="thermal-info">
