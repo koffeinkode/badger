@@ -445,6 +445,101 @@
     margin-top: 0.5mm;
   }
 
+  /* Phomemo thermal badge (70×50mm) */
+  .badge--thermal {
+    display: flex;
+    flex-direction: column;
+    padding: 3mm;
+    background: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    border: 0.3mm solid #ccc;
+  }
+
+  .badge--thermal .thermal-logo {
+    flex: 0 0 auto;
+    text-align: center;
+    margin-bottom: 2mm;
+  }
+
+  .badge--thermal .thermal-logo img {
+    max-height: 7mm;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .badge--thermal .thermal-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    min-height: 0;
+  }
+
+  .badge--thermal .thermal-body.qr-right {
+    flex-direction: row-reverse;
+  }
+
+  .badge--thermal .thermal-qr {
+    flex: 0 0 auto;
+  }
+
+  .badge--thermal .thermal-qr img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .badge--thermal .thermal-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  .badge--thermal .thermal-name {
+    font-weight: 700;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+  }
+
+  .badge--thermal .thermal-title {
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+    margin-top: 0.5mm;
+  }
+
+  .badge--thermal .thermal-company {
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #555;
+    margin-top: 0.5mm;
+  }
+
+  body.thermal-mode .preview-area .page {
+    width: 70mm;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    row-gap: 0;
+    column-gap: 0;
+  }
+
   .badge-count {
     font-size: 11px;
     color: var(--text-muted);
@@ -667,6 +762,26 @@
       page-break-inside: avoid;
       break-inside: avoid;
     }
+    body.thermal-mode .preview-area .page {
+      width: 70mm !important;
+      height: auto !important;
+      min-height: 0 !important;
+      padding: 0 !important;
+      row-gap: 0 !important;
+      column-gap: 0 !important;
+      box-shadow: none !important;
+      border: none !important;
+      display: block !important;
+      margin: 0 !important;
+    }
+    body.thermal-mode .badge--thermal {
+      page-break-after: always;
+      break-after: page;
+    }
+    body.thermal-mode .preview-area .page:last-child .badge--thermal {
+      page-break-after: auto;
+      break-after: auto;
+    }
   }
 
   @page {
@@ -701,6 +816,7 @@
       <select id="presetSelect" onchange="applyPreset(this.value)" style="width:100%;font-family:var(--mono);font-size:11px;padding:6px 8px;border:1px solid var(--border);background:var(--surface);cursor:pointer">
         <option value="clas-ohlson-34-2512">Clas Ohlson 34-2512 (92×59mm)</option>
         <option value="herma-4350">Herma 4350 (96×63,5mm)</option>
+        <option value="phomemo-70x50">Phomemo termisk (70×50mm)</option>
       </select>
       <div class="size-row" style="margin-top:10px">
         <div>
@@ -872,6 +988,7 @@ let logoWidthPct = 100;
 let logoAlign = 'center';
 let logoYPct = 0;
 let qrSizeMm = 18;
+let thermalMode = false;
 
 const layoutDescriptions = {
   a: 'H\u00f8yrestilt \u2014 QR venstre, info h\u00f8yre',
@@ -880,12 +997,15 @@ const layoutDescriptions = {
 
 const PRESETS = {
   'clas-ohlson-34-2512': { w: 92, h: 59, padTop: '10mm', padRight: '10mm', padBottom: '10mm', padLeft: '10mm', rowGap: '4mm', colGap: '4mm' },
-  'herma-4350':          { w: 96, h: 63.5, padTop: '13.5mm', padRight: '6mm', padBottom: '18mm', padLeft: '7mm', rowGap: '3mm', colGap: '4mm' }
+  'herma-4350':          { w: 96, h: 63.5, padTop: '13.5mm', padRight: '6mm', padBottom: '18mm', padLeft: '7mm', rowGap: '3mm', colGap: '4mm' },
+  'phomemo-70x50':       { w: 70, h: 50, padTop: '0', padRight: '0', padBottom: '0', padLeft: '0', rowGap: '0', colGap: '0', thermal: true }
 };
 
 function applyPreset(id) {
   const p = PRESETS[id];
   if (!p) return;
+  thermalMode = !!p.thermal;
+  document.body.classList.toggle('thermal-mode', thermalMode);
   document.getElementById('badgeWidth').value = p.w;
   document.getElementById('badgeHeight').value = p.h;
   const r = document.documentElement.style;
@@ -895,6 +1015,14 @@ function applyPreset(id) {
   r.setProperty('--page-pad-left', p.padLeft);
   r.setProperty('--page-row-gap', p.rowGap);
   r.setProperty('--page-col-gap', p.colGap);
+  if (thermalMode) {
+    document.getElementById('fontSize_name').value = 16;
+    document.getElementById('fontSize_commission').value = 10;
+    document.getElementById('fontSize_company').value = 8;
+    document.getElementById('qrSize').value = 18;
+    document.getElementById('qrSizeVal').textContent = '18mm';
+    qrSizeMm = 18;
+  }
   saveState();
   renderBadges();
 }
@@ -1279,7 +1407,7 @@ function renderBadges() {
 
   document.querySelectorAll('.design-section').forEach(s => s.style.display = '');
 
-  const badgesPerPage = 8;
+  const badgesPerPage = thermalMode ? 1 : 8;
   const qrImg = qrDataUrl ? `<img src="${qrDataUrl}" alt="QR">` : '';
   const layoutClass = `badge--layout-${currentLayout}`;
   const alignMap = { left: 'flex-start', center: 'center', right: 'flex-end' };
@@ -1291,8 +1419,9 @@ function renderBadges() {
     ? entries
     : [{ name: 'Fornavn Etternavn', title: 'Stilling', company: 'Firma AS' }];
 
+  const pageLabel = thermalMode ? 'klistremerker' : 'sider';
   let html = entries.length > 0
-    ? `<div class="badge-count">${entries.length} navneskilt / ${Math.ceil(entries.length / badgesPerPage)} sider</div>`
+    ? `<div class="badge-count">${entries.length} navneskilt / ${Math.ceil(entries.length / badgesPerPage)} ${pageLabel}</div>`
     : '';
 
   for (let i = 0; i < displayEntries.length; i++) {
@@ -1301,21 +1430,39 @@ function renderBadges() {
       html += '<div class="page">';
     }
     const e = displayEntries[i];
-    html += `
-      <div class="badge ${layoutClass}" style="width:${w}mm;height:${h}mm;">
-        <div class="badge-top">
-          ${logoHtml}
-        </div>
-        <div class="badge-bottom">
-          <div class="qr" style="width:${qrSizeMm}mm;height:${qrSizeMm}mm">${qrImg}</div>
-          <div class="info">
-            <div class="name" style="font-family:'${currentFont}',sans-serif;font-size:${fontName}pt">${esc(e.name)}</div>
-            ${e.title ? `<div class="commission" style="font-family:'${currentFont}',sans-serif;font-size:${fontComm}pt">${esc(e.title)}</div>` : ''}
-            ${e.company ? `<div class="country" style="font-family:'${currentFont}',sans-serif;font-size:${fontCompany}pt">${esc(e.company)}</div>` : ''}
+
+    if (thermalMode) {
+      const qrRight = currentLayout === 'c';
+      html += `
+        <div class="badge badge--thermal" style="width:${w}mm;height:${h}mm;">
+          ${logoDataUrl ? `<div class="thermal-logo"><img src="${logoDataUrl}" alt="Logo"></div>` : ''}
+          <div class="thermal-body${qrRight ? ' qr-right' : ''}">
+            ${qrDataUrl ? `<div class="thermal-qr" style="width:${qrSizeMm}mm;height:${qrSizeMm}mm">${qrImg}</div>` : ''}
+            <div class="thermal-info">
+              <div class="thermal-name" style="font-family:'${currentFont}',sans-serif;font-size:${fontName}pt">${esc(e.name)}</div>
+              ${e.title ? `<div class="thermal-title" style="font-family:'${currentFont}',sans-serif;font-size:${fontComm}pt">${esc(e.title)}</div>` : ''}
+              ${e.company ? `<div class="thermal-company" style="font-family:'${currentFont}',sans-serif;font-size:${fontCompany}pt">${esc(e.company)}</div>` : ''}
+            </div>
           </div>
         </div>
-      </div>
-    `;
+      `;
+    } else {
+      html += `
+        <div class="badge ${layoutClass}" style="width:${w}mm;height:${h}mm;">
+          <div class="badge-top">
+            ${logoHtml}
+          </div>
+          <div class="badge-bottom">
+            <div class="qr" style="width:${qrSizeMm}mm;height:${qrSizeMm}mm">${qrImg}</div>
+            <div class="info">
+              <div class="name" style="font-family:'${currentFont}',sans-serif;font-size:${fontName}pt">${esc(e.name)}</div>
+              ${e.title ? `<div class="commission" style="font-family:'${currentFont}',sans-serif;font-size:${fontComm}pt">${esc(e.title)}</div>` : ''}
+              ${e.company ? `<div class="country" style="font-family:'${currentFont}',sans-serif;font-size:${fontCompany}pt">${esc(e.company)}</div>` : ''}
+            </div>
+          </div>
+        </div>
+      `;
+    }
   }
   html += '</div>';
 
@@ -1352,6 +1499,17 @@ function resetAll() {
   currentFont = 'Lato';
   qrDotStyle = 'square';
   qrSizeMm = 18;
+  thermalMode = false;
+  document.body.classList.remove('thermal-mode');
+  document.getElementById('presetSelect').value = 'clas-ohlson-34-2512';
+
+  const r = document.documentElement.style;
+  r.setProperty('--page-pad-top', '10mm');
+  r.setProperty('--page-pad-right', '10mm');
+  r.setProperty('--page-pad-bottom', '10mm');
+  r.setProperty('--page-pad-left', '10mm');
+  r.setProperty('--page-row-gap', '4mm');
+  r.setProperty('--page-col-gap', '4mm');
 
   document.getElementById('badgeWidth').value = 92;
   document.getElementById('badgeHeight').value = 59;
@@ -1515,6 +1673,15 @@ function printBadges() {
   if (entries.length === 0) {
     alert('Ingen deltakere. Importer data forst.');
     return;
+  }
+  if (thermalMode) {
+    const style = document.createElement('style');
+    style.id = 'thermalPageOverride';
+    style.textContent = '@page { size: 70mm 50mm; margin: 0; }';
+    document.head.appendChild(style);
+    window.addEventListener('afterprint', () => {
+      document.getElementById('thermalPageOverride')?.remove();
+    }, { once: true });
   }
   window.print();
 }
